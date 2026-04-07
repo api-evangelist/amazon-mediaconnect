@@ -9,11 +9,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Live Video
-  - Media Transport
-  - Broadcasting
-  - Media
   - AWS
+  - Broadcasting
+  - Live Video
+  - Media
+  - Media Transport
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -29,9 +29,9 @@ apis:
     humanURL: https://aws.amazon.com/mediaconnect/
     baseURL: https://mediaconnect.amazonaws.com
     tags:
+      - Broadcasting
       - Live Video
       - Media Transport
-      - Broadcasting
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
