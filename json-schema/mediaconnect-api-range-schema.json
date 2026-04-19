@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-range-schema.json",
+  "title": "Range",
+  "description": "Range schema from AWS Elemental MediaConnect API",
+  "type": "string",
+  "enum": [
+    "NARROW",
+    "FULL",
+    "FULLPROTECT"
+  ]
+}

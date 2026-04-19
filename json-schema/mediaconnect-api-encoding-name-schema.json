@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-encoding-name-schema.json",
+  "title": "EncodingName",
+  "description": "EncodingName schema from AWS Elemental MediaConnect API",
+  "type": "string",
+  "enum": [
+    "jxsv",
+    "raw",
+    "smpte291",
+    "pcm"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-list-gateways-response-structure.json",
+  "name": "ListGatewaysResponse",
+  "type": "object",
+  "description": "ListGatewaysResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "Gateways": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfListedGateway"
+        },
+        {
+          "xml": {
+            "name": "gateways"
+          },
+          "description": "A list of gateway summaries."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "nextToken"
+          },
+          "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListGateways request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListGateways request a second time and specify the NextToken value."
+        }
+      ]
+    }
+  }
+}

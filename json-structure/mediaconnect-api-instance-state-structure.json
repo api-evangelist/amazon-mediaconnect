@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-instance-state-structure.json",
+  "name": "InstanceState",
+  "type": "string",
+  "description": "InstanceState schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "REGISTERING",
+    "ACTIVE",
+    "DEREGISTERING",
+    "DEREGISTERED",
+    "REGISTRATION_ERROR",
+    "DEREGISTRATION_ERROR"
+  ]
+}

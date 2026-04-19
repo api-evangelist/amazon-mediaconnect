@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-flow-entitlement-response-structure.json",
+  "name": "UpdateFlowEntitlementResponse",
+  "type": "object",
+  "description": "UpdateFlowEntitlementResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "Entitlement": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Entitlement"
+        },
+        {
+          "xml": {
+            "name": "entitlement"
+          },
+          "description": "The new configuration of the entitlement that you updated."
+        }
+      ]
+    },
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the flow that this entitlement was granted on."
+        }
+      ]
+    }
+  }
+}

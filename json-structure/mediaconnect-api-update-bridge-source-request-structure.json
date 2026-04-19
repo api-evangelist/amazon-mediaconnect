@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-bridge-source-request-structure.json",
+  "name": "UpdateBridgeSourceRequest",
+  "type": "object",
+  "description": "The fields that you want to update in the bridge source.",
+  "properties": {
+    "FlowSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateBridgeFlowSourceRequest"
+        },
+        {
+          "xml": {
+            "name": "flowSource"
+          }
+        }
+      ]
+    },
+    "NetworkSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateBridgeNetworkSourceRequest"
+        },
+        {
+          "xml": {
+            "name": "networkSource"
+          }
+        }
+      ]
+    }
+  }
+}

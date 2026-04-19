@@ -1,0 +1,7 @@
+{
+  "BridgeArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "BridgeState": "example-value",
+  "BridgeType": "standard",
+  "Name": "example-mediaconnect-flow",
+  "PlacementArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow"
+}

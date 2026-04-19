@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-remove-flow-media-stream-request-structure.json",
+  "name": "RemoveFlowMediaStreamRequest",
+  "type": "object",
+  "description": "RemoveFlowMediaStreamRequest schema from AWS Elemental MediaConnect API",
+  "properties": {}
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-media-stream-attributes-request-structure.json",
+  "name": "MediaStreamAttributesRequest",
+  "type": "object",
+  "description": "Attributes that are related to the media stream.",
+  "properties": {
+    "Fmtp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FmtpRequest"
+        },
+        {
+          "xml": {
+            "name": "fmtp"
+          },
+          "description": "The settings that you want to use to define the media stream."
+        }
+      ]
+    },
+    "Lang": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "lang"
+          },
+          "description": "The audio language, in a format that is recognized by the receiver."
+        }
+      ]
+    }
+  }
+}

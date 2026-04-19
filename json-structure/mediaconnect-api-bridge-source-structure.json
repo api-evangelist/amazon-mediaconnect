@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-bridge-source-structure.json",
+  "name": "BridgeSource",
+  "type": "object",
+  "description": "The bridge's source.",
+  "properties": {
+    "FlowSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgeFlowSource"
+        },
+        {
+          "xml": {
+            "name": "flowSource"
+          }
+        }
+      ]
+    },
+    "NetworkSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgeNetworkSource"
+        },
+        {
+          "xml": {
+            "name": "networkSource"
+          }
+        }
+      ]
+    }
+  }
+}

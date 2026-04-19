@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-flow-entitlement-request-structure.json",
+  "name": "UpdateFlowEntitlementRequest",
+  "type": "object",
+  "description": "The entitlement fields that you want to update.",
+  "properties": {
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user."
+        }
+      ]
+    },
+    "Encryption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateEncryption"
+        },
+        {
+          "xml": {
+            "name": "encryption"
+          },
+          "description": "The type of encryption that will be used on the output associated with this entitlement. Allowable encryption types: static-key, speke."
+        }
+      ]
+    },
+    "EntitlementStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntitlementStatus"
+        },
+        {
+          "xml": {
+            "name": "entitlementStatus"
+          },
+          "description": "An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber\u2019s flow temporarily. If you don\u2019t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged."
+        }
+      ]
+    },
+    "Subscribers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "subscribers"
+          },
+          "description": "The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source."
+        }
+      ]
+    }
+  }
+}

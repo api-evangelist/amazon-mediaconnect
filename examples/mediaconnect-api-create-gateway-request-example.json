@@ -1,0 +1,5 @@
+{
+  "EgressCidrBlocks": "example-value",
+  "Name": "example-mediaconnect-flow",
+  "Networks": "example-value"
+}

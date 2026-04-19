@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-message-detail-schema.json",
+  "title": "MessageDetail",
+  "description": "MessageDetail schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "Code": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "code"
+          },
+          "description": "The error code."
+        }
+      ]
+    },
+    "Message": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "message"
+          },
+          "description": "The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed."
+        }
+      ]
+    },
+    "ResourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "resourceName"
+          },
+          "description": "The name of the resource."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Message",
+    "Code"
+  ]
+}

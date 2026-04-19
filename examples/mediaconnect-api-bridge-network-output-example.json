@@ -1,0 +1,8 @@
+{
+  "IpAddress": "10.0.0.1",
+  "Name": "example-mediaconnect-flow",
+  "NetworkName": "example-mediaconnect-flow",
+  "Port": "5000",
+  "Protocol": "srt",
+  "Ttl": "example-value"
+}

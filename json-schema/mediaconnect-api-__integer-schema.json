@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-__integer-schema.json",
+  "title": "__integer",
+  "description": "__integer schema from AWS Elemental MediaConnect API",
+  "type": "integer"
+}

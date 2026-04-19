@@ -1,0 +1,6 @@
+{
+  "Description": "Example MediaConnect flow for live video transport",
+  "Encryption": "example-value",
+  "EntitlementStatus": "ACTIVE",
+  "Subscribers": "example-value"
+}

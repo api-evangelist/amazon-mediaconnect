@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-update-gateway-instance-response-schema.json",
+  "title": "UpdateGatewayInstanceResponse",
+  "description": "UpdateGatewayInstanceResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "BridgePlacement": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgePlacement"
+        },
+        {
+          "xml": {
+            "name": "bridgePlacement"
+          },
+          "description": "The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance."
+        }
+      ]
+    },
+    "GatewayInstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "gatewayInstanceArn"
+          },
+          "description": "The Amazon Resource Name (ARN) of the instance."
+        }
+      ]
+    }
+  }
+}

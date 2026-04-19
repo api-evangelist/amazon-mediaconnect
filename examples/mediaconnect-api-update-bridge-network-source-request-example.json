@@ -1,0 +1,6 @@
+{
+  "MulticastIp": "10.0.0.1",
+  "NetworkName": "example-mediaconnect-flow",
+  "Port": "5000",
+  "Protocol": "srt"
+}

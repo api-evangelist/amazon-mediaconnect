@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-__list-of-message-detail-structure.json",
+  "name": "__listOfMessageDetail",
+  "type": "array",
+  "description": "__listOfMessageDetail schema from AWS Elemental MediaConnect API",
+  "items": {
+    "$ref": "#/components/schemas/MessageDetail"
+  }
+}

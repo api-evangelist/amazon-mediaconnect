@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-remove-flow-vpc-interface-response-structure.json",
+  "name": "RemoveFlowVpcInterfaceResponse",
+  "type": "object",
+  "description": "RemoveFlowVpcInterfaceResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the flow that is associated with the VPC interface you removed."
+        }
+      ]
+    },
+    "NonDeletedNetworkInterfaceIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "nonDeletedNetworkInterfaceIds"
+          },
+          "description": "IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove."
+        }
+      ]
+    },
+    "VpcInterfaceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "vpcInterfaceName"
+          },
+          "description": "The name of the VPC interface that was removed."
+        }
+      ]
+    }
+  }
+}

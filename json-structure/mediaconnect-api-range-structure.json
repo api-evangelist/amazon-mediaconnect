@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-range-structure.json",
+  "name": "Range",
+  "type": "string",
+  "description": "Range schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "NARROW",
+    "FULL",
+    "FULLPROTECT"
+  ]
+}

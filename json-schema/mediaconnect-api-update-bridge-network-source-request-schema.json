@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-update-bridge-network-source-request-schema.json",
+  "title": "UpdateBridgeNetworkSourceRequest",
+  "description": "Update the network source of the bridge.",
+  "type": "object",
+  "properties": {
+    "MulticastIp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "multicastIp"
+          },
+          "description": "The network source multicast IP."
+        }
+      ]
+    },
+    "NetworkName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "networkName"
+          },
+          "description": "The network source's gateway network name."
+        }
+      ]
+    },
+    "Port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "port"
+          },
+          "description": "The network source port."
+        }
+      ]
+    },
+    "Protocol": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Protocol"
+        },
+        {
+          "xml": {
+            "name": "protocol"
+          },
+          "description": "The network source protocol."
+        }
+      ]
+    }
+  }
+}

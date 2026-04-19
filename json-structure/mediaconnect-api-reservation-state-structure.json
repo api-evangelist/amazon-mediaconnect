@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-reservation-state-structure.json",
+  "name": "ReservationState",
+  "type": "string",
+  "description": "ReservationState schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "ACTIVE",
+    "EXPIRED",
+    "PROCESSING",
+    "CANCELED"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-gateway-network-structure.json",
+  "name": "GatewayNetwork",
+  "type": "object",
+  "description": "The network settings for a gateway.",
+  "properties": {
+    "CidrBlock": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "cidrBlock"
+          },
+          "description": "A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the network. This name is used to reference the network and must be unique among networks in this gateway."
+        }
+      ]
+    }
+  },
+  "required": [
+    "CidrBlock",
+    "Name"
+  ]
+}

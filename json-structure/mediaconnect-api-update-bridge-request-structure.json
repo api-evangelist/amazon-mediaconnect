@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-bridge-request-structure.json",
+  "name": "UpdateBridgeRequest",
+  "type": "object",
+  "description": "A request to update the bridge.",
+  "properties": {
+    "EgressGatewayBridge": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateEgressGatewayBridgeRequest"
+        },
+        {
+          "xml": {
+            "name": "egressGatewayBridge"
+          }
+        }
+      ]
+    },
+    "IngressGatewayBridge": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateIngressGatewayBridgeRequest"
+        },
+        {
+          "xml": {
+            "name": "ingressGatewayBridge"
+          }
+        }
+      ]
+    },
+    "SourceFailoverConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateFailoverConfig"
+        },
+        {
+          "xml": {
+            "name": "sourceFailoverConfig"
+          }
+        }
+      ]
+    }
+  }
+}

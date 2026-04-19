@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-vpc-interface-request-schema.json",
+  "title": "VpcInterfaceRequest",
+  "description": "Desired VPC Interface for a Flow",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the VPC Interface. This value must be unique within the current flow."
+        }
+      ]
+    },
+    "NetworkInterfaceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NetworkInterfaceType"
+        },
+        {
+          "xml": {
+            "name": "networkInterfaceType"
+          },
+          "description": "The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType."
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "roleArn"
+          },
+          "description": "Role Arn MediaConnect can assumes to create ENIs in customer's account"
+        }
+      ]
+    },
+    "SecurityGroupIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "securityGroupIds"
+          },
+          "description": "Security Group IDs to be used on ENI."
+        }
+      ]
+    },
+    "SubnetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "subnetId"
+          },
+          "description": "Subnet must be in the AZ of the Flow"
+        }
+      ]
+    }
+  },
+  "required": [
+    "SubnetId",
+    "SecurityGroupIds",
+    "RoleArn",
+    "Name"
+  ]
+}

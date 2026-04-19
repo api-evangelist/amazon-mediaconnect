@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-create-bridge-request-schema.json",
+  "title": "CreateBridgeRequest",
+  "description": "Creates a new bridge. The request must include one source.",
+  "type": "object",
+  "properties": {
+    "EgressGatewayBridge": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddEgressGatewayBridgeRequest"
+        },
+        {
+          "xml": {
+            "name": "egressGatewayBridge"
+          },
+          "description": "Create a bridge with the egress bridge type. An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises."
+        }
+      ]
+    },
+    "IngressGatewayBridge": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddIngressGatewayBridgeRequest"
+        },
+        {
+          "xml": {
+            "name": "ingressGatewayBridge"
+          },
+          "description": "Create a bridge with the ingress bridge type. An ingress bridge is a ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the bridge. This name can not be modified after the bridge is created."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAddBridgeOutputRequest"
+        },
+        {
+          "xml": {
+            "name": "outputs"
+          },
+          "description": "The outputs that you want to add to this bridge."
+        }
+      ]
+    },
+    "PlacementArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "placementArn"
+          },
+          "description": "The bridge placement Amazon Resource Number (ARN)."
+        }
+      ]
+    },
+    "SourceFailoverConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailoverConfig"
+        },
+        {
+          "xml": {
+            "name": "sourceFailoverConfig"
+          },
+          "description": "The settings for source failover."
+        }
+      ]
+    },
+    "Sources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAddBridgeSourceRequest"
+        },
+        {
+          "xml": {
+            "name": "sources"
+          },
+          "description": "The sources that you want to add to this bridge."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Sources",
+    "PlacementArn",
+    "Name"
+  ]
+}

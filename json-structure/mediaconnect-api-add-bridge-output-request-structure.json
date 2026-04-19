@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-add-bridge-output-request-structure.json",
+  "name": "AddBridgeOutputRequest",
+  "type": "object",
+  "description": "Add an output to a bridge.",
+  "properties": {
+    "NetworkOutput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddBridgeNetworkOutputRequest"
+        },
+        {
+          "xml": {
+            "name": "networkOutput"
+          }
+        }
+      ]
+    }
+  }
+}

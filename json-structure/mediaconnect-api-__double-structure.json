@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-__double-structure.json",
+  "name": "__double",
+  "type": "double",
+  "description": "__double schema from AWS Elemental MediaConnect API"
+}

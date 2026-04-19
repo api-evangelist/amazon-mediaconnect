@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-__list-of-media-stream-source-configuration-schema.json",
+  "title": "__listOfMediaStreamSourceConfiguration",
+  "description": "__listOfMediaStreamSourceConfiguration schema from AWS Elemental MediaConnect API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/MediaStreamSourceConfiguration"
+  }
+}

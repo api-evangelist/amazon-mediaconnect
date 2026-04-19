@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-source-priority-schema.json",
+  "title": "SourcePriority",
+  "description": "The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.",
+  "type": "object",
+  "properties": {
+    "PrimarySource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "primarySource"
+          },
+          "description": "The name of the source you choose as the primary source for this flow."
+        }
+      ]
+    }
+  }
+}

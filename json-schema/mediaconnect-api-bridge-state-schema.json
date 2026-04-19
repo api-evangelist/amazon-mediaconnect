@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-bridge-state-schema.json",
+  "title": "BridgeState",
+  "description": "BridgeState schema from AWS Elemental MediaConnect API",
+  "type": "string",
+  "enum": [
+    "CREATING",
+    "STANDBY",
+    "STARTING",
+    "DEPLOYING",
+    "ACTIVE",
+    "STOPPING",
+    "DELETING",
+    "DELETED",
+    "START_FAILED",
+    "START_PENDING",
+    "STOP_FAILED",
+    "UPDATING"
+  ]
+}

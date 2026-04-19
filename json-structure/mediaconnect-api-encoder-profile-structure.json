@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-encoder-profile-structure.json",
+  "name": "EncoderProfile",
+  "type": "string",
+  "description": "EncoderProfile schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "main",
+    "high"
+  ]
+}

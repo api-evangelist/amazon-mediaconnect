@@ -1,0 +1,5 @@
+{
+  "EgressGatewayBridge": "example-value",
+  "IngressGatewayBridge": "example-value",
+  "SourceFailoverConfig": "example-value"
+}

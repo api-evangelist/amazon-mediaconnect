@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-list-reservations-response-schema.json",
+  "title": "ListReservationsResponse",
+  "description": "ListReservationsResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "nextToken"
+          },
+          "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value."
+        }
+      ]
+    },
+    "Reservations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfReservation"
+        },
+        {
+          "xml": {
+            "name": "reservations"
+          },
+          "description": "A list of all reservations that have been purchased by this account in the current AWS Region."
+        }
+      ]
+    }
+  }
+}

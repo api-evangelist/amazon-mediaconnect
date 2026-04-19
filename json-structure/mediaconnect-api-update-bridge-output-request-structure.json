@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-bridge-output-request-structure.json",
+  "name": "UpdateBridgeOutputRequest",
+  "type": "object",
+  "description": "The fields that you want to update in the bridge output.",
+  "properties": {
+    "NetworkOutput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateBridgeNetworkOutputRequest"
+        },
+        {
+          "xml": {
+            "name": "networkOutput"
+          }
+        }
+      ]
+    }
+  }
+}

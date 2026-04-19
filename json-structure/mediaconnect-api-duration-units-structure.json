@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-duration-units-structure.json",
+  "name": "DurationUnits",
+  "type": "string",
+  "description": "DurationUnits schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "MONTHS"
+  ]
+}

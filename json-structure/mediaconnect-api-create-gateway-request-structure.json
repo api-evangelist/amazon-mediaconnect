@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-create-gateway-request-structure.json",
+  "name": "CreateGatewayRequest",
+  "type": "object",
+  "description": "Creates a new gateway. The request must include at least one network (up to 4).",
+  "properties": {
+    "EgressCidrBlocks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "egressCidrBlocks"
+          },
+          "description": "The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the gateway. This name can not be modified after the gateway is created."
+        }
+      ]
+    },
+    "Networks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfGatewayNetwork"
+        },
+        {
+          "xml": {
+            "name": "networks"
+          },
+          "description": "The list of networks that you want to add."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Networks",
+    "EgressCidrBlocks",
+    "Name"
+  ]
+}

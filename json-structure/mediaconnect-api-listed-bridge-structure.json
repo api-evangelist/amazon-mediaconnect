@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-listed-bridge-structure.json",
+  "name": "ListedBridge",
+  "type": "object",
+  "description": "Displays details of the selected bridge.",
+  "properties": {
+    "BridgeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bridgeArn"
+          },
+          "description": "The ARN of the bridge."
+        }
+      ]
+    },
+    "BridgeState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgeState"
+        },
+        {
+          "xml": {
+            "name": "bridgeState"
+          }
+        }
+      ]
+    },
+    "BridgeType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bridgeType"
+          },
+          "description": "The type of the bridge."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the bridge."
+        }
+      ]
+    },
+    "PlacementArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "placementArn"
+          },
+          "description": "The ARN of the gateway associated with the bridge."
+        }
+      ]
+    }
+  },
+  "required": [
+    "BridgeArn",
+    "BridgeState",
+    "PlacementArn",
+    "BridgeType",
+    "Name"
+  ]
+}

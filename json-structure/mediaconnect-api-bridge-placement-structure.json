@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-bridge-placement-structure.json",
+  "name": "BridgePlacement",
+  "type": "string",
+  "description": "BridgePlacement schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "AVAILABLE",
+    "LOCKED"
+  ]
+}

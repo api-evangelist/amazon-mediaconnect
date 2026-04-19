@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-max-results-schema.json",
+  "title": "MaxResults",
+  "description": "MaxResults schema from AWS Elemental MediaConnect API",
+  "type": "integer",
+  "minimum": 1,
+  "maximum": 1000
+}

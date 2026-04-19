@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-colorimetry-schema.json",
+  "title": "Colorimetry",
+  "description": "Colorimetry schema from AWS Elemental MediaConnect API",
+  "type": "string",
+  "enum": [
+    "BT601",
+    "BT709",
+    "BT2020",
+    "BT2100",
+    "ST2065-1",
+    "ST2065-3",
+    "XYZ"
+  ]
+}

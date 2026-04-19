@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-failover-mode-structure.json",
+  "name": "FailoverMode",
+  "type": "string",
+  "description": "FailoverMode schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "MERGE",
+    "FAILOVER"
+  ]
+}

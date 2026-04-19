@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-destination-configuration-structure.json",
+  "name": "DestinationConfiguration",
+  "type": "object",
+  "description": "The transport parameters that are associated with an outbound media stream.",
+  "properties": {
+    "DestinationIp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "destinationIp"
+          },
+          "description": "The IP address where contents of the media stream will be sent."
+        }
+      ]
+    },
+    "DestinationPort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "destinationPort"
+          },
+          "description": "The port to use when the content of the media stream is distributed to the output."
+        }
+      ]
+    },
+    "Interface": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Interface"
+        },
+        {
+          "xml": {
+            "name": "interface"
+          },
+          "description": "The VPC interface that is used for the media stream associated with the output."
+        }
+      ]
+    },
+    "OutboundIp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "outboundIp"
+          },
+          "description": "The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DestinationIp",
+    "DestinationPort",
+    "Interface",
+    "OutboundIp"
+  ]
+}

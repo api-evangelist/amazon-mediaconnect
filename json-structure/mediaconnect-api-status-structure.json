@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-status-structure.json",
+  "name": "Status",
+  "type": "string",
+  "description": "Status schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "STANDBY",
+    "ACTIVE",
+    "UPDATING",
+    "DELETING",
+    "STARTING",
+    "STOPPING",
+    "ERROR"
+  ]
+}

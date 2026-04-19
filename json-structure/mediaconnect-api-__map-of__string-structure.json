@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-__map-of__string-structure.json",
+  "name": "__mapOf__string",
+  "type": "object",
+  "description": "__mapOf__string schema from AWS Elemental MediaConnect API",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/__string"
+  }
+}

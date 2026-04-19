@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-vpc-interface-attachment-structure.json",
+  "name": "VpcInterfaceAttachment",
+  "type": "object",
+  "description": "The settings for attaching a VPC interface to an resource.",
+  "properties": {
+    "VpcInterfaceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "vpcInterfaceName"
+          },
+          "description": "The name of the VPC interface to use for this resource."
+        }
+      ]
+    }
+  }
+}

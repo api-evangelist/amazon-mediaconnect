@@ -1,0 +1,9 @@
+{
+  "Attributes": "example-value",
+  "ClockRate": "example-value",
+  "Description": "Example MediaConnect flow for live video transport",
+  "MediaStreamId": "id-abc123",
+  "MediaStreamName": "example-mediaconnect-flow",
+  "MediaStreamType": "standard",
+  "VideoFormat": "example-value"
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-listed-gateway-structure.json",
+  "name": "ListedGateway",
+  "type": "object",
+  "description": "Provides a summary of a gateway, including its name, ARN, and status.",
+  "properties": {
+    "GatewayArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "gatewayArn"
+          },
+          "description": "The Amazon Resource Name (ARN) of the gateway."
+        }
+      ]
+    },
+    "GatewayState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayState"
+        },
+        {
+          "xml": {
+            "name": "gatewayState"
+          }
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the gateway."
+        }
+      ]
+    }
+  },
+  "required": [
+    "GatewayArn",
+    "GatewayState",
+    "Name"
+  ]
+}

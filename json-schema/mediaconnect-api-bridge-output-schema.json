@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-bridge-output-schema.json",
+  "title": "BridgeOutput",
+  "description": "The output of the bridge.",
+  "type": "object",
+  "properties": {
+    "FlowOutput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgeFlowOutput"
+        },
+        {
+          "xml": {
+            "name": "flowOutput"
+          }
+        }
+      ]
+    },
+    "NetworkOutput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgeNetworkOutput"
+        },
+        {
+          "xml": {
+            "name": "networkOutput"
+          }
+        }
+      ]
+    }
+  }
+}

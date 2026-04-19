@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-key-type-structure.json",
+  "name": "KeyType",
+  "type": "string",
+  "description": "KeyType schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "speke",
+    "static-key",
+    "srt-password"
+  ]
+}

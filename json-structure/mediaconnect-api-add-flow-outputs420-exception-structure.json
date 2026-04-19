@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-add-flow-outputs420-exception-structure.json",
+  "name": "AddFlowOutputs420Exception",
+  "description": "AddFlowOutputs420Exception schema from AWS Elemental MediaConnect API"
+}

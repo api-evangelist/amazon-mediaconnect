@@ -1,0 +1,11 @@
+{
+  "Algorithm": "aes128",
+  "ConstantInitializationVector": "example-value",
+  "DeviceId": "id-abc123",
+  "KeyType": "abcdef1234567890",
+  "Region": "us-east-1",
+  "ResourceId": "id-abc123",
+  "RoleArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "SecretArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "Url": "https://example.com"
+}

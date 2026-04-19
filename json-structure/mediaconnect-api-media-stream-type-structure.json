@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-media-stream-type-structure.json",
+  "name": "MediaStreamType",
+  "type": "string",
+  "description": "MediaStreamType schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "video",
+    "audio",
+    "ancillary-data"
+  ]
+}

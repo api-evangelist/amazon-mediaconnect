@@ -1,0 +1,6 @@
+{
+  "FailoverMode": "example-value",
+  "RecoveryWindow": "example-value",
+  "SourcePriority": "example-value",
+  "State": "example-value"
+}

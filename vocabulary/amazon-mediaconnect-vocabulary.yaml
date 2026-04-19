@@ -1,0 +1,213 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon MediaConnect
+  description: Unified vocabulary for Amazon MediaConnect live video transport APIs and capabilities.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: AWS Elemental MediaConnect API
+    namespace: mediaconnect
+    version: '2018-11-14'
+    baseUrl: https://mediaconnect.amazonaws.com
+    status: active
+  resources:
+  - name: bridges
+    api: AWS Elemental MediaConnect API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: flows
+    api: AWS Elemental MediaConnect API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: gateways
+    api: AWS Elemental MediaConnect API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: gateway-instances
+    api: AWS Elemental MediaConnect API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: offerings
+    api: AWS Elemental MediaConnect API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: reservations
+    api: AWS Elemental MediaConnect API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: entitlements
+    api: AWS Elemental MediaConnect API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  actions:
+  - name: create
+    httpMethod: POST
+    pattern: write
+  - name: list
+    httpMethod: GET
+    pattern: read
+  - name: get
+    httpMethod: GET
+    pattern: read
+  - name: update
+    httpMethod: PUT
+    pattern: write
+  - name: delete
+    httpMethod: DELETE
+    pattern: write
+  schemas:
+    core:
+    - AddBridgeOutputsResponse
+    - AddBridgeOutputRequest
+    - AddBridgeSourcesResponse
+    - AddBridgeSourceRequest
+    - AddFlowMediaStreamsResponse
+    - AddMediaStreamRequest
+    - AddFlowOutputsResponse
+    - AddOutputRequest
+    - AddFlowSourcesResponse
+    - SetSourceRequest
+    - AddFlowVpcInterfacesResponse
+    - VpcInterfaceRequest
+  parameters:
+    pagination:
+    - name: maxResults
+      description: The maximum number of results to return per API request. For example, you submit a ListBridges request with MaxResults set at 5. Although 20 items match your request, the service 
+        returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the 
+        MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    - name: nextToken
+      description: The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of
+        results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
+    identifiers:
+    - name: bridgeArn
+      description: The ARN of the bridge that you want to update.
+    - name: flowArn
+      description: The Amazon Resource Name (ARN) of the flow.
+    - name: filterArn
+      description: Filter the list results to display only the bridges associated with the selected Amazon Resource Name (ARN).
+    - name: gatewayArn
+      description: The Amazon Resource Name (ARN) of the gateway that you want to describe.
+    - name: gatewayInstanceArn
+      description: The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    - name: offeringArn
+      description: The Amazon Resource Name (ARN) of the offering.
+    - name: reservationArn
+      description: The Amazon Resource Name (ARN) of the reservation.
+    - name: resourceArn
+      description: The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
+    - name: outputArn
+      description: The ARN of the output that you want to update.
+    - name: sourceArn
+      description: The ARN of the source that you want to update.
+    - name: entitlementArn
+      description: The ARN of the entitlement that you want to update.
+    filters: []
+  enums: {}
+  authentication:
+    schemes:
+    - type: awsSigV4
+      description: AWS Signature Version 4
+capability:
+  workflows:
+  - name: Live Video Transport
+    file: capabilities/amazon-mediaconnect-live-video-transport.yaml
+    description: Live video transport workflow for broadcast engineers
+    personas:
+    - Broadcast Engineer
+    domains:
+    - Media Transport
+  personas:
+  - id: broadcast-engineer
+    name: Broadcast Engineer
+    description: Engineer managing live video workflows
+    workflows:
+    - Live Video Transport
+  domains:
+  - name: Media Transport
+    description: Live video transport and distribution
+  namespaces:
+  - name: mediaconnect
+    type: consumed
+  - name: mediaconnect-transport-api
+    type: rest
+    port: 8080
+  - name: mediaconnect-transport-mcp
+    type: mcp
+    port: 9090
+  binds:
+  - name: AWS_ACCESS_KEY_ID
+    description: AWS access key ID
+  - name: AWS_SECRET_ACCESS_KEY
+    description: AWS secret access key
+crossReference:
+- resource: bridges
+  api: AWS Elemental MediaConnect API
+  workflows:
+  - Live Video Transport
+  personas:
+  - Broadcast Engineer
+- resource: flows
+  api: AWS Elemental MediaConnect API
+  workflows:
+  - Live Video Transport
+  personas:
+  - Broadcast Engineer
+- resource: gateways
+  api: AWS Elemental MediaConnect API
+  workflows:
+  - Live Video Transport
+  personas:
+  - Broadcast Engineer
+- resource: gateway-instances
+  api: AWS Elemental MediaConnect API
+  workflows:
+  - Live Video Transport
+  personas:
+  - Broadcast Engineer
+- resource: offerings
+  api: AWS Elemental MediaConnect API
+  workflows:
+  - Live Video Transport
+  personas:
+  - Broadcast Engineer
+- resource: reservations
+  api: AWS Elemental MediaConnect API
+  workflows:
+  - Live Video Transport
+  personas:
+  - Broadcast Engineer
+- resource: entitlements
+  api: AWS Elemental MediaConnect API
+  workflows:
+  - Live Video Transport
+  personas:
+  - Broadcast Engineer

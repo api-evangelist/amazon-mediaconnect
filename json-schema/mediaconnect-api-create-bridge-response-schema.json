@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-create-bridge-response-schema.json",
+  "title": "CreateBridgeResponse",
+  "description": "CreateBridgeResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "Bridge": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Bridge"
+        },
+        {
+          "xml": {
+            "name": "bridge"
+          }
+        }
+      ]
+    }
+  }
+}

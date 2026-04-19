@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-list-flows-request-structure.json",
+  "name": "ListFlowsRequest",
+  "type": "object",
+  "description": "ListFlowsRequest schema from AWS Elemental MediaConnect API",
+  "properties": {}
+}

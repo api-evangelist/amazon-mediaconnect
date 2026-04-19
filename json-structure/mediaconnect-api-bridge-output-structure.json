@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-bridge-output-structure.json",
+  "name": "BridgeOutput",
+  "type": "object",
+  "description": "The output of the bridge.",
+  "properties": {
+    "FlowOutput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgeFlowOutput"
+        },
+        {
+          "xml": {
+            "name": "flowOutput"
+          }
+        }
+      ]
+    },
+    "NetworkOutput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgeNetworkOutput"
+        },
+        {
+          "xml": {
+            "name": "networkOutput"
+          }
+        }
+      ]
+    }
+  }
+}

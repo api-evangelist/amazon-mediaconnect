@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-failover-config-structure.json",
+  "name": "FailoverConfig",
+  "type": "object",
+  "description": "The settings for source failover.",
+  "properties": {
+    "FailoverMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailoverMode"
+        },
+        {
+          "xml": {
+            "name": "failoverMode"
+          },
+          "description": "The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams."
+        }
+      ]
+    },
+    "RecoveryWindow": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "recoveryWindow"
+          },
+          "description": "Search window time to look for dash-7 packets"
+        }
+      ]
+    },
+    "SourcePriority": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SourcePriority"
+        },
+        {
+          "xml": {
+            "name": "sourcePriority"
+          },
+          "description": "The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams."
+        }
+      ]
+    },
+    "State": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/State"
+        },
+        {
+          "xml": {
+            "name": "state"
+          }
+        }
+      ]
+    }
+  }
+}

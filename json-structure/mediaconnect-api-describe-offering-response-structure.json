@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-describe-offering-response-structure.json",
+  "name": "DescribeOfferingResponse",
+  "type": "object",
+  "description": "DescribeOfferingResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "Offering": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Offering"
+        },
+        {
+          "xml": {
+            "name": "offering"
+          }
+        }
+      ]
+    }
+  }
+}

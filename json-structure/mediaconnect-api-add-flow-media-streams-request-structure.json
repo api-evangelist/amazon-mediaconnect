@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-add-flow-media-streams-request-structure.json",
+  "name": "AddFlowMediaStreamsRequest",
+  "type": "object",
+  "description": "A request to add media streams to the flow.",
+  "properties": {
+    "MediaStreams": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAddMediaStreamRequest"
+        },
+        {
+          "xml": {
+            "name": "mediaStreams"
+          },
+          "description": "The media streams that you want to add to the flow."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MediaStreams"
+  ]
+}

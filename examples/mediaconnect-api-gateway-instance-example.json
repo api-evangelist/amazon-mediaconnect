@@ -1,0 +1,10 @@
+{
+  "BridgePlacement": "example-value",
+  "ConnectionStatus": "ACTIVE",
+  "GatewayArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "GatewayInstanceArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "InstanceId": "id-abc123",
+  "InstanceMessages": "example-value",
+  "InstanceState": "example-value",
+  "RunningBridgeCount": "example-value"
+}

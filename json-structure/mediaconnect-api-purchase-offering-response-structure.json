@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-purchase-offering-response-structure.json",
+  "name": "PurchaseOfferingResponse",
+  "type": "object",
+  "description": "PurchaseOfferingResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "Reservation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Reservation"
+        },
+        {
+          "xml": {
+            "name": "reservation"
+          }
+        }
+      ]
+    }
+  }
+}

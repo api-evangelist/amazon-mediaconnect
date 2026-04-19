@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-create-gateway-response-schema.json",
+  "title": "CreateGatewayResponse",
+  "description": "CreateGatewayResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "Gateway": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Gateway"
+        },
+        {
+          "xml": {
+            "name": "gateway"
+          }
+        }
+      ]
+    }
+  }
+}

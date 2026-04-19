@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-__boolean-structure.json",
+  "name": "__boolean",
+  "type": "boolean",
+  "description": "__boolean schema from AWS Elemental MediaConnect API"
+}

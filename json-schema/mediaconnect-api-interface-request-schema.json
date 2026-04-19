@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-interface-request-schema.json",
+  "title": "InterfaceRequest",
+  "description": "The VPC interface that you want to designate where the media stream is coming from or going to.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the VPC interface."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

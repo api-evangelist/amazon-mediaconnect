@@ -1,0 +1,8 @@
+{
+  "DataTransferSubscriberFeePercent": "example-value",
+  "Description": "Example MediaConnect flow for live video transport",
+  "Encryption": "example-value",
+  "EntitlementStatus": "ACTIVE",
+  "Name": "example-mediaconnect-flow",
+  "Subscribers": "example-value"
+}

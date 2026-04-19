@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-algorithm-structure.json",
+  "name": "Algorithm",
+  "type": "string",
+  "description": "Algorithm schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "aes128",
+    "aes192",
+    "aes256"
+  ]
+}

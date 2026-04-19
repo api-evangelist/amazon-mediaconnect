@@ -1,0 +1,15 @@
+{
+  "CidrAllowList": "example-value",
+  "MaxBitrate": "example-value",
+  "MaxLatency": "example-value",
+  "MaxSyncBuffer": "example-value",
+  "MinLatency": "example-value",
+  "Protocol": "srt",
+  "RemoteId": "id-abc123",
+  "SenderControlPort": "5000",
+  "SenderIpAddress": "10.0.0.1",
+  "SmoothingLatency": "example-value",
+  "SourceListenerAddress": "10.0.0.1",
+  "SourceListenerPort": "5000",
+  "StreamId": "id-abc123"
+}

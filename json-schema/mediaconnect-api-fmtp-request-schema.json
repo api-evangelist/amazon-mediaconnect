@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-fmtp-request-schema.json",
+  "title": "FmtpRequest",
+  "description": "The settings that you want to use to define the media stream.",
+  "type": "object",
+  "properties": {
+    "ChannelOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "channelOrder"
+          },
+          "description": "The format of the audio channel."
+        }
+      ]
+    },
+    "Colorimetry": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Colorimetry"
+        },
+        {
+          "xml": {
+            "name": "colorimetry"
+          },
+          "description": "The format that is used for the representation of color."
+        }
+      ]
+    },
+    "ExactFramerate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "exactFramerate"
+          },
+          "description": "The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate."
+        }
+      ]
+    },
+    "Par": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "par"
+          },
+          "description": "The pixel aspect ratio (PAR) of the video."
+        }
+      ]
+    },
+    "Range": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Range"
+        },
+        {
+          "xml": {
+            "name": "range"
+          },
+          "description": "The encoding range of the video."
+        }
+      ]
+    },
+    "ScanMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanMode"
+        },
+        {
+          "xml": {
+            "name": "scanMode"
+          },
+          "description": "The type of compression that was used to smooth the video\u2019s appearance."
+        }
+      ]
+    },
+    "Tcs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Tcs"
+        },
+        {
+          "xml": {
+            "name": "tcs"
+          },
+          "description": "The transfer characteristic system (TCS) that is used in the video."
+        }
+      ]
+    }
+  }
+}

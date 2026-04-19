@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-source-type-schema.json",
+  "title": "SourceType",
+  "description": "SourceType schema from AWS Elemental MediaConnect API",
+  "type": "string",
+  "enum": [
+    "OWNED",
+    "ENTITLED"
+  ]
+}

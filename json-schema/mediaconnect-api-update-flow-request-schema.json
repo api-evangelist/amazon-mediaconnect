@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-update-flow-request-schema.json",
+  "title": "UpdateFlowRequest",
+  "description": "A request to update flow.",
+  "type": "object",
+  "properties": {
+    "SourceFailoverConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateFailoverConfig"
+        },
+        {
+          "xml": {
+            "name": "sourceFailoverConfig"
+          }
+        }
+      ]
+    },
+    "Maintenance": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateMaintenance"
+        },
+        {
+          "xml": {
+            "name": "maintenance"
+          }
+        }
+      ]
+    }
+  }
+}

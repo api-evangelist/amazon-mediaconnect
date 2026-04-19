@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-list-entitlements-request-structure.json",
+  "name": "ListEntitlementsRequest",
+  "type": "object",
+  "description": "ListEntitlementsRequest schema from AWS Elemental MediaConnect API",
+  "properties": {}
+}

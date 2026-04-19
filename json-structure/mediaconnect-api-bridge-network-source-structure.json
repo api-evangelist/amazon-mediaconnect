@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-bridge-network-source-structure.json",
+  "name": "BridgeNetworkSource",
+  "type": "object",
+  "description": "The source of the bridge. A network source originates at your premises.",
+  "properties": {
+    "MulticastIp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "multicastIp"
+          },
+          "description": "The network source multicast IP."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the network source."
+        }
+      ]
+    },
+    "NetworkName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "networkName"
+          },
+          "description": "The network source's gateway network name."
+        }
+      ]
+    },
+    "Port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "port"
+          },
+          "description": "The network source port."
+        }
+      ]
+    },
+    "Protocol": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Protocol"
+        },
+        {
+          "xml": {
+            "name": "protocol"
+          },
+          "description": "The network source protocol."
+        }
+      ]
+    }
+  },
+  "required": [
+    "NetworkName",
+    "MulticastIp",
+    "Port",
+    "Protocol",
+    "Name"
+  ]
+}

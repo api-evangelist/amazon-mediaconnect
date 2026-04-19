@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-describe-flow-response-schema.json",
+  "title": "DescribeFlowResponse",
+  "description": "DescribeFlowResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "Flow": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Flow"
+        },
+        {
+          "xml": {
+            "name": "flow"
+          }
+        }
+      ]
+    },
+    "Messages": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Messages"
+        },
+        {
+          "xml": {
+            "name": "messages"
+          }
+        }
+      ]
+    }
+  }
+}

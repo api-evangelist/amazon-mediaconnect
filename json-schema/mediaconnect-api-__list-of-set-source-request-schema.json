@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-__list-of-set-source-request-schema.json",
+  "title": "__listOfSetSourceRequest",
+  "description": "__listOfSetSourceRequest schema from AWS Elemental MediaConnect API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/SetSourceRequest"
+  }
+}

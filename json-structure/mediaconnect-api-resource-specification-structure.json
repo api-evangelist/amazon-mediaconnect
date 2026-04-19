@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-resource-specification-structure.json",
+  "name": "ResourceSpecification",
+  "type": "object",
+  "description": "A definition of what is being billed for, including the type and amount.",
+  "properties": {
+    "ReservedBitrate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "reservedBitrate"
+          },
+          "description": "The amount of outbound bandwidth that is discounted in the offering."
+        }
+      ]
+    },
+    "ResourceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceType"
+        },
+        {
+          "xml": {
+            "name": "resourceType"
+          },
+          "description": "The type of resource and the unit that is being billed for."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ResourceType"
+  ]
+}

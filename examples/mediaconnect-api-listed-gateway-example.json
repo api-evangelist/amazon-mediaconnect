@@ -1,0 +1,5 @@
+{
+  "GatewayArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "GatewayState": "example-value",
+  "Name": "example-mediaconnect-flow"
+}

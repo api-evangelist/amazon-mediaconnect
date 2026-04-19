@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-__list-of-vpc-interface-request-structure.json",
+  "name": "__listOfVpcInterfaceRequest",
+  "type": "array",
+  "description": "__listOfVpcInterfaceRequest schema from AWS Elemental MediaConnect API",
+  "items": {
+    "$ref": "#/components/schemas/VpcInterfaceRequest"
+  }
+}

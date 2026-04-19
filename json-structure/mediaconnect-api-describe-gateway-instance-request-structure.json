@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-describe-gateway-instance-request-structure.json",
+  "name": "DescribeGatewayInstanceRequest",
+  "type": "object",
+  "description": "DescribeGatewayInstanceRequest schema from AWS Elemental MediaConnect API",
+  "properties": {}
+}

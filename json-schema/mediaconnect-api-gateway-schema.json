@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-gateway-schema.json",
+  "title": "Gateway",
+  "description": "The settings for a gateway, including its networks.",
+  "type": "object",
+  "properties": {
+    "EgressCidrBlocks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "egressCidrBlocks"
+          },
+          "description": "The range of IP addresses that contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16."
+        }
+      ]
+    },
+    "GatewayArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "gatewayArn"
+          },
+          "description": "The Amazon Resource Name (ARN) of the gateway."
+        }
+      ]
+    },
+    "GatewayMessages": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfMessageDetail"
+        },
+        {
+          "xml": {
+            "name": "gatewayMessages"
+          }
+        }
+      ]
+    },
+    "GatewayState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayState"
+        },
+        {
+          "xml": {
+            "name": "gatewayState"
+          },
+          "description": "The current status of the gateway."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the gateway. This name can not be modified after the gateway is created."
+        }
+      ]
+    },
+    "Networks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfGatewayNetwork"
+        },
+        {
+          "xml": {
+            "name": "networks"
+          },
+          "description": "The list of networks in the gateway."
+        }
+      ]
+    }
+  },
+  "required": [
+    "GatewayArn",
+    "Networks",
+    "EgressCidrBlocks",
+    "Name"
+  ]
+}

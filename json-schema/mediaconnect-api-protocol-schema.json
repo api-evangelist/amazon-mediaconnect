@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-protocol-schema.json",
+  "title": "Protocol",
+  "description": "Protocol schema from AWS Elemental MediaConnect API",
+  "type": "string",
+  "enum": [
+    "zixi-push",
+    "rtp-fec",
+    "rtp",
+    "zixi-pull",
+    "rist",
+    "st2110-jpegxs",
+    "cdi",
+    "srt-listener",
+    "srt-caller",
+    "fujitsu-qos",
+    "udp"
+  ]
+}

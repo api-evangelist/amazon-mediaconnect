@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-revoke-flow-entitlement-response-structure.json",
+  "name": "RevokeFlowEntitlementResponse",
+  "type": "object",
+  "description": "RevokeFlowEntitlementResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "EntitlementArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "entitlementArn"
+          },
+          "description": "The ARN of the entitlement that was revoked."
+        }
+      ]
+    },
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the flow that the entitlement was revoked from."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-source-structure.json",
+  "name": "Source",
+  "type": "object",
+  "description": "The settings for the source of the flow.",
+  "properties": {
+    "DataTransferSubscriberFeePercent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "dataTransferSubscriberFeePercent"
+          },
+          "description": "Percentage from 0-100 of the data transfer cost to be billed to the subscriber."
+        }
+      ]
+    },
+    "Decryption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Encryption"
+        },
+        {
+          "xml": {
+            "name": "decryption"
+          },
+          "description": "The type of encryption that is used on the content ingested from this source."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account."
+        }
+      ]
+    },
+    "EntitlementArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "entitlementArn"
+          },
+          "description": "The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow."
+        }
+      ]
+    },
+    "IngestIp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "ingestIp"
+          },
+          "description": "The IP address that the flow will be listening on for incoming content."
+        }
+      ]
+    },
+    "IngestPort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "ingestPort"
+          },
+          "description": "The port that the flow will be listening on for incoming content."
+        }
+      ]
+    },
+    "MediaStreamSourceConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfMediaStreamSourceConfiguration"
+        },
+        {
+          "xml": {
+            "name": "mediaStreamSourceConfigurations"
+          },
+          "description": "The media streams that are associated with the source, and the parameters for those associations."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the source."
+        }
+      ]
+    },
+    "SenderControlPort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "senderControlPort"
+          },
+          "description": "The port that the flow uses to send outbound requests to initiate connection with the sender."
+        }
+      ]
+    },
+    "SenderIpAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "senderIpAddress"
+          },
+          "description": "The IP address that the flow communicates with to initiate connection with the sender."
+        }
+      ]
+    },
+    "SourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "sourceArn"
+          },
+          "description": "The ARN of the source."
+        }
+      ]
+    },
+    "Transport": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Transport"
+        },
+        {
+          "xml": {
+            "name": "transport"
+          },
+          "description": "Attributes related to the transport stream that are used in the source."
+        }
+      ]
+    },
+    "VpcInterfaceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "vpcInterfaceName"
+          },
+          "description": "The name of the VPC interface that is used for this source."
+        }
+      ]
+    },
+    "WhitelistCidr": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "whitelistCidr"
+          },
+          "description": "The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16."
+        }
+      ]
+    },
+    "GatewayBridgeSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayBridgeSource"
+        },
+        {
+          "xml": {
+            "name": "gatewayBridgeSource"
+          },
+          "description": "The source configuration for cloud flows receiving a stream from a bridge."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "SourceArn"
+  ]
+}

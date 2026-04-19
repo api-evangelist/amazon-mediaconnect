@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-ingress-gateway-bridge-structure.json",
+  "name": "IngressGatewayBridge",
+  "type": "object",
+  "description": "IngressGatewayBridge schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "InstanceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "instanceId"
+          },
+          "description": "The ID of the instance running this bridge."
+        }
+      ]
+    },
+    "MaxBitrate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxBitrate"
+          },
+          "description": "The maximum expected bitrate (in bps) of the ingress bridge."
+        }
+      ]
+    },
+    "MaxOutputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxOutputs"
+          },
+          "description": "The maximum number of outputs on the ingress bridge."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MaxOutputs",
+    "MaxBitrate"
+  ]
+}

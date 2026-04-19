@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-remove-flow-media-stream-response-structure.json",
+  "name": "RemoveFlowMediaStreamResponse",
+  "type": "object",
+  "description": "RemoveFlowMediaStreamResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The Amazon Resource Name (ARN) of the flow."
+        }
+      ]
+    },
+    "MediaStreamName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "mediaStreamName"
+          },
+          "description": "The name of the media stream that was removed."
+        }
+      ]
+    }
+  }
+}

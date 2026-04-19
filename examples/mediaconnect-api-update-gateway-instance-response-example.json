@@ -1,0 +1,4 @@
+{
+  "BridgePlacement": "example-value",
+  "GatewayInstanceArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow"
+}

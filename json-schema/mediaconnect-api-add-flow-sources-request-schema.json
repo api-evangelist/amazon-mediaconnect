@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-add-flow-sources-request-schema.json",
+  "title": "AddFlowSourcesRequest",
+  "description": "A request to add sources to the flow.",
+  "type": "object",
+  "properties": {
+    "Sources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfSetSourceRequest"
+        },
+        {
+          "xml": {
+            "name": "sources"
+          },
+          "description": "A list of sources that you want to add."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Sources"
+  ]
+}

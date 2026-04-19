@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-remove-bridge-output-response-schema.json",
+  "title": "RemoveBridgeOutputResponse",
+  "description": "RemoveBridgeOutputResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "BridgeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bridgeArn"
+          }
+        }
+      ]
+    },
+    "OutputName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "outputName"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-connection-status-structure.json",
+  "name": "ConnectionStatus",
+  "type": "string",
+  "description": "ConnectionStatus schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "CONNECTED",
+    "DISCONNECTED"
+  ]
+}

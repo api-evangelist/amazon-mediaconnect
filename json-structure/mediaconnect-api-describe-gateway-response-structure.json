@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-describe-gateway-response-structure.json",
+  "name": "DescribeGatewayResponse",
+  "type": "object",
+  "description": "DescribeGatewayResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "Gateway": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Gateway"
+        },
+        {
+          "xml": {
+            "name": "gateway"
+          }
+        }
+      ]
+    }
+  }
+}

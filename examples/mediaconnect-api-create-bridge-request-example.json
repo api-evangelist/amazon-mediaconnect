@@ -1,0 +1,9 @@
+{
+  "EgressGatewayBridge": "example-value",
+  "IngressGatewayBridge": "example-value",
+  "Name": "example-mediaconnect-flow",
+  "Outputs": "example-value",
+  "PlacementArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "SourceFailoverConfig": "example-value",
+  "Sources": "example-value"
+}

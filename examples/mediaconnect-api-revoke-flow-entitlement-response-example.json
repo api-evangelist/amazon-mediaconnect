@@ -1,0 +1,4 @@
+{
+  "EntitlementArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "FlowArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow"
+}

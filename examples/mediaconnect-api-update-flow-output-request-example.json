@@ -1,0 +1,17 @@
+{
+  "CidrAllowList": "example-value",
+  "Description": "Example MediaConnect flow for live video transport",
+  "Destination": "example-value",
+  "Encryption": "example-value",
+  "MaxLatency": "example-value",
+  "MediaStreamOutputConfigurations": "example-value",
+  "MinLatency": "example-value",
+  "Port": "5000",
+  "Protocol": "srt",
+  "RemoteId": "id-abc123",
+  "SenderControlPort": "5000",
+  "SenderIpAddress": "10.0.0.1",
+  "SmoothingLatency": "example-value",
+  "StreamId": "id-abc123",
+  "VpcInterfaceAttachment": "example-value"
+}

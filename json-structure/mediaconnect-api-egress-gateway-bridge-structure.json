@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-egress-gateway-bridge-structure.json",
+  "name": "EgressGatewayBridge",
+  "type": "object",
+  "description": "EgressGatewayBridge schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "InstanceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "instanceId"
+          },
+          "description": "The ID of the instance running this bridge."
+        }
+      ]
+    },
+    "MaxBitrate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxBitrate"
+          },
+          "description": "The maximum expected bitrate (in bps) of the egress bridge."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MaxBitrate"
+  ]
+}

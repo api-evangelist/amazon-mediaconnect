@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-add-flow-vpc-interfaces-request-structure.json",
+  "name": "AddFlowVpcInterfacesRequest",
+  "type": "object",
+  "description": "A request to add VPC interfaces to the flow.",
+  "properties": {
+    "VpcInterfaces": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfVpcInterfaceRequest"
+        },
+        {
+          "xml": {
+            "name": "vpcInterfaces"
+          },
+          "description": "A list of VPC interfaces that you want to add."
+        }
+      ]
+    }
+  },
+  "required": [
+    "VpcInterfaces"
+  ]
+}

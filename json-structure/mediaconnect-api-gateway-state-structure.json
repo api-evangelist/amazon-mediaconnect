@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-gateway-state-structure.json",
+  "name": "GatewayState",
+  "type": "string",
+  "description": "GatewayState schema from AWS Elemental MediaConnect API",
+  "enum": [
+    "CREATING",
+    "ACTIVE",
+    "UPDATING",
+    "ERROR",
+    "DELETING",
+    "DELETED"
+  ]
+}

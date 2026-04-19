@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-list-flows-response-schema.json",
+  "title": "ListFlowsResponse",
+  "description": "ListFlowsResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "Flows": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfListedFlow"
+        },
+        {
+          "xml": {
+            "name": "flows"
+          },
+          "description": "A list of flow summaries."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "nextToken"
+          },
+          "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value."
+        }
+      ]
+    }
+  }
+}

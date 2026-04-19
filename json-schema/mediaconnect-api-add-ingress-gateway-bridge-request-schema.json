@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-add-ingress-gateway-bridge-request-schema.json",
+  "title": "AddIngressGatewayBridgeRequest",
+  "description": "AddIngressGatewayBridgeRequest schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "MaxBitrate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxBitrate"
+          },
+          "description": "The maximum expected bitrate (in bps)."
+        }
+      ]
+    },
+    "MaxOutputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxOutputs"
+          },
+          "description": "The maximum number of expected outputs."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MaxOutputs",
+    "MaxBitrate"
+  ]
+}

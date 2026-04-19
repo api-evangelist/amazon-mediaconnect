@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-vpc-interface-schema.json",
+  "title": "VpcInterface",
+  "description": "The settings for a VPC Source.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "Immutable and has to be a unique against other VpcInterfaces in this Flow."
+        }
+      ]
+    },
+    "NetworkInterfaceIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "networkInterfaceIds"
+          },
+          "description": "IDs of the network interfaces created in customer's account by MediaConnect."
+        }
+      ]
+    },
+    "NetworkInterfaceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NetworkInterfaceType"
+        },
+        {
+          "xml": {
+            "name": "networkInterfaceType"
+          },
+          "description": "The type of network interface."
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "roleArn"
+          },
+          "description": "Role Arn MediaConnect can assumes to create ENIs in customer's account"
+        }
+      ]
+    },
+    "SecurityGroupIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "securityGroupIds"
+          },
+          "description": "Security Group IDs to be used on ENI."
+        }
+      ]
+    },
+    "SubnetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "subnetId"
+          },
+          "description": "Subnet must be in the AZ of the Flow"
+        }
+      ]
+    }
+  },
+  "required": [
+    "NetworkInterfaceType",
+    "NetworkInterfaceIds",
+    "SubnetId",
+    "SecurityGroupIds",
+    "RoleArn",
+    "Name"
+  ]
+}

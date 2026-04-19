@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-update-bridge-source-response-schema.json",
+  "title": "UpdateBridgeSourceResponse",
+  "description": "UpdateBridgeSourceResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "BridgeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bridgeArn"
+          },
+          "description": "The Amazon Resource Number (ARN) of the bridge."
+        }
+      ]
+    },
+    "Source": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgeSource"
+        },
+        {
+          "xml": {
+            "name": "source"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-deregister-gateway-instance-response-structure.json",
+  "name": "DeregisterGatewayInstanceResponse",
+  "type": "object",
+  "description": "DeregisterGatewayInstanceResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "GatewayInstanceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "gatewayInstanceArn"
+          },
+          "description": "The Amazon Resource Name (ARN) of the instance."
+        }
+      ]
+    },
+    "InstanceState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceState"
+        },
+        {
+          "xml": {
+            "name": "instanceState"
+          },
+          "description": "The status of the instance."
+        }
+      ]
+    }
+  }
+}

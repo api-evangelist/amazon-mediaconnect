@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-delete-bridge-response-structure.json",
+  "name": "DeleteBridgeResponse",
+  "type": "object",
+  "description": "DeleteBridgeResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "BridgeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bridgeArn"
+          },
+          "description": "The Amazon Resource Number (ARN) of the deleted bridge."
+        }
+      ]
+    }
+  }
+}

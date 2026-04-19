@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-grant-entitlement-request-structure.json",
+  "name": "GrantEntitlementRequest",
+  "type": "object",
+  "description": "The entitlements that you want to grant on a flow.",
+  "properties": {
+    "DataTransferSubscriberFeePercent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "dataTransferSubscriberFeePercent"
+          },
+          "description": "Percentage from 0-100 of the data transfer cost to be billed to the subscriber."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user."
+        }
+      ]
+    },
+    "Encryption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Encryption"
+        },
+        {
+          "xml": {
+            "name": "encryption"
+          },
+          "description": "The type of encryption that will be used on the output that is associated with this entitlement. Allowable encryption types: static-key, speke."
+        }
+      ]
+    },
+    "EntitlementStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntitlementStatus"
+        },
+        {
+          "xml": {
+            "name": "entitlementStatus"
+          },
+          "description": "An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don\u2019t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the entitlement. This value must be unique within the current flow."
+        }
+      ]
+    },
+    "Subscribers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "subscribers"
+          },
+          "description": "The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Subscribers"
+  ]
+}

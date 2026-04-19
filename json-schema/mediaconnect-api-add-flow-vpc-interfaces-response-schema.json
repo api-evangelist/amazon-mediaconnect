@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-add-flow-vpc-interfaces-response-schema.json",
+  "title": "AddFlowVpcInterfacesResponse",
+  "description": "AddFlowVpcInterfacesResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the flow that these VPC interfaces were added to."
+        }
+      ]
+    },
+    "VpcInterfaces": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfVpcInterface"
+        },
+        {
+          "xml": {
+            "name": "vpcInterfaces"
+          },
+          "description": "The details of the newly added VPC interfaces."
+        }
+      ]
+    }
+  }
+}

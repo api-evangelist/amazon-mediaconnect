@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-add-media-stream-request-schema.json",
+  "title": "AddMediaStreamRequest",
+  "description": "The media stream that you want to add to the flow.",
+  "type": "object",
+  "properties": {
+    "Attributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MediaStreamAttributesRequest"
+        },
+        {
+          "xml": {
+            "name": "attributes"
+          },
+          "description": "The attributes that you want to assign to the new media stream."
+        }
+      ]
+    },
+    "ClockRate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "clockRate"
+          },
+          "description": "The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A description that can help you quickly identify what your media stream is used for."
+        }
+      ]
+    },
+    "MediaStreamId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "mediaStreamId"
+          },
+          "description": "A unique identifier for the media stream."
+        }
+      ]
+    },
+    "MediaStreamName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "mediaStreamName"
+          },
+          "description": "A name that helps you distinguish one media stream from another."
+        }
+      ]
+    },
+    "MediaStreamType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MediaStreamType"
+        },
+        {
+          "xml": {
+            "name": "mediaStreamType"
+          },
+          "description": "The type of media stream."
+        }
+      ]
+    },
+    "VideoFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "videoFormat"
+          },
+          "description": "The resolution of the video."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MediaStreamType",
+    "MediaStreamId",
+    "MediaStreamName"
+  ]
+}

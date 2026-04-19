@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-input-configuration-structure.json",
+  "name": "InputConfiguration",
+  "type": "object",
+  "description": "The transport parameters that are associated with an incoming media stream.",
+  "properties": {
+    "InputIp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "inputIp"
+          },
+          "description": "The IP address that the flow listens on for incoming content for a media stream."
+        }
+      ]
+    },
+    "InputPort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "inputPort"
+          },
+          "description": "The port that the flow listens on for an incoming media stream."
+        }
+      ]
+    },
+    "Interface": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Interface"
+        },
+        {
+          "xml": {
+            "name": "interface"
+          },
+          "description": "The VPC interface where the media stream comes in from."
+        }
+      ]
+    }
+  },
+  "required": [
+    "InputPort",
+    "InputIp",
+    "Interface"
+  ]
+}

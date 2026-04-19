@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-media-stream-output-configuration-schema.json",
+  "title": "MediaStreamOutputConfiguration",
+  "description": "The media stream that is associated with the output, and the parameters for that association.",
+  "type": "object",
+  "properties": {
+    "DestinationConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfDestinationConfiguration"
+        },
+        {
+          "xml": {
+            "name": "destinationConfigurations"
+          },
+          "description": "The transport parameters that are associated with each outbound media stream."
+        }
+      ]
+    },
+    "EncodingName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncodingName"
+        },
+        {
+          "xml": {
+            "name": "encodingName"
+          },
+          "description": "The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv."
+        }
+      ]
+    },
+    "EncodingParameters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncodingParameters"
+        },
+        {
+          "xml": {
+            "name": "encodingParameters"
+          },
+          "description": "Encoding parameters"
+        }
+      ]
+    },
+    "MediaStreamName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "mediaStreamName"
+          },
+          "description": "The name of the media stream."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MediaStreamName",
+    "EncodingName"
+  ]
+}

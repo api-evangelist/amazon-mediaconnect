@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-maintenance-schema.json",
+  "title": "Maintenance",
+  "description": "The maintenance setting of a flow",
+  "type": "object",
+  "properties": {
+    "MaintenanceDay": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaintenanceDay"
+        },
+        {
+          "xml": {
+            "name": "maintenanceDay"
+          },
+          "description": "A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday."
+        }
+      ]
+    },
+    "MaintenanceDeadline": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "maintenanceDeadline"
+          },
+          "description": "The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z."
+        }
+      ]
+    },
+    "MaintenanceScheduledDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "maintenanceScheduledDate"
+          },
+          "description": "A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30."
+        }
+      ]
+    },
+    "MaintenanceStartHour": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "maintenanceStartHour"
+          },
+          "description": "UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00."
+        }
+      ]
+    }
+  }
+}

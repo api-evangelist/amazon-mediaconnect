@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-listed-flow-schema.json",
+  "title": "ListedFlow",
+  "description": "Provides a summary of a flow, including its ARN, Availability Zone, and source type.",
+  "type": "object",
+  "properties": {
+    "AvailabilityZone": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "availabilityZone"
+          },
+          "description": "The Availability Zone that the flow was created in."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A description of the flow."
+        }
+      ]
+    },
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the flow."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the flow."
+        }
+      ]
+    },
+    "SourceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SourceType"
+        },
+        {
+          "xml": {
+            "name": "sourceType"
+          },
+          "description": "The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account)."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Status"
+        },
+        {
+          "xml": {
+            "name": "status"
+          },
+          "description": "The current status of the flow."
+        }
+      ]
+    },
+    "Maintenance": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Maintenance"
+        },
+        {
+          "xml": {
+            "name": "maintenance"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "Status",
+    "Description",
+    "SourceType",
+    "AvailabilityZone",
+    "FlowArn",
+    "Name"
+  ]
+}

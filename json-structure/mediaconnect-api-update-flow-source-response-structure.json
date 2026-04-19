@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-flow-source-response-structure.json",
+  "name": "UpdateFlowSourceResponse",
+  "type": "object",
+  "description": "UpdateFlowSourceResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the flow that you want to update."
+        }
+      ]
+    },
+    "Source": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Source"
+        },
+        {
+          "xml": {
+            "name": "source"
+          },
+          "description": "The settings for the source of the flow."
+        }
+      ]
+    }
+  }
+}

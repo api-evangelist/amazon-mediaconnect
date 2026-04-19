@@ -1,0 +1,6 @@
+{
+  "GatewayArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "GatewayInstanceArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "InstanceId": "id-abc123",
+  "InstanceState": "example-value"
+}

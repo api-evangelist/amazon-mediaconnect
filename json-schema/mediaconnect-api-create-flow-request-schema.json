@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-create-flow-request-schema.json",
+  "title": "CreateFlowRequest",
+  "description": "Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).",
+  "type": "object",
+  "properties": {
+    "AvailabilityZone": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "availabilityZone"
+          },
+          "description": "The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region."
+        }
+      ]
+    },
+    "Entitlements": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfGrantEntitlementRequest"
+        },
+        {
+          "xml": {
+            "name": "entitlements"
+          },
+          "description": "The entitlements that you want to grant on a flow."
+        }
+      ]
+    },
+    "MediaStreams": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAddMediaStreamRequest"
+        },
+        {
+          "xml": {
+            "name": "mediaStreams"
+          },
+          "description": "The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the flow."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAddOutputRequest"
+        },
+        {
+          "xml": {
+            "name": "outputs"
+          },
+          "description": "The outputs that you want to add to this flow."
+        }
+      ]
+    },
+    "Source": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SetSourceRequest"
+        },
+        {
+          "xml": {
+            "name": "source"
+          }
+        }
+      ]
+    },
+    "SourceFailoverConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailoverConfig"
+        },
+        {
+          "xml": {
+            "name": "sourceFailoverConfig"
+          }
+        }
+      ]
+    },
+    "Sources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfSetSourceRequest"
+        },
+        {
+          "xml": {
+            "name": "sources"
+          }
+        }
+      ]
+    },
+    "VpcInterfaces": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfVpcInterfaceRequest"
+        },
+        {
+          "xml": {
+            "name": "vpcInterfaces"
+          },
+          "description": "The VPC interfaces you want on the flow."
+        }
+      ]
+    },
+    "Maintenance": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddMaintenance"
+        },
+        {
+          "xml": {
+            "name": "maintenance"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-grant-flow-entitlements420-exception-schema.json",
+  "title": "GrantFlowEntitlements420Exception",
+  "description": "GrantFlowEntitlements420Exception schema from AWS Elemental MediaConnect API"
+}

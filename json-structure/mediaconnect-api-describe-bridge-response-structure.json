@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-describe-bridge-response-structure.json",
+  "name": "DescribeBridgeResponse",
+  "type": "object",
+  "description": "DescribeBridgeResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "Bridge": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Bridge"
+        },
+        {
+          "xml": {
+            "name": "bridge"
+          }
+        }
+      ]
+    }
+  }
+}

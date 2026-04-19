@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-grant-flow-entitlements-response-schema.json",
+  "title": "GrantFlowEntitlementsResponse",
+  "description": "GrantFlowEntitlementsResponse schema from AWS Elemental MediaConnect API",
+  "type": "object",
+  "properties": {
+    "Entitlements": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfEntitlement"
+        },
+        {
+          "xml": {
+            "name": "entitlements"
+          },
+          "description": "The entitlements that were just granted."
+        }
+      ]
+    },
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the flow that these entitlements were granted to."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-add-flow-outputs-response-structure.json",
+  "name": "AddFlowOutputsResponse",
+  "type": "object",
+  "description": "AddFlowOutputsResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the flow that these outputs were added to."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfOutput"
+        },
+        {
+          "xml": {
+            "name": "outputs"
+          },
+          "description": "The details of the newly added outputs."
+        }
+      ]
+    }
+  }
+}

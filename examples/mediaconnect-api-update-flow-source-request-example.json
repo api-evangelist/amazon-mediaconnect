@@ -1,0 +1,20 @@
+{
+  "Decryption": "example-value",
+  "Description": "Example MediaConnect flow for live video transport",
+  "EntitlementArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "IngestPort": "5000",
+  "MaxBitrate": "example-value",
+  "MaxLatency": "example-value",
+  "MaxSyncBuffer": "example-value",
+  "MediaStreamSourceConfigurations": "example-value",
+  "MinLatency": "example-value",
+  "Protocol": "srt",
+  "SenderControlPort": "5000",
+  "SenderIpAddress": "10.0.0.1",
+  "SourceListenerAddress": "10.0.0.1",
+  "SourceListenerPort": "5000",
+  "StreamId": "id-abc123",
+  "VpcInterfaceName": "example-mediaconnect-flow",
+  "WhitelistCidr": "example-value",
+  "GatewayBridgeSource": "example-value"
+}

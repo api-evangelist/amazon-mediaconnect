@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-add-maintenance-structure.json",
+  "name": "AddMaintenance",
+  "type": "object",
+  "description": "Create maintenance setting for a flow",
+  "properties": {
+    "MaintenanceDay": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaintenanceDay"
+        },
+        {
+          "xml": {
+            "name": "maintenanceDay"
+          },
+          "description": "A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday."
+        }
+      ]
+    },
+    "MaintenanceStartHour": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "maintenanceStartHour"
+          },
+          "description": "UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MaintenanceDay",
+    "MaintenanceStartHour"
+  ]
+}

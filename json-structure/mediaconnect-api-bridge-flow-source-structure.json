@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-bridge-flow-source-structure.json",
+  "name": "BridgeFlowSource",
+  "type": "object",
+  "description": "The source of the bridge. A flow source originates in MediaConnect as an existing cloud flow.",
+  "properties": {
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the cloud flow used as a source of this bridge."
+        }
+      ]
+    },
+    "FlowVpcInterfaceAttachment": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VpcInterfaceAttachment"
+        },
+        {
+          "xml": {
+            "name": "flowVpcInterfaceAttachment"
+          },
+          "description": "The name of the VPC interface attachment to use for this source."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the flow source."
+        }
+      ]
+    },
+    "OutputArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "outputArn"
+          },
+          "description": "The Amazon Resource Number (ARN) of the output."
+        }
+      ]
+    }
+  },
+  "required": [
+    "FlowArn",
+    "Name"
+  ]
+}

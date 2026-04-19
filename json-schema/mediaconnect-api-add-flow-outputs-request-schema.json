@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-add-flow-outputs-request-schema.json",
+  "title": "AddFlowOutputsRequest",
+  "description": "A request to add outputs to the specified flow.",
+  "type": "object",
+  "properties": {
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfAddOutputRequest"
+        },
+        {
+          "xml": {
+            "name": "outputs"
+          },
+          "description": "A list of outputs that you want to add."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Outputs"
+  ]
+}

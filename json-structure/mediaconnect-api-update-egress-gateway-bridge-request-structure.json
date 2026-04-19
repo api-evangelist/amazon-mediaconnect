@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-egress-gateway-bridge-request-structure.json",
+  "name": "UpdateEgressGatewayBridgeRequest",
+  "type": "object",
+  "description": "UpdateEgressGatewayBridgeRequest schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "MaxBitrate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxBitrate"
+          },
+          "description": "Update an existing egress-type bridge."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-bridge-flow-output-structure.json",
+  "name": "BridgeFlowOutput",
+  "type": "object",
+  "description": "The output of the bridge. A flow output is delivered to the AWS cloud.",
+  "properties": {
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The Amazon Resource Number (ARN) of the cloud flow."
+        }
+      ]
+    },
+    "FlowSourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowSourceArn"
+          },
+          "description": "The Amazon Resource Number (ARN) of the flow source."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the bridge's output."
+        }
+      ]
+    }
+  },
+  "required": [
+    "FlowSourceArn",
+    "FlowArn",
+    "Name"
+  ]
+}

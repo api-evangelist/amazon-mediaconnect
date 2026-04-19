@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-reservation-schema.json",
+  "title": "Reservation",
+  "description": "A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.",
+  "type": "object",
+  "properties": {
+    "CurrencyCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "currencyCode"
+          },
+          "description": "The type of currency that is used for billing. The currencyCode used for your reservation is US dollars."
+        }
+      ]
+    },
+    "Duration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "duration"
+          },
+          "description": "The length of time that this reservation is active. MediaConnect defines this value in the offering."
+        }
+      ]
+    },
+    "DurationUnits": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationUnits"
+        },
+        {
+          "xml": {
+            "name": "durationUnits"
+          },
+          "description": "The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering."
+        }
+      ]
+    },
+    "End": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "end"
+          },
+          "description": "The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration."
+        }
+      ]
+    },
+    "OfferingArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "offeringArn"
+          },
+          "description": "The Amazon Resource Name (ARN) that MediaConnect assigns to the offering."
+        }
+      ]
+    },
+    "OfferingDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "offeringDescription"
+          },
+          "description": "A description of the offering. MediaConnect defines this value in the offering."
+        }
+      ]
+    },
+    "PricePerUnit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "pricePerUnit"
+          },
+          "description": "The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering."
+        }
+      ]
+    },
+    "PriceUnits": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PriceUnits"
+        },
+        {
+          "xml": {
+            "name": "priceUnits"
+          },
+          "description": "The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering."
+        }
+      ]
+    },
+    "ReservationArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "reservationArn"
+          },
+          "description": "The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering."
+        }
+      ]
+    },
+    "ReservationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "reservationName"
+          },
+          "description": "The name that you assigned to the reservation when you purchased the offering."
+        }
+      ]
+    },
+    "ReservationState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReservationState"
+        },
+        {
+          "xml": {
+            "name": "reservationState"
+          },
+          "description": "The status of your reservation."
+        }
+      ]
+    },
+    "ResourceSpecification": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceSpecification"
+        },
+        {
+          "xml": {
+            "name": "resourceSpecification"
+          },
+          "description": "A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering."
+        }
+      ]
+    },
+    "Start": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "start"
+          },
+          "description": "The day and time that the reservation becomes active. You set this value when you purchase the offering."
+        }
+      ]
+    }
+  },
+  "required": [
+    "CurrencyCode",
+    "ReservationState",
+    "OfferingArn",
+    "ReservationArn",
+    "Start",
+    "OfferingDescription",
+    "ReservationName",
+    "End",
+    "Duration",
+    "DurationUnits",
+    "PricePerUnit",
+    "ResourceSpecification",
+    "PriceUnits"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-bridge-flow-source-request-structure.json",
+  "name": "UpdateBridgeFlowSourceRequest",
+  "type": "object",
+  "description": "Update the flow source of the bridge.",
+  "properties": {
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "pattern": "^arn:.+:mediaconnect.+:flow:.+$",
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The ARN of the cloud flow to use as a source of this bridge."
+        }
+      ]
+    },
+    "FlowVpcInterfaceAttachment": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VpcInterfaceAttachment"
+        },
+        {
+          "xml": {
+            "name": "flowVpcInterfaceAttachment"
+          },
+          "description": "The name of the VPC interface attachment to use for this source."
+        }
+      ]
+    }
+  }
+}

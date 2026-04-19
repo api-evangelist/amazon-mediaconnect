@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-add-bridge-source-request-schema.json",
+  "title": "AddBridgeSourceRequest",
+  "description": "Add a source to an existing bridge.",
+  "type": "object",
+  "properties": {
+    "FlowSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddBridgeFlowSourceRequest"
+        },
+        {
+          "xml": {
+            "name": "flowSource"
+          }
+        }
+      ]
+    },
+    "NetworkSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddBridgeNetworkSourceRequest"
+        },
+        {
+          "xml": {
+            "name": "networkSource"
+          }
+        }
+      ]
+    }
+  }
+}

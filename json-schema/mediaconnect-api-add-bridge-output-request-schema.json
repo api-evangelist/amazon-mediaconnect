@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-add-bridge-output-request-schema.json",
+  "title": "AddBridgeOutputRequest",
+  "description": "Add an output to a bridge.",
+  "type": "object",
+  "properties": {
+    "NetworkOutput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddBridgeNetworkOutputRequest"
+        },
+        {
+          "xml": {
+            "name": "networkOutput"
+          }
+        }
+      ]
+    }
+  }
+}

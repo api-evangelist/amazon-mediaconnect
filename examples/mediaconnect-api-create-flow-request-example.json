@@ -1,0 +1,12 @@
+{
+  "AvailabilityZone": "example-value",
+  "Entitlements": "example-value",
+  "MediaStreams": "example-value",
+  "Name": "example-mediaconnect-flow",
+  "Outputs": "example-value",
+  "Source": "example-value",
+  "SourceFailoverConfig": "example-value",
+  "Sources": "example-value",
+  "VpcInterfaces": "example-value",
+  "Maintenance": "example-value"
+}

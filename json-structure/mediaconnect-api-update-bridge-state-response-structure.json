@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-bridge-state-response-structure.json",
+  "name": "UpdateBridgeStateResponse",
+  "type": "object",
+  "description": "UpdateBridgeStateResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "BridgeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bridgeArn"
+          },
+          "description": "The Amazon Resource Number (ARN) of the bridge."
+        }
+      ]
+    },
+    "DesiredState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DesiredState"
+        },
+        {
+          "xml": {
+            "name": "desiredState"
+          },
+          "description": "The state of the bridge. ACTIVE or STANDBY."
+        }
+      ]
+    }
+  }
+}

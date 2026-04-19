@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-listed-entitlement-schema.json",
+  "title": "ListedEntitlement",
+  "description": "An entitlement that has been granted to you from other AWS accounts.",
+  "type": "object",
+  "properties": {
+    "DataTransferSubscriberFeePercent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "dataTransferSubscriberFeePercent"
+          },
+          "description": "Percentage from 0-100 of the data transfer cost to be billed to the subscriber."
+        }
+      ]
+    },
+    "EntitlementArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "entitlementArn"
+          },
+          "description": "The ARN of the entitlement."
+        }
+      ]
+    },
+    "EntitlementName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "entitlementName"
+          },
+          "description": "The name of the entitlement."
+        }
+      ]
+    }
+  },
+  "required": [
+    "EntitlementArn",
+    "EntitlementName"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "DataTransferSubscriberFeePercent": "example-value",
+  "Description": "Example MediaConnect flow for live video transport",
+  "Encryption": "example-value",
+  "EntitlementArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "EntitlementStatus": "ACTIVE",
+  "Name": "example-mediaconnect-flow",
+  "Subscribers": "example-value"
+}

@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-output-schema.json",
+  "title": "Output",
+  "description": "The settings for an output.",
+  "type": "object",
+  "properties": {
+    "DataTransferSubscriberFeePercent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "dataTransferSubscriberFeePercent"
+          },
+          "description": "Percentage from 0-100 of the data transfer cost to be billed to the subscriber."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A description of the output."
+        }
+      ]
+    },
+    "Destination": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "destination"
+          },
+          "description": "The address where you want to send the output."
+        }
+      ]
+    },
+    "Encryption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Encryption"
+        },
+        {
+          "xml": {
+            "name": "encryption"
+          },
+          "description": "The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key)."
+        }
+      ]
+    },
+    "EntitlementArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "entitlementArn"
+          },
+          "description": "The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows."
+        }
+      ]
+    },
+    "ListenerAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "listenerAddress"
+          },
+          "description": "The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol."
+        }
+      ]
+    },
+    "MediaLiveInputArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "mediaLiveInputArn"
+          },
+          "description": "The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input."
+        }
+      ]
+    },
+    "MediaStreamOutputConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfMediaStreamOutputConfiguration"
+        },
+        {
+          "xml": {
+            "name": "mediaStreamOutputConfigurations"
+          },
+          "description": "The configuration for each media stream that is associated with the output."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the output. This value must be unique within the current flow."
+        }
+      ]
+    },
+    "OutputArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "outputArn"
+          },
+          "description": "The ARN of the output."
+        }
+      ]
+    },
+    "Port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "port"
+          },
+          "description": "The port to use when content is distributed to this output."
+        }
+      ]
+    },
+    "Transport": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Transport"
+        },
+        {
+          "xml": {
+            "name": "transport"
+          },
+          "description": "Attributes related to the transport stream that are used in the output."
+        }
+      ]
+    },
+    "VpcInterfaceAttachment": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VpcInterfaceAttachment"
+        },
+        {
+          "xml": {
+            "name": "vpcInterfaceAttachment"
+          },
+          "description": "The name of the VPC interface attachment to use for this output."
+        }
+      ]
+    },
+    "BridgeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bridgeArn"
+          },
+          "description": "The ARN of the bridge that added this output."
+        }
+      ]
+    },
+    "BridgePorts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__integer"
+        },
+        {
+          "xml": {
+            "name": "bridgePorts"
+          },
+          "description": "The bridge output ports currently in use."
+        }
+      ]
+    }
+  },
+  "required": [
+    "OutputArn",
+    "Name"
+  ]
+}

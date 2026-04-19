@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-update-bridge-state-request-structure.json",
+  "name": "UpdateBridgeStateRequest",
+  "type": "object",
+  "description": "A request to update the bridge state.",
+  "properties": {
+    "DesiredState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DesiredState"
+        },
+        {
+          "xml": {
+            "name": "desiredState"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "DesiredState"
+  ]
+}

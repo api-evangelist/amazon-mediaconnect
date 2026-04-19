@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-offering-structure.json",
+  "name": "Offering",
+  "type": "object",
+  "description": "A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.",
+  "properties": {
+    "CurrencyCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "currencyCode"
+          },
+          "description": "The type of currency that is used for billing. The currencyCode used for all reservations is US dollars."
+        }
+      ]
+    },
+    "Duration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "duration"
+          },
+          "description": "The length of time that your reservation would be active."
+        }
+      ]
+    },
+    "DurationUnits": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationUnits"
+        },
+        {
+          "xml": {
+            "name": "durationUnits"
+          },
+          "description": "The unit of measurement for the duration of the offering."
+        }
+      ]
+    },
+    "OfferingArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "offeringArn"
+          },
+          "description": "The Amazon Resource Name (ARN) that MediaConnect assigns to the offering."
+        }
+      ]
+    },
+    "OfferingDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "offeringDescription"
+          },
+          "description": "A description of the offering."
+        }
+      ]
+    },
+    "PricePerUnit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "pricePerUnit"
+          },
+          "description": "The cost of a single unit. This value, in combination with priceUnits, makes up the rate."
+        }
+      ]
+    },
+    "PriceUnits": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PriceUnits"
+        },
+        {
+          "xml": {
+            "name": "priceUnits"
+          },
+          "description": "The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate."
+        }
+      ]
+    },
+    "ResourceSpecification": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceSpecification"
+        },
+        {
+          "xml": {
+            "name": "resourceSpecification"
+          },
+          "description": "A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering."
+        }
+      ]
+    }
+  },
+  "required": [
+    "CurrencyCode",
+    "OfferingArn",
+    "OfferingDescription",
+    "DurationUnits",
+    "Duration",
+    "PricePerUnit",
+    "ResourceSpecification",
+    "PriceUnits"
+  ]
+}

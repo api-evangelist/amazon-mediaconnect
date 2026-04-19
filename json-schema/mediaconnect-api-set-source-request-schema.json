@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-set-source-request-schema.json",
+  "title": "SetSourceRequest",
+  "description": "The settings for the source of the flow.",
+  "type": "object",
+  "properties": {
+    "Decryption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Encryption"
+        },
+        {
+          "xml": {
+            "name": "decryption"
+          },
+          "description": "The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account."
+        }
+      ]
+    },
+    "EntitlementArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "pattern": "^arn:.+:mediaconnect.+:entitlement:.+$",
+          "xml": {
+            "name": "entitlementArn"
+          },
+          "description": "The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow."
+        }
+      ]
+    },
+    "IngestPort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "ingestPort"
+          },
+          "description": "The port that the flow will be listening on for incoming content."
+        }
+      ]
+    },
+    "MaxBitrate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxBitrate"
+          },
+          "description": "The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams."
+        }
+      ]
+    },
+    "MaxLatency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxLatency"
+          },
+          "description": "The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams."
+        }
+      ]
+    },
+    "MaxSyncBuffer": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxSyncBuffer"
+          },
+          "description": "The size of the buffer (in milliseconds) to use to sync incoming source data."
+        }
+      ]
+    },
+    "MediaStreamSourceConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfMediaStreamSourceConfigurationRequest"
+        },
+        {
+          "xml": {
+            "name": "mediaStreamSourceConfigurations"
+          },
+          "description": "The media streams that are associated with the source, and the parameters for those associations."
+        }
+      ]
+    },
+    "MinLatency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "minLatency"
+          },
+          "description": "The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender\u2019s minimum latency and the receiver\u2019s minimum latency."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the source."
+        }
+      ]
+    },
+    "Protocol": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Protocol"
+        },
+        {
+          "xml": {
+            "name": "protocol"
+          },
+          "description": "The protocol that is used by the source."
+        }
+      ]
+    },
+    "SenderControlPort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "senderControlPort"
+          },
+          "description": "The port that the flow uses to send outbound requests to initiate connection with the sender."
+        }
+      ]
+    },
+    "SenderIpAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "senderIpAddress"
+          },
+          "description": "The IP address that the flow communicates with to initiate connection with the sender."
+        }
+      ]
+    },
+    "SourceListenerAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "sourceListenerAddress"
+          },
+          "description": "Source IP or domain name for SRT-caller protocol."
+        }
+      ]
+    },
+    "SourceListenerPort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "sourceListenerPort"
+          },
+          "description": "Source port for SRT-caller protocol."
+        }
+      ]
+    },
+    "StreamId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "streamId"
+          },
+          "description": "The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams."
+        }
+      ]
+    },
+    "VpcInterfaceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "vpcInterfaceName"
+          },
+          "description": "The name of the VPC interface to use for this source."
+        }
+      ]
+    },
+    "WhitelistCidr": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "whitelistCidr"
+          },
+          "description": "The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16."
+        }
+      ]
+    },
+    "GatewayBridgeSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SetGatewayBridgeSourceRequest"
+        },
+        {
+          "xml": {
+            "name": "gatewayBridgeSource"
+          },
+          "description": "The source configuration for cloud flows receiving a stream from a bridge."
+        }
+      ]
+    }
+  }
+}

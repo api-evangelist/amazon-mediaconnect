@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-update-bridge-network-output-request-schema.json",
+  "title": "UpdateBridgeNetworkOutputRequest",
+  "description": "Update an existing network output.",
+  "type": "object",
+  "properties": {
+    "IpAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "ipAddress"
+          },
+          "description": "The network output IP Address."
+        }
+      ]
+    },
+    "NetworkName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "networkName"
+          },
+          "description": "The network output's gateway network name."
+        }
+      ]
+    },
+    "Port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "port"
+          },
+          "description": "The network output port."
+        }
+      ]
+    },
+    "Protocol": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Protocol"
+        },
+        {
+          "xml": {
+            "name": "protocol"
+          },
+          "description": "The network output protocol."
+        }
+      ]
+    },
+    "Ttl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "ttl"
+          },
+          "description": "The network output TTL."
+        }
+      ]
+    }
+  }
+}

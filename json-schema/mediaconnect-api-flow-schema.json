@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-flow-schema.json",
+  "title": "Flow",
+  "description": "The settings for a flow, including its source, outputs, and entitlements.",
+  "type": "object",
+  "properties": {
+    "AvailabilityZone": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "availabilityZone"
+          },
+          "description": "The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account."
+        }
+      ]
+    },
+    "EgressIp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "egressIp"
+          },
+          "description": "The IP address from which video will be sent to output destinations."
+        }
+      ]
+    },
+    "Entitlements": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfEntitlement"
+        },
+        {
+          "xml": {
+            "name": "entitlements"
+          },
+          "description": "The entitlements in this flow."
+        }
+      ]
+    },
+    "FlowArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "flowArn"
+          },
+          "description": "The Amazon Resource Name (ARN) of the flow."
+        }
+      ]
+    },
+    "MediaStreams": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfMediaStream"
+        },
+        {
+          "xml": {
+            "name": "mediaStreams"
+          },
+          "description": "The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the flow."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfOutput"
+        },
+        {
+          "xml": {
+            "name": "outputs"
+          },
+          "description": "The outputs in this flow."
+        }
+      ]
+    },
+    "Source": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Source"
+        },
+        {
+          "xml": {
+            "name": "source"
+          }
+        }
+      ]
+    },
+    "SourceFailoverConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailoverConfig"
+        },
+        {
+          "xml": {
+            "name": "sourceFailoverConfig"
+          }
+        }
+      ]
+    },
+    "Sources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfSource"
+        },
+        {
+          "xml": {
+            "name": "sources"
+          }
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Status"
+        },
+        {
+          "xml": {
+            "name": "status"
+          },
+          "description": "The current status of the flow."
+        }
+      ]
+    },
+    "VpcInterfaces": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfVpcInterface"
+        },
+        {
+          "xml": {
+            "name": "vpcInterfaces"
+          },
+          "description": "The VPC Interfaces for this flow."
+        }
+      ]
+    },
+    "Maintenance": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Maintenance"
+        },
+        {
+          "xml": {
+            "name": "maintenance"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "Status",
+    "AvailabilityZone",
+    "Source",
+    "Name",
+    "Entitlements",
+    "Outputs",
+    "FlowArn"
+  ]
+}

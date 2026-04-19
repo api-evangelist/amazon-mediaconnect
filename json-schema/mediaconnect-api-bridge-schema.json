@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-bridge-schema.json",
+  "title": "Bridge",
+  "description": "A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.",
+  "type": "object",
+  "properties": {
+    "BridgeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bridgeArn"
+          },
+          "description": "The Amazon Resource Number (ARN) of the bridge."
+        }
+      ]
+    },
+    "BridgeMessages": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfMessageDetail"
+        },
+        {
+          "xml": {
+            "name": "bridgeMessages"
+          }
+        }
+      ]
+    },
+    "BridgeState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BridgeState"
+        },
+        {
+          "xml": {
+            "name": "bridgeState"
+          }
+        }
+      ]
+    },
+    "EgressGatewayBridge": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EgressGatewayBridge"
+        },
+        {
+          "xml": {
+            "name": "egressGatewayBridge"
+          }
+        }
+      ]
+    },
+    "IngressGatewayBridge": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IngressGatewayBridge"
+        },
+        {
+          "xml": {
+            "name": "ingressGatewayBridge"
+          }
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "name"
+          },
+          "description": "The name of the bridge."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfBridgeOutput"
+        },
+        {
+          "xml": {
+            "name": "outputs"
+          },
+          "description": "The outputs on this bridge."
+        }
+      ]
+    },
+    "PlacementArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "placementArn"
+          },
+          "description": "The placement Amazon Resource Number (ARN) of the bridge."
+        }
+      ]
+    },
+    "SourceFailoverConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailoverConfig"
+        },
+        {
+          "xml": {
+            "name": "sourceFailoverConfig"
+          }
+        }
+      ]
+    },
+    "Sources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfBridgeSource"
+        },
+        {
+          "xml": {
+            "name": "sources"
+          },
+          "description": "The sources on this bridge."
+        }
+      ]
+    }
+  },
+  "required": [
+    "BridgeArn",
+    "BridgeState",
+    "PlacementArn",
+    "Name"
+  ]
+}

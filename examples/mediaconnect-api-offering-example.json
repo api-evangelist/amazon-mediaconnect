@@ -1,0 +1,10 @@
+{
+  "CurrencyCode": "example-value",
+  "Duration": "example-value",
+  "DurationUnits": "example-value",
+  "OfferingArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "OfferingDescription": "Example MediaConnect flow for live video transport",
+  "PricePerUnit": "example-value",
+  "PriceUnits": "example-value",
+  "ResourceSpecification": "example-value"
+}

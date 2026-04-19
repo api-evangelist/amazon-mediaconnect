@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-add-bridge-outputs-response-structure.json",
+  "name": "AddBridgeOutputsResponse",
+  "type": "object",
+  "description": "AddBridgeOutputsResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "BridgeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bridgeArn"
+          },
+          "description": "The Amazon Resource Number (ARN) of the bridge."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfBridgeOutput"
+        },
+        {
+          "xml": {
+            "name": "outputs"
+          },
+          "description": "The outputs that you added to this bridge."
+        }
+      ]
+    }
+  }
+}

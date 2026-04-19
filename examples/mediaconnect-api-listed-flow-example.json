@@ -1,0 +1,9 @@
+{
+  "AvailabilityZone": "example-value",
+  "Description": "Example MediaConnect flow for live video transport",
+  "FlowArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "Name": "example-mediaconnect-flow",
+  "SourceType": "standard",
+  "Status": "ACTIVE",
+  "Maintenance": "example-value"
+}

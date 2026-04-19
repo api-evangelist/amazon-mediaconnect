@@ -1,0 +1,6 @@
+{
+  "DestinationIp": "10.0.0.1",
+  "DestinationPort": "5000",
+  "Interface": "example-value",
+  "OutboundIp": "10.0.0.1"
+}

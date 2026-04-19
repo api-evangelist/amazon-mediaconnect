@@ -1,0 +1,17 @@
+{
+  "DataTransferSubscriberFeePercent": "example-value",
+  "Description": "Example MediaConnect flow for live video transport",
+  "Destination": "example-value",
+  "Encryption": "example-value",
+  "EntitlementArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "ListenerAddress": "10.0.0.1",
+  "MediaLiveInputArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "MediaStreamOutputConfigurations": "example-value",
+  "Name": "example-mediaconnect-flow",
+  "OutputArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "Port": "5000",
+  "Transport": "5000",
+  "VpcInterfaceAttachment": "example-value",
+  "BridgeArn": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+  "BridgePorts": "5000"
+}

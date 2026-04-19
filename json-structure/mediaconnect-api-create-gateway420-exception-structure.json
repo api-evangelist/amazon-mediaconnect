@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-create-gateway420-exception-structure.json",
+  "name": "CreateGateway420Exception",
+  "description": "CreateGateway420Exception schema from AWS Elemental MediaConnect API"
+}

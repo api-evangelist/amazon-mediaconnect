@@ -1,0 +1,935 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pan": "https://pan.dev/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "CreateFlow420Exception": "pan:CreateFlow420Exception",
+    "StartFlowResponse": "pan:StartFlowResponse",
+    "AddFlowMediaStreamsResponse": "pan:AddFlowMediaStreamsResponse",
+    "RemoveFlowMediaStreamRequest": "pan:RemoveFlowMediaStreamRequest",
+    "__listOfDestinationConfigurationRequest": "pan:__listOfDestinationConfigurationRequest",
+    "Tcs": "pan:Tcs",
+    "Gateway": "pan:Gateway",
+    "GrantFlowEntitlements420Exception": "pan:GrantFlowEntitlements420Exception",
+    "UpdateEgressGatewayBridgeRequest": "pan:UpdateEgressGatewayBridgeRequest",
+    "__integer": "pan:__integer",
+    "EgressGatewayBridge": "pan:EgressGatewayBridge",
+    "__listOfBridgeOutput": "pan:__listOfBridgeOutput",
+    "ListedFlow": "pan:ListedFlow",
+    "ReservationState": "pan:ReservationState",
+    "__listOfReservation": "pan:__listOfReservation",
+    "DeleteBridgeResponse": "pan:DeleteBridgeResponse",
+    "DescribeOfferingRequest": "pan:DescribeOfferingRequest",
+    "__listOfMediaStreamOutputConfiguration": "pan:__listOfMediaStreamOutputConfiguration",
+    "UpdateFlowOutputRequest": "pan:UpdateFlowOutputRequest",
+    "RemoveFlowSourceResponse": "pan:RemoveFlowSourceResponse",
+    "DescribeReservationRequest": "pan:DescribeReservationRequest",
+    "AddFlowVpcInterfacesResponse": "pan:AddFlowVpcInterfacesResponse",
+    "DescribeFlowRequest": "pan:DescribeFlowRequest",
+    "__listOfSource": "pan:__listOfSource",
+    "Status": "pan:Status",
+    "FmtpRequest": "pan:FmtpRequest",
+    "Maintenance": "pan:Maintenance",
+    "Encryption": "pan:Encryption",
+    "DeleteGatewayRequest": "pan:DeleteGatewayRequest",
+    "AddFlowVpcInterfacesRequest": "pan:AddFlowVpcInterfacesRequest",
+    "__listOfMediaStreamSourceConfiguration": "pan:__listOfMediaStreamSourceConfiguration",
+    "InterfaceRequest": "pan:InterfaceRequest",
+    "__listOfOffering": "pan:__listOfOffering",
+    "EntitlementStatus": "pan:EntitlementStatus",
+    "__listOfAddBridgeSourceRequest": "pan:__listOfAddBridgeSourceRequest",
+    "ListBridgesRequest": "pan:ListBridgesRequest",
+    "FailoverMode": "pan:FailoverMode",
+    "AddBridgeSourcesResponse": "pan:AddBridgeSourcesResponse",
+    "Transport": "pan:Transport",
+    "AddBridgeNetworkOutputRequest": "pan:AddBridgeNetworkOutputRequest",
+    "AddFlowOutputsResponse": "pan:AddFlowOutputsResponse",
+    "TagResourceRequest": "pan:TagResourceRequest",
+    "AddFlowSourcesRequest": "pan:AddFlowSourcesRequest",
+    "Protocol": "pan:Protocol",
+    "ListedEntitlement": "pan:ListedEntitlement",
+    "BridgeNetworkSource": "pan:BridgeNetworkSource",
+    "RemoveFlowSourceRequest": "pan:RemoveFlowSourceRequest",
+    "VpcInterface": "pan:VpcInterface",
+    "DescribeReservationResponse": "pan:DescribeReservationResponse",
+    "CreateGateway420Exception": "pan:CreateGateway420Exception",
+    "GatewayBridgeSource": "pan:GatewayBridgeSource",
+    "MediaStreamSourceConfiguration": "pan:MediaStreamSourceConfiguration",
+    "ListGatewayInstancesResponse": "pan:ListGatewayInstancesResponse",
+    "ListReservationsRequest": "pan:ListReservationsRequest",
+    "BridgeNetworkOutput": "pan:BridgeNetworkOutput",
+    "Interface": "pan:Interface",
+    "DescribeBridgeRequest": "pan:DescribeBridgeRequest",
+    "GrantFlowEntitlementsRequest": "pan:GrantFlowEntitlementsRequest",
+    "UpdateBridgeNetworkOutputRequest": "pan:UpdateBridgeNetworkOutputRequest",
+    "UpdateGatewayBridgeSourceRequest": "pan:UpdateGatewayBridgeSourceRequest",
+    "CreateBridgeRequest": "pan:CreateBridgeRequest",
+    "DeleteGatewayResponse": "pan:DeleteGatewayResponse",
+    "InstanceState": "pan:InstanceState",
+    "UpdateFailoverConfig": "pan:UpdateFailoverConfig",
+    "ScanMode": "pan:ScanMode",
+    "RemoveBridgeOutputRequest": "pan:RemoveBridgeOutputRequest",
+    "MessageDetail": "pan:MessageDetail",
+    "__listOfInputConfiguration": "pan:__listOfInputConfiguration",
+    "UntagResourceRequest": "pan:UntagResourceRequest",
+    "KeyType": "pan:KeyType",
+    "RevokeFlowEntitlementRequest": "pan:RevokeFlowEntitlementRequest",
+    "ListBridgesResponse": "pan:ListBridgesResponse",
+    "UpdateFlowSourceResponse": "pan:UpdateFlowSourceResponse",
+    "UpdateBridgeSourceResponse": "pan:UpdateBridgeSourceResponse",
+    "GrantFlowEntitlementsResponse": "pan:GrantFlowEntitlementsResponse",
+    "__listOfListedBridge": "pan:__listOfListedBridge",
+    "AddOutputRequest": "pan:AddOutputRequest",
+    "FailoverConfig": "pan:FailoverConfig",
+    "__listOfEntitlement": "pan:__listOfEntitlement",
+    "DescribeOfferingResponse": "pan:DescribeOfferingResponse",
+    "UpdateIngressGatewayBridgeRequest": "pan:UpdateIngressGatewayBridgeRequest",
+    "Fmtp": "pan:Fmtp",
+    "DescribeFlowResponse": "pan:DescribeFlowResponse",
+    "DescribeBridgeResponse": "pan:DescribeBridgeResponse",
+    "ListTagsForResourceResponse": "pan:ListTagsForResourceResponse",
+    "ListedGatewayInstance": "pan:ListedGatewayInstance",
+    "DeregisterGatewayInstanceRequest": "pan:DeregisterGatewayInstanceRequest",
+    "AddBridgeSourceRequest": "pan:AddBridgeSourceRequest",
+    "DescribeGatewayInstanceResponse": "pan:DescribeGatewayInstanceResponse",
+    "DestinationConfigurationRequest": "pan:DestinationConfigurationRequest",
+    "__listOfOutput": "pan:__listOfOutput",
+    "GatewayState": "pan:GatewayState",
+    "EncoderProfile": "pan:EncoderProfile",
+    "__listOfMessageDetail": "pan:__listOfMessageDetail",
+    "ListOfferingsResponse": "pan:ListOfferingsResponse",
+    "__listOfBridgeSource": "pan:__listOfBridgeSource",
+    "DescribeGatewayRequest": "pan:DescribeGatewayRequest",
+    "StartFlowRequest": "pan:StartFlowRequest",
+    "DeleteBridgeRequest": "pan:DeleteBridgeRequest",
+    "ListOfferingsRequest": "pan:ListOfferingsRequest",
+    "ListReservationsResponse": "pan:ListReservationsResponse",
+    "GatewayNetwork": "pan:GatewayNetwork",
+    "InputConfiguration": "pan:InputConfiguration",
+    "__listOf__integer": "pan:__listOf__integer",
+    "AddEgressGatewayBridgeRequest": "pan:AddEgressGatewayBridgeRequest",
+    "__listOfVpcInterfaceRequest": "pan:__listOfVpcInterfaceRequest",
+    "MediaStreamOutputConfiguration": "pan:MediaStreamOutputConfiguration",
+    "EncodingParametersRequest": "pan:EncodingParametersRequest",
+    "StopFlowResponse": "pan:StopFlowResponse",
+    "UpdateBridgeSourceRequest": "pan:UpdateBridgeSourceRequest",
+    "ResourceType": "pan:ResourceType",
+    "AddMaintenance": "pan:AddMaintenance",
+    "__listOfSetSourceRequest": "pan:__listOfSetSourceRequest",
+    "CreateBridge420Exception": "pan:CreateBridge420Exception",
+    "AddBridgeSourcesRequest": "pan:AddBridgeSourcesRequest",
+    "__listOf__string": "pan:__listOf__string",
+    "VpcInterfaceAttachment": "pan:VpcInterfaceAttachment",
+    "RemoveBridgeSourceResponse": "pan:RemoveBridgeSourceResponse",
+    "DestinationConfiguration": "pan:DestinationConfiguration",
+    "RemoveBridgeSourceRequest": "pan:RemoveBridgeSourceRequest",
+    "__listOfGrantEntitlementRequest": "pan:__listOfGrantEntitlementRequest",
+    "RemoveFlowVpcInterfaceRequest": "pan:RemoveFlowVpcInterfaceRequest",
+    "CreateFlowResponse": "pan:CreateFlowResponse",
+    "ListGatewayInstancesRequest": "pan:ListGatewayInstancesRequest",
+    "UpdateFlowRequest": "pan:UpdateFlowRequest",
+    "BridgeFlowSource": "pan:BridgeFlowSource",
+    "RemoveBridgeOutputResponse": "pan:RemoveBridgeOutputResponse",
+    "Output": "pan:Output",
+    "AddFlowOutputs420Exception": "pan:AddFlowOutputs420Exception",
+    "MediaStream": "pan:MediaStream",
+    "__mapOf__string": "pan:__mapOf__string",
+    "__listOfMediaStreamOutputConfigurationRequest": "pan:__listOfMediaStreamOutputConfigurationRequest",
+    "BridgeOutput": "pan:BridgeOutput",
+    "AddBridgeOutputsRequest": "pan:AddBridgeOutputsRequest",
+    "__listOfListedGatewayInstance": "pan:__listOfListedGatewayInstance",
+    "SourcePriority": "pan:SourcePriority",
+    "CreateBridgeResponse": "pan:CreateBridgeResponse",
+    "UpdateFlowMediaStreamResponse": "pan:UpdateFlowMediaStreamResponse",
+    "CreateGatewayResponse": "pan:CreateGatewayResponse",
+    "ListFlowsRequest": "pan:ListFlowsRequest",
+    "MediaStreamOutputConfigurationRequest": "pan:MediaStreamOutputConfigurationRequest",
+    "RevokeFlowEntitlementResponse": "pan:RevokeFlowEntitlementResponse",
+    "DeleteFlowRequest": "pan:DeleteFlowRequest",
+    "UpdateBridgeNetworkSourceRequest": "pan:UpdateBridgeNetworkSourceRequest",
+    "Flow": "pan:Flow",
+    "Entitlement": "pan:Entitlement",
+    "UpdateFlowEntitlementRequest": "pan:UpdateFlowEntitlementRequest",
+    "VpcInterfaceRequest": "pan:VpcInterfaceRequest",
+    "UpdateMaintenance": "pan:UpdateMaintenance",
+    "AddFlowSourcesResponse": "pan:AddFlowSourcesResponse",
+    "UpdateFlowOutputResponse": "pan:UpdateFlowOutputResponse",
+    "UpdateBridgeOutputResponse": "pan:UpdateBridgeOutputResponse",
+    "AddBridgeFlowSourceRequest": "pan:AddBridgeFlowSourceRequest",
+    "NetworkInterfaceType": "pan:NetworkInterfaceType",
+    "AddIngressGatewayBridgeRequest": "pan:AddIngressGatewayBridgeRequest",
+    "EncodingName": "pan:EncodingName",
+    "__listOfVpcInterface": "pan:__listOfVpcInterface",
+    "__listOfMediaStream": "pan:__listOfMediaStream",
+    "UpdateBridgeStateRequest": "pan:UpdateBridgeStateRequest",
+    "UpdateGatewayInstanceResponse": "pan:UpdateGatewayInstanceResponse",
+    "AddBridgeOutputsResponse": "pan:AddBridgeOutputsResponse",
+    "UpdateBridgeOutputRequest": "pan:UpdateBridgeOutputRequest",
+    "CreateFlowRequest": "pan:CreateFlowRequest",
+    "AddFlowMediaStreamsRequest": "pan:AddFlowMediaStreamsRequest",
+    "IngressGatewayBridge": "pan:IngressGatewayBridge",
+    "Algorithm": "pan:Algorithm",
+    "UpdateFlowMediaStreamRequest": "pan:UpdateFlowMediaStreamRequest",
+    "BridgeState": "pan:BridgeState",
+    "Bridge": "pan:Bridge",
+    "Range": "pan:Range",
+    "DurationUnits": "pan:DurationUnits",
+    "DeregisterGatewayInstanceResponse": "pan:DeregisterGatewayInstanceResponse",
+    "AddBridgeOutputRequest": "pan:AddBridgeOutputRequest",
+    "DescribeGatewayResponse": "pan:DescribeGatewayResponse",
+    "MediaStreamType": "pan:MediaStreamType",
+    "SourceType": "pan:SourceType",
+    "UpdateBridgeStateResponse": "pan:UpdateBridgeStateResponse",
+    "InputConfigurationRequest": "pan:InputConfigurationRequest",
+    "PurchaseOfferingResponse": "pan:PurchaseOfferingResponse",
+    "MediaStreamAttributesRequest": "pan:MediaStreamAttributesRequest",
+    "SetGatewayBridgeSourceRequest": "pan:SetGatewayBridgeSourceRequest",
+    "CreateGatewayRequest": "pan:CreateGatewayRequest",
+    "ResourceSpecification": "pan:ResourceSpecification",
+    "MaintenanceDay": "pan:MaintenanceDay",
+    "__listOfGatewayNetwork": "pan:__listOfGatewayNetwork",
+    "UpdateEncryption": "pan:UpdateEncryption",
+    "RemoveFlowVpcInterfaceResponse": "pan:RemoveFlowVpcInterfaceResponse",
+    "UpdateBridgeRequest": "pan:UpdateBridgeRequest",
+    "Offering": "pan:Offering",
+    "ConnectionStatus": "pan:ConnectionStatus",
+    "__listOfListedEntitlement": "pan:__listOfListedEntitlement",
+    "BridgePlacement": "pan:BridgePlacement",
+    "UpdateBridgeResponse": "pan:UpdateBridgeResponse",
+    "State": "pan:State",
+    "UpdateBridgeFlowSourceRequest": "pan:UpdateBridgeFlowSourceRequest",
+    "UpdateFlowSourceRequest": "pan:UpdateFlowSourceRequest",
+    "ListedBridge": "pan:ListedBridge",
+    "__string": "pan:__string",
+    "RemoveFlowMediaStreamResponse": "pan:RemoveFlowMediaStreamResponse",
+    "__double": "pan:__double",
+    "UpdateGatewayInstanceRequest": "pan:UpdateGatewayInstanceRequest",
+    "ListGatewaysRequest": "pan:ListGatewaysRequest",
+    "MediaStreamAttributes": "pan:MediaStreamAttributes",
+    "__listOfDestinationConfiguration": "pan:__listOfDestinationConfiguration",
+    "__listOfMediaStreamSourceConfigurationRequest": "pan:__listOfMediaStreamSourceConfigurationRequest",
+    "AddFlowOutputsRequest": "pan:AddFlowOutputsRequest",
+    "GrantEntitlementRequest": "pan:GrantEntitlementRequest",
+    "UpdateFlowResponse": "pan:UpdateFlowResponse",
+    "DescribeGatewayInstanceRequest": "pan:DescribeGatewayInstanceRequest",
+    "__listOfListedFlow": "pan:__listOfListedFlow",
+    "__listOfListedGateway": "pan:__listOfListedGateway",
+    "DesiredState": "pan:DesiredState",
+    "MediaStreamSourceConfigurationRequest": "pan:MediaStreamSourceConfigurationRequest",
+    "StopFlowRequest": "pan:StopFlowRequest",
+    "Reservation": "pan:Reservation",
+    "GatewayInstance": "pan:GatewayInstance",
+    "__boolean": "pan:__boolean",
+    "__listOfAddOutputRequest": "pan:__listOfAddOutputRequest",
+    "__listOfAddMediaStreamRequest": "pan:__listOfAddMediaStreamRequest",
+    "ListEntitlementsResponse": "pan:ListEntitlementsResponse",
+    "ListGatewaysResponse": "pan:ListGatewaysResponse",
+    "Colorimetry": "pan:Colorimetry",
+    "AddBridgeNetworkSourceRequest": "pan:AddBridgeNetworkSourceRequest",
+    "__listOfInputConfigurationRequest": "pan:__listOfInputConfigurationRequest",
+    "ListTagsForResourceRequest": "pan:ListTagsForResourceRequest",
+    "UpdateFlowEntitlementResponse": "pan:UpdateFlowEntitlementResponse",
+    "AddMediaStreamRequest": "pan:AddMediaStreamRequest",
+    "ListedGateway": "pan:ListedGateway",
+    "ListEntitlementsRequest": "pan:ListEntitlementsRequest",
+    "EncodingParameters": "pan:EncodingParameters",
+    "RemoveFlowOutputRequest": "pan:RemoveFlowOutputRequest",
+    "RemoveFlowOutputResponse": "pan:RemoveFlowOutputResponse",
+    "Source": "pan:Source",
+    "BridgeFlowOutput": "pan:BridgeFlowOutput",
+    "ListFlowsResponse": "pan:ListFlowsResponse",
+    "DeleteFlowResponse": "pan:DeleteFlowResponse",
+    "BridgeSource": "pan:BridgeSource",
+    "PriceUnits": "pan:PriceUnits",
+    "PurchaseOfferingRequest": "pan:PurchaseOfferingRequest",
+    "Messages": "pan:Messages",
+    "SetSourceRequest": "pan:SetSourceRequest",
+    "__listOfAddBridgeOutputRequest": "pan:__listOfAddBridgeOutputRequest",
+    "MaxResults": "pan:MaxResults",
+    "flowArn": {
+      "@id": "pan:flow_arn",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "pan:status",
+      "@type": "xsd:string"
+    },
+    "mediaStreams": {
+      "@id": "pan:media_streams",
+      "@type": "xsd:string"
+    },
+    "egressCidrBlocks": {
+      "@id": "pan:egress_cidr_blocks",
+      "@type": "xsd:string"
+    },
+    "gatewayArn": {
+      "@id": "pan:gateway_arn",
+      "@type": "xsd:string"
+    },
+    "gatewayMessages": {
+      "@id": "pan:gateway_messages",
+      "@type": "xsd:string"
+    },
+    "gatewayState": {
+      "@id": "pan:gateway_state",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "networks": {
+      "@id": "pan:networks",
+      "@type": "xsd:string"
+    },
+    "maxBitrate": {
+      "@id": "pan:max_bitrate",
+      "@type": "xsd:string"
+    },
+    "instanceId": {
+      "@id": "pan:instance_id",
+      "@type": "xsd:string"
+    },
+    "availabilityZone": {
+      "@id": "pan:availability_zone",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "sourceType": {
+      "@id": "pan:source_type",
+      "@type": "xsd:string"
+    },
+    "maintenance": {
+      "@id": "pan:maintenance",
+      "@type": "xsd:string"
+    },
+    "bridgeArn": {
+      "@id": "pan:bridge_arn",
+      "@type": "xsd:string"
+    },
+    "cidrAllowList": {
+      "@id": "pan:cidr_allow_list",
+      "@type": "xsd:string"
+    },
+    "destination": {
+      "@id": "pan:destination",
+      "@type": "xsd:string"
+    },
+    "encryption": {
+      "@id": "pan:encryption",
+      "@type": "xsd:string"
+    },
+    "maxLatency": {
+      "@id": "pan:max_latency",
+      "@type": "xsd:string"
+    },
+    "mediaStreamOutputConfigurations": {
+      "@id": "pan:media_stream_output_configurations",
+      "@type": "xsd:string"
+    },
+    "minLatency": {
+      "@id": "pan:min_latency",
+      "@type": "xsd:string"
+    },
+    "port": {
+      "@id": "pan:port",
+      "@type": "xsd:string"
+    },
+    "protocol": {
+      "@id": "pan:protocol",
+      "@type": "xsd:string"
+    },
+    "remoteId": {
+      "@id": "pan:remote_id",
+      "@type": "xsd:string"
+    },
+    "senderControlPort": {
+      "@id": "pan:sender_control_port",
+      "@type": "xsd:string"
+    },
+    "senderIpAddress": {
+      "@id": "pan:sender_ip_address",
+      "@type": "xsd:string"
+    },
+    "smoothingLatency": {
+      "@id": "pan:smoothing_latency",
+      "@type": "xsd:string"
+    },
+    "streamId": {
+      "@id": "pan:stream_id",
+      "@type": "xsd:string"
+    },
+    "vpcInterfaceAttachment": {
+      "@id": "pan:vpc_interface_attachment",
+      "@type": "xsd:string"
+    },
+    "sourceArn": {
+      "@id": "pan:source_arn",
+      "@type": "xsd:string"
+    },
+    "vpcInterfaces": {
+      "@id": "pan:vpc_interfaces",
+      "@type": "xsd:string"
+    },
+    "channelOrder": {
+      "@id": "pan:channel_order",
+      "@type": "xsd:string"
+    },
+    "colorimetry": {
+      "@id": "pan:colorimetry",
+      "@type": "xsd:string"
+    },
+    "exactFramerate": {
+      "@id": "pan:exact_framerate",
+      "@type": "xsd:string"
+    },
+    "par": {
+      "@id": "pan:par",
+      "@type": "xsd:string"
+    },
+    "range": {
+      "@id": "pan:range",
+      "@type": "xsd:string"
+    },
+    "scanMode": {
+      "@id": "pan:scan_mode",
+      "@type": "xsd:string"
+    },
+    "tcs": {
+      "@id": "pan:tcs",
+      "@type": "xsd:string"
+    },
+    "maintenanceDay": {
+      "@id": "pan:maintenance_day",
+      "@type": "xsd:string"
+    },
+    "maintenanceDeadline": {
+      "@id": "pan:maintenance_deadline",
+      "@type": "xsd:string"
+    },
+    "maintenanceScheduledDate": {
+      "@id": "pan:maintenance_scheduled_date",
+      "@type": "xsd:string"
+    },
+    "maintenanceStartHour": {
+      "@id": "pan:maintenance_start_hour",
+      "@type": "xsd:string"
+    },
+    "algorithm": {
+      "@id": "pan:algorithm",
+      "@type": "xsd:string"
+    },
+    "constantInitializationVector": {
+      "@id": "pan:constant_initialization_vector",
+      "@type": "xsd:string"
+    },
+    "deviceId": {
+      "@id": "pan:device_id",
+      "@type": "xsd:string"
+    },
+    "keyType": {
+      "@id": "pan:key_type",
+      "@type": "xsd:string"
+    },
+    "region": {
+      "@id": "pan:region",
+      "@type": "xsd:string"
+    },
+    "resourceId": {
+      "@id": "pan:resource_id",
+      "@type": "xsd:string"
+    },
+    "roleArn": {
+      "@id": "pan:role_arn",
+      "@type": "xsd:string"
+    },
+    "secretArn": {
+      "@id": "pan:secret_arn",
+      "@type": "xsd:string"
+    },
+    "url": "schema:url",
+    "sources": {
+      "@id": "pan:sources",
+      "@type": "xsd:string"
+    },
+    "maxSyncBuffer": {
+      "@id": "pan:max_sync_buffer",
+      "@type": "xsd:string"
+    },
+    "sourceListenerAddress": {
+      "@id": "pan:source_listener_address",
+      "@type": "xsd:string"
+    },
+    "sourceListenerPort": {
+      "@id": "pan:source_listener_port",
+      "@type": "xsd:string"
+    },
+    "ipAddress": {
+      "@id": "pan:ip_address",
+      "@type": "xsd:string"
+    },
+    "networkName": {
+      "@id": "pan:network_name",
+      "@type": "xsd:string"
+    },
+    "ttl": {
+      "@id": "pan:ttl",
+      "@type": "xsd:string"
+    },
+    "outputs": {
+      "@id": "pan:outputs",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "pan:tags",
+      "@type": "xsd:string"
+    },
+    "dataTransferSubscriberFeePercent": {
+      "@id": "pan:data_transfer_subscriber_fee_percent",
+      "@type": "xsd:string"
+    },
+    "entitlementArn": {
+      "@id": "pan:entitlement_arn",
+      "@type": "xsd:string"
+    },
+    "entitlementName": {
+      "@id": "pan:entitlement_name",
+      "@type": "xsd:string"
+    },
+    "multicastIp": {
+      "@id": "pan:multicast_ip",
+      "@type": "xsd:string"
+    },
+    "networkInterfaceIds": {
+      "@id": "pan:network_interface_ids",
+      "@type": "xsd:string"
+    },
+    "networkInterfaceType": {
+      "@id": "pan:network_interface_type",
+      "@type": "xsd:string"
+    },
+    "securityGroupIds": {
+      "@id": "pan:security_group_ids",
+      "@type": "xsd:string"
+    },
+    "subnetId": {
+      "@id": "pan:subnet_id",
+      "@type": "xsd:string"
+    },
+    "reservation": {
+      "@id": "pan:reservation",
+      "@type": "xsd:string"
+    },
+    "encodingName": {
+      "@id": "pan:encoding_name",
+      "@type": "xsd:string"
+    },
+    "inputConfigurations": {
+      "@id": "pan:input_configurations",
+      "@type": "xsd:string"
+    },
+    "mediaStreamName": {
+      "@id": "pan:media_stream_name",
+      "@type": "xsd:string"
+    },
+    "instances": {
+      "@id": "pan:instances",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "pan:next_token",
+      "@type": "xsd:string"
+    },
+    "entitlements": {
+      "@id": "pan:entitlements",
+      "@type": "xsd:string"
+    },
+    "egressGatewayBridge": {
+      "@id": "pan:egress_gateway_bridge",
+      "@type": "xsd:string"
+    },
+    "ingressGatewayBridge": {
+      "@id": "pan:ingress_gateway_bridge",
+      "@type": "xsd:string"
+    },
+    "placementArn": {
+      "@id": "pan:placement_arn",
+      "@type": "xsd:string"
+    },
+    "sourceFailoverConfig": {
+      "@id": "pan:source_failover_config",
+      "@type": "xsd:string"
+    },
+    "failoverMode": {
+      "@id": "pan:failover_mode",
+      "@type": "xsd:string"
+    },
+    "recoveryWindow": {
+      "@id": "pan:recovery_window",
+      "@type": "xsd:string"
+    },
+    "sourcePriority": {
+      "@id": "pan:source_priority",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "pan:state",
+      "@type": "xsd:string"
+    },
+    "code": {
+      "@id": "pan:code",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "pan:message",
+      "@type": "xsd:string"
+    },
+    "resourceName": {
+      "@id": "pan:resource_name",
+      "@type": "xsd:string"
+    },
+    "bridges": {
+      "@id": "pan:bridges",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "pan:source",
+      "@type": "xsd:string"
+    },
+    "offering": {
+      "@id": "pan:offering",
+      "@type": "xsd:string"
+    },
+    "maxOutputs": {
+      "@id": "pan:max_outputs",
+      "@type": "xsd:string"
+    },
+    "flow": {
+      "@id": "pan:flow",
+      "@type": "xsd:string"
+    },
+    "messages": {
+      "@id": "pan:messages",
+      "@type": "xsd:string"
+    },
+    "bridge": {
+      "@id": "pan:bridge",
+      "@type": "xsd:string"
+    },
+    "gatewayInstanceArn": {
+      "@id": "pan:gateway_instance_arn",
+      "@type": "xsd:string"
+    },
+    "instanceState": {
+      "@id": "pan:instance_state",
+      "@type": "xsd:string"
+    },
+    "flowSource": {
+      "@id": "pan:flow_source",
+      "@type": "xsd:string"
+    },
+    "networkSource": {
+      "@id": "pan:network_source",
+      "@type": "xsd:string"
+    },
+    "gatewayInstance": {
+      "@id": "pan:gateway_instance",
+      "@type": "xsd:string"
+    },
+    "destinationIp": {
+      "@id": "pan:destination_ip",
+      "@type": "xsd:string"
+    },
+    "destinationPort": {
+      "@id": "pan:destination_port",
+      "@type": "xsd:string"
+    },
+    "interface": {
+      "@id": "pan:interface",
+      "@type": "xsd:string"
+    },
+    "offerings": {
+      "@id": "pan:offerings",
+      "@type": "xsd:string"
+    },
+    "reservations": {
+      "@id": "pan:reservations",
+      "@type": "xsd:string"
+    },
+    "cidrBlock": {
+      "@id": "pan:cidr_block",
+      "@type": "xsd:string"
+    },
+    "inputIp": {
+      "@id": "pan:input_ip",
+      "@type": "xsd:string"
+    },
+    "inputPort": {
+      "@id": "pan:input_port",
+      "@type": "xsd:string"
+    },
+    "destinationConfigurations": {
+      "@id": "pan:destination_configurations",
+      "@type": "xsd:string"
+    },
+    "encodingParameters": {
+      "@id": "pan:encoding_parameters",
+      "@type": "xsd:string"
+    },
+    "compressionFactor": {
+      "@id": "pan:compression_factor",
+      "@type": "xsd:string"
+    },
+    "encoderProfile": {
+      "@id": "pan:encoder_profile",
+      "@type": "xsd:string"
+    },
+    "vpcInterfaceName": {
+      "@id": "pan:vpc_interface_name",
+      "@type": "xsd:string"
+    },
+    "sourceName": {
+      "@id": "pan:source_name",
+      "@type": "xsd:string"
+    },
+    "outboundIp": {
+      "@id": "pan:outbound_ip",
+      "@type": "xsd:string"
+    },
+    "flowVpcInterfaceAttachment": {
+      "@id": "pan:flow_vpc_interface_attachment",
+      "@type": "xsd:string"
+    },
+    "outputArn": {
+      "@id": "pan:output_arn",
+      "@type": "xsd:string"
+    },
+    "outputName": {
+      "@id": "pan:output_name",
+      "@type": "xsd:string"
+    },
+    "listenerAddress": {
+      "@id": "pan:listener_address",
+      "@type": "xsd:string"
+    },
+    "mediaLiveInputArn": {
+      "@id": "pan:media_live_input_arn",
+      "@type": "xsd:string"
+    },
+    "transport": {
+      "@id": "pan:transport",
+      "@type": "xsd:string"
+    },
+    "bridgePorts": {
+      "@id": "pan:bridge_ports",
+      "@type": "xsd:string"
+    },
+    "attributes": {
+      "@id": "pan:attributes",
+      "@type": "xsd:string"
+    },
+    "clockRate": {
+      "@id": "pan:clock_rate",
+      "@type": "xsd:string"
+    },
+    "fmt": {
+      "@id": "pan:fmt",
+      "@type": "xsd:string"
+    },
+    "mediaStreamId": {
+      "@id": "pan:media_stream_id",
+      "@type": "xsd:string"
+    },
+    "mediaStreamType": {
+      "@id": "pan:media_stream_type",
+      "@type": "xsd:string"
+    },
+    "videoFormat": {
+      "@id": "pan:video_format",
+      "@type": "xsd:string"
+    },
+    "flowOutput": {
+      "@id": "pan:flow_output",
+      "@type": "xsd:string"
+    },
+    "networkOutput": {
+      "@id": "pan:network_output",
+      "@type": "xsd:string"
+    },
+    "primarySource": {
+      "@id": "pan:primary_source",
+      "@type": "xsd:string"
+    },
+    "mediaStream": {
+      "@id": "pan:media_stream",
+      "@type": "xsd:string"
+    },
+    "gateway": {
+      "@id": "pan:gateway",
+      "@type": "xsd:string"
+    },
+    "egressIp": {
+      "@id": "pan:egress_ip",
+      "@type": "xsd:string"
+    },
+    "entitlementStatus": {
+      "@id": "pan:entitlement_status",
+      "@type": "xsd:string"
+    },
+    "subscribers": {
+      "@id": "pan:subscribers",
+      "@type": "xsd:string"
+    },
+    "output": {
+      "@id": "pan:output",
+      "@type": "xsd:string"
+    },
+    "desiredState": {
+      "@id": "pan:desired_state",
+      "@type": "xsd:string"
+    },
+    "bridgePlacement": {
+      "@id": "pan:bridge_placement",
+      "@type": "xsd:string"
+    },
+    "bridgeMessages": {
+      "@id": "pan:bridge_messages",
+      "@type": "xsd:string"
+    },
+    "bridgeState": {
+      "@id": "pan:bridge_state",
+      "@type": "xsd:string"
+    },
+    "fmtp": {
+      "@id": "pan:fmtp",
+      "@type": "xsd:string"
+    },
+    "lang": {
+      "@id": "pan:lang",
+      "@type": "xsd:string"
+    },
+    "reservedBitrate": {
+      "@id": "pan:reserved_bitrate",
+      "@type": "xsd:string"
+    },
+    "resourceType": {
+      "@id": "pan:resource_type",
+      "@type": "xsd:string"
+    },
+    "nonDeletedNetworkInterfaceIds": {
+      "@id": "pan:non_deleted_network_interface_ids",
+      "@type": "xsd:string"
+    },
+    "currencyCode": {
+      "@id": "pan:currency_code",
+      "@type": "xsd:string"
+    },
+    "duration": {
+      "@id": "pan:duration",
+      "@type": "xsd:string"
+    },
+    "durationUnits": {
+      "@id": "pan:duration_units",
+      "@type": "xsd:string"
+    },
+    "offeringArn": {
+      "@id": "pan:offering_arn",
+      "@type": "xsd:string"
+    },
+    "offeringDescription": {
+      "@id": "pan:offering_description",
+      "@type": "xsd:string"
+    },
+    "pricePerUnit": {
+      "@id": "pan:price_per_unit",
+      "@type": "xsd:string"
+    },
+    "priceUnits": {
+      "@id": "pan:price_units",
+      "@type": "xsd:string"
+    },
+    "resourceSpecification": {
+      "@id": "pan:resource_specification",
+      "@type": "xsd:string"
+    },
+    "decryption": {
+      "@id": "pan:decryption",
+      "@type": "xsd:string"
+    },
+    "ingestPort": {
+      "@id": "pan:ingest_port",
+      "@type": "xsd:string"
+    },
+    "mediaStreamSourceConfigurations": {
+      "@id": "pan:media_stream_source_configurations",
+      "@type": "xsd:string"
+    },
+    "whitelistCidr": {
+      "@id": "pan:whitelist_cidr",
+      "@type": "xsd:string"
+    },
+    "gatewayBridgeSource": {
+      "@id": "pan:gateway_bridge_source",
+      "@type": "xsd:string"
+    },
+    "bridgeType": {
+      "@id": "pan:bridge_type",
+      "@type": "xsd:string"
+    },
+    "end": {
+      "@id": "pan:end",
+      "@type": "xsd:string"
+    },
+    "reservationArn": {
+      "@id": "pan:reservation_arn",
+      "@type": "xsd:string"
+    },
+    "reservationName": {
+      "@id": "pan:reservation_name",
+      "@type": "xsd:string"
+    },
+    "reservationState": {
+      "@id": "pan:reservation_state",
+      "@type": "xsd:string"
+    },
+    "start": {
+      "@id": "pan:start",
+      "@type": "xsd:string"
+    },
+    "connectionStatus": {
+      "@id": "pan:connection_status",
+      "@type": "xsd:string"
+    },
+    "instanceMessages": {
+      "@id": "pan:instance_messages",
+      "@type": "xsd:string"
+    },
+    "runningBridgeCount": {
+      "@id": "pan:running_bridge_count",
+      "@type": "xsd:string"
+    },
+    "gateways": {
+      "@id": "pan:gateways",
+      "@type": "xsd:string"
+    },
+    "entitlement": {
+      "@id": "pan:entitlement",
+      "@type": "xsd:string"
+    },
+    "ingestIp": {
+      "@id": "pan:ingest_ip",
+      "@type": "xsd:string"
+    },
+    "flowSourceArn": {
+      "@id": "pan:flow_source_arn",
+      "@type": "xsd:string"
+    },
+    "flows": {
+      "@id": "pan:flows",
+      "@type": "xsd:string"
+    },
+    "errors": {
+      "@id": "pan:errors",
+      "@type": "xsd:string"
+    }
+  }
+}

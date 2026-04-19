@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-schema/mediaconnect-api-media-stream-output-configuration-request-schema.json",
+  "title": "MediaStreamOutputConfigurationRequest",
+  "description": "The media stream that you want to associate with the output, and the parameters for that association.",
+  "type": "object",
+  "properties": {
+    "DestinationConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfDestinationConfigurationRequest"
+        },
+        {
+          "xml": {
+            "name": "destinationConfigurations"
+          },
+          "description": "The transport parameters that you want to associate with the media stream."
+        }
+      ]
+    },
+    "EncodingName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncodingName"
+        },
+        {
+          "xml": {
+            "name": "encodingName"
+          },
+          "description": "The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv."
+        }
+      ]
+    },
+    "EncodingParameters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncodingParametersRequest"
+        },
+        {
+          "xml": {
+            "name": "encodingParameters"
+          },
+          "description": "A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source."
+        }
+      ]
+    },
+    "MediaStreamName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "mediaStreamName"
+          },
+          "description": "The name of the media stream that is associated with the output."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MediaStreamName",
+    "EncodingName"
+  ]
+}

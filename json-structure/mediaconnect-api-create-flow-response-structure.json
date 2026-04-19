@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-create-flow-response-structure.json",
+  "name": "CreateFlowResponse",
+  "type": "object",
+  "description": "CreateFlowResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "Flow": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Flow"
+        },
+        {
+          "xml": {
+            "name": "flow"
+          }
+        }
+      ]
+    }
+  }
+}

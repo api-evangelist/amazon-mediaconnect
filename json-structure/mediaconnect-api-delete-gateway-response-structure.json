@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/json-structure/mediaconnect-api-delete-gateway-response-structure.json",
+  "name": "DeleteGatewayResponse",
+  "type": "object",
+  "description": "DeleteGatewayResponse schema from AWS Elemental MediaConnect API",
+  "properties": {
+    "GatewayArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "gatewayArn"
+          },
+          "description": "The Amazon Resource Name (ARN) of the gateway that was deleted."
+        }
+      ]
+    }
+  }
+}
