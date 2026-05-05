@@ -1,0 +1,13 @@
+{
+  "repo": "amazon-mediaconnect",
+  "feeds": [
+    {
+      "source": "https://aws.amazon.com/blogs/media/tag/aws-elemental-mediaconnect/",
+      "feed_url": "https://aws.amazon.com/blogs/media/tag/aws-elemental-mediaconnect/feed/",
+      "saved": 10,
+      "title": "AWS Elemental MediaConnect \u2013 AWS for M&E Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:21:37Z"
+}
