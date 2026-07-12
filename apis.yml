@@ -44,6 +44,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-mediaconnect.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-mediaconnect-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-mediaconnect-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-mediaconnect-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-mediaconnect-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/mediaconnect/
 - type: Documentation
