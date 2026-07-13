@@ -1,179 +1,225 @@
+# amazon-mediaconnect — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 50% of servers already https (warn)
+#   - path-params-casing: camel @ 100% (n=53)
+#   - query-params-casing: camel @ 53% (n=32)
+#   - operationid-casing: pascal @ 100% (n=50)
+#   - schema-names-casing: pascal @ 85% (n=250)
+#   - schema-properties-casing: pascal @ 100% (n=524)
+#   - security: global (root) — NOT emitting operation-security-required
+#   - error-schema-defined: InternalServerErrorException
+#   - pagination params observed: ['maxResults', 'nextToken']
+#   - merge: kept 20 existing, added 7 measured, upgraded 0
+#   - added: path-params-casing, query-params-casing, operationid-casing, schema-names-casing, schema-properties-casing, error-schema-defined, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
-  # INFO / METADATA
   info-title-required:
     description: Info title must be present and non-empty.
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: title
       function: truthy
-
   info-description-required:
     description: Info description must be present with minimum length.
     severity: warn
-    given: "$.info"
+    given: $.info
     then:
       field: description
       function: truthy
-
   info-version-required:
     description: Info version must be present.
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: version
       function: truthy
-
-  # OPENAPI VERSION
   openapi-version-3:
     description: OpenAPI version must be 3.x.
     severity: error
-    given: "$"
+    given: $
     then:
       field: openapi
       function: pattern
       functionOptions:
-        match: "^3\\."
-
-  # SERVERS
+        match: ^3\.
   servers-required:
     description: Servers must be defined.
     severity: error
-    given: "$"
+    given: $
     then:
       field: servers
       function: truthy
-
   servers-https:
     description: All server URLs must use HTTPS.
     severity: error
-    given: "$.servers[*]"
+    given: $.servers[*]
     then:
       field: url
       function: pattern
       functionOptions:
-        match: "^https://"
-
-  # PATHS
+        match: ^https://
   paths-kebab-case:
     description: Path segments should use kebab-case.
     severity: warn
-    given: "$.paths[*]~"
+    given: $.paths[*]~
     then:
       function: pattern
       functionOptions:
-        match: "^(/[a-z0-9{}-]+)+$"
-
+        match: ^(/[a-z0-9{}-]+)+$
   paths-no-trailing-slash:
     description: Paths must not have trailing slashes.
     severity: warn
-    given: "$.paths[*]~"
+    given: $.paths[*]~
     then:
       function: pattern
       functionOptions:
-        notMatch: "/$"
-
-  # OPERATIONS
+        notMatch: /$
   operation-operationId-required:
     description: Every operation must have an operationId.
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: operationId
       function: truthy
-
   operation-summary-required:
     description: Every operation must have a summary.
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: summary
       function: truthy
-
   operation-summary-amazon-prefix:
     description: Operation summaries must start with 'Amazon MediaConnect'.
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete].summary"
+    given: $.paths[*][get,post,put,patch,delete].summary
     then:
       function: pattern
       functionOptions:
-        match: "^Amazon MediaConnect"
-
+        match: ^Amazon MediaConnect
   operation-description-required:
     description: Every operation must have a description.
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: description
       function: truthy
-
   operation-tags-required:
     description: Every operation must have at least one tag.
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: tags
       function: truthy
-
-  # PARAMETERS
   parameter-description-required:
     description: All parameters must have a description.
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete].parameters[*]"
+    given: $.paths[*][get,post,put,patch,delete].parameters[*]
     then:
       field: description
       function: truthy
-
-  # RESPONSES
   operation-success-response:
     description: Operations must have at least one 2xx response.
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete].responses"
+    given: $.paths[*][get,post,put,patch,delete].responses
     then:
       function: schema
       functionOptions:
         schema:
           minProperties: 1
-
   response-description-required:
     description: All responses must have a description.
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete].responses[*]"
+    given: $.paths[*][get,post,put,patch,delete].responses[*]
     then:
       field: description
       function: truthy
-
-  # SCHEMAS
   schema-property-description:
     description: Top-level schema properties should have descriptions.
     severity: info
-    given: "$.components.schemas[*].properties[*]"
+    given: $.components.schemas[*].properties[*]
     then:
       field: description
       function: truthy
-
-  # SECURITY
   security-schemes-defined:
     description: Security schemes should be defined in components.
     severity: warn
-    given: "$.components"
+    given: $.components
     then:
       field: securitySchemes
       function: truthy
-
-  # HTTP METHODS
   get-no-request-body:
     description: GET operations must not have a request body.
     severity: error
-    given: "$.paths[*].get"
+    given: $.paths[*].get
     then:
       field: requestBody
       function: falsy
-
   delete-no-request-body:
     description: DELETE operations should not have a request body.
     severity: warn
-    given: "$.paths[*].delete"
+    given: $.paths[*].delete
     then:
       field: requestBody
       function: falsy
+  path-params-casing:
+    description: Path parameters should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*].parameters[?(@.in=='path')].name
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  query-params-casing:
+    description: Query parameters should be camelCase (the dominant convention in this API).
+    severity: info
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: camel
+  operationid-casing:
+    description: Operation IDs should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  error-schema-defined:
+    description: A shared error schema (InternalServerErrorException) should be defined for error payloads.
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: InternalServerErrorException
+      function: truthy
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
+      function: truthy
