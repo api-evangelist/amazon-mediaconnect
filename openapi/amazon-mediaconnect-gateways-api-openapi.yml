@@ -1,0 +1,851 @@
+openapi: 3.0.0
+info:
+  version: 2018-11-14
+  x-release: v4
+  title: AWS MediaConnect Bridges Gateways API
+  description: API for AWS Elemental MediaConnect
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: mediaconnect
+  x-aws-signingName: mediaconnect
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediaconnect-2018-11-14.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://mediaconnect.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS MediaConnect multi-region endpoint
+- url: https://mediaconnect.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS MediaConnect multi-region endpoint
+- url: http://mediaconnect.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS MediaConnect endpoint for China (Beijing) and China (Ningxia)
+- url: https://mediaconnect.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS MediaConnect endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Gateways
+paths:
+  /v1/gateways:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateGateway
+      description: Creates a new gateway. The request must include at least one network (up to 4).
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateGatewayResponse'
+              examples:
+                CreateGateway201Example:
+                  summary: Default CreateGateway 201 response
+                  x-microcks-default: true
+                  value:
+                    Gateway: example-value
+        '480':
+          description: CreateGateway420Exception
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateGateway420Exception'
+              examples:
+                CreateGateway480Example:
+                  summary: Default CreateGateway 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                CreateGateway481Example:
+                  summary: Default CreateGateway 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                CreateGateway482Example:
+                  summary: Default CreateGateway 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                CreateGateway483Example:
+                  summary: Default CreateGateway 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                CreateGateway484Example:
+                  summary: Default CreateGateway 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                CreateGateway485Example:
+                  summary: Default CreateGateway 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                CreateGateway486Example:
+                  summary: Default CreateGateway 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - egressCidrBlocks
+              - name
+              - networks
+              properties:
+                egressCidrBlocks:
+                  description: The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/__string'
+                name:
+                  description: The name of the gateway. This name can not be modified after the gateway is created.
+                  type: string
+                networks:
+                  description: The list of networks that you want to add.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/GatewayNetwork'
+      summary: Amazon MediaConnect Create Gateway
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Gateways
+    get:
+      operationId: ListGateways
+      description: Displays a list of gateways that are associated with this account. This request returns a paginated result.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListGatewaysResponse'
+              examples:
+                ListGateways200Example:
+                  summary: Default ListGateways 200 response
+                  x-microcks-default: true
+                  value:
+                    Gateways: example-value
+                    NextToken: example-value
+        '480':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                ListGateways480Example:
+                  summary: Default ListGateways 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                ListGateways481Example:
+                  summary: Default ListGateways 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                ListGateways482Example:
+                  summary: Default ListGateways 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                ListGateways483Example:
+                  summary: Default ListGateways 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                ListGateways484Example:
+                  summary: Default ListGateways 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: maxResults
+        in: query
+        required: false
+        description: The maximum number of results to return per API request. For example, you submit a ListGateways request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000
+        example: 1
+      - name: nextToken
+        in: query
+        required: false
+        description: The token that identifies which batch of results that you want to see. For example, you submit a ListGateways request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListGateways request a second time and specify the NextToken value.
+        schema:
+          type: string
+        example: example-value
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+        example: example-value
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+        example: example-value
+      summary: Amazon MediaConnect List Gateways
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Gateways
+  /v1/gateways/{gatewayArn}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteGateway
+      description: Deletes a gateway. Before you can delete a gateway, you must deregister its instances and delete its bridges.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteGatewayResponse'
+              examples:
+                DeleteGateway200Example:
+                  summary: Default DeleteGateway 200 response
+                  x-microcks-default: true
+                  value:
+                    GatewayArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                DeleteGateway480Example:
+                  summary: Default DeleteGateway 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                DeleteGateway481Example:
+                  summary: Default DeleteGateway 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                DeleteGateway482Example:
+                  summary: Default DeleteGateway 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                DeleteGateway483Example:
+                  summary: Default DeleteGateway 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DeleteGateway484Example:
+                  summary: Default DeleteGateway 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                DeleteGateway485Example:
+                  summary: Default DeleteGateway 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DeleteGateway486Example:
+                  summary: Default DeleteGateway 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: gatewayArn
+        in: path
+        required: true
+        description: The ARN of the gateway that you want to delete.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      summary: Amazon MediaConnect Delete Gateway
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Gateways
+    get:
+      operationId: DescribeGateway
+      description: Displays the details of a gateway. The response includes the gateway ARN, name, and CIDR blocks, as well as details about the networks.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeGatewayResponse'
+              examples:
+                DescribeGateway200Example:
+                  summary: Default DescribeGateway 200 response
+                  x-microcks-default: true
+                  value:
+                    Gateway: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                DescribeGateway480Example:
+                  summary: Default DescribeGateway 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                DescribeGateway481Example:
+                  summary: Default DescribeGateway 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                DescribeGateway482Example:
+                  summary: Default DescribeGateway 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                DescribeGateway483Example:
+                  summary: Default DescribeGateway 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DescribeGateway484Example:
+                  summary: Default DescribeGateway 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                DescribeGateway485Example:
+                  summary: Default DescribeGateway 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DescribeGateway486Example:
+                  summary: Default DescribeGateway 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: gatewayArn
+        in: path
+        required: true
+        description: The Amazon Resource Name (ARN) of the gateway that you want to describe.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      summary: Amazon MediaConnect Describe Gateway
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Gateways
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    __listOfGatewayNetwork:
+      type: array
+      items:
+        $ref: '#/components/schemas/GatewayNetwork'
+    __listOf__string:
+      type: array
+      items:
+        $ref: '#/components/schemas/__string'
+    CreateGatewayResponse:
+      type: object
+      properties:
+        Gateway:
+          allOf:
+          - $ref: '#/components/schemas/Gateway'
+          - xml:
+              name: gateway
+    DescribeGatewayResponse:
+      type: object
+      properties:
+        Gateway:
+          allOf:
+          - $ref: '#/components/schemas/Gateway'
+          - xml:
+              name: gateway
+    __listOfMessageDetail:
+      type: array
+      items:
+        $ref: '#/components/schemas/MessageDetail'
+    GatewayState:
+      type: string
+      enum:
+      - CREATING
+      - ACTIVE
+      - UPDATING
+      - ERROR
+      - DELETING
+      - DELETED
+    ListGatewaysResponse:
+      type: object
+      properties:
+        Gateways:
+          allOf:
+          - $ref: '#/components/schemas/__listOfListedGateway'
+          - xml:
+              name: gateways
+            description: A list of gateway summaries.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: The token that identifies which batch of results that you want to see. For example, you submit a ListGateways request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListGateways request a second time and specify the NextToken value.
+    DeleteGatewayResponse:
+      type: object
+      properties:
+        GatewayArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayArn
+            description: The Amazon Resource Name (ARN) of the gateway that was deleted.
+    InternalServerErrorException: {}
+    Gateway:
+      type: object
+      required:
+      - GatewayArn
+      - Networks
+      - EgressCidrBlocks
+      - Name
+      properties:
+        EgressCidrBlocks:
+          allOf:
+          - $ref: '#/components/schemas/__listOf__string'
+          - xml:
+              name: egressCidrBlocks
+            description: The range of IP addresses that contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        GatewayArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayArn
+            description: The Amazon Resource Name (ARN) of the gateway.
+        GatewayMessages:
+          allOf:
+          - $ref: '#/components/schemas/__listOfMessageDetail'
+          - xml:
+              name: gatewayMessages
+        GatewayState:
+          allOf:
+          - $ref: '#/components/schemas/GatewayState'
+          - xml:
+              name: gatewayState
+            description: The current status of the gateway.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the gateway. This name can not be modified after the gateway is created.
+        Networks:
+          allOf:
+          - $ref: '#/components/schemas/__listOfGatewayNetwork'
+          - xml:
+              name: networks
+            description: The list of networks in the gateway.
+      description: The settings for a gateway, including its networks.
+    GatewayNetwork:
+      type: object
+      required:
+      - CidrBlock
+      - Name
+      properties:
+        CidrBlock:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: cidrBlock
+            description: A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
+      description: The network settings for a gateway.
+    CreateGateway420Exception: {}
+    ConflictException: {}
+    ForbiddenException: {}
+    BadRequestException: {}
+    ListedGateway:
+      type: object
+      required:
+      - GatewayArn
+      - GatewayState
+      - Name
+      properties:
+        GatewayArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayArn
+            description: The Amazon Resource Name (ARN) of the gateway.
+        GatewayState:
+          allOf:
+          - $ref: '#/components/schemas/GatewayState'
+          - xml:
+              name: gatewayState
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the gateway.
+      description: Provides a summary of a gateway, including its name, ARN, and status.
+    NotFoundException: {}
+    ServiceUnavailableException: {}
+    TooManyRequestsException: {}
+    __string:
+      type: string
+    __listOfListedGateway:
+      type: array
+      items:
+        $ref: '#/components/schemas/ListedGateway'
+    MessageDetail:
+      type: object
+      required:
+      - Message
+      - Code
+      properties:
+        Code:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: code
+            description: The error code.
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: message
+            description: The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
+        ResourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: resourceName
+            description: The name of the resource.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mediaconnect/
+x-hasEquivalentPaths: true

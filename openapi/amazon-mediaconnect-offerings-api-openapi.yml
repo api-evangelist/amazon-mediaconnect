@@ -1,0 +1,740 @@
+openapi: 3.0.0
+info:
+  version: 2018-11-14
+  x-release: v4
+  title: AWS MediaConnect Bridges Offerings API
+  description: API for AWS Elemental MediaConnect
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: mediaconnect
+  x-aws-signingName: mediaconnect
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediaconnect-2018-11-14.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://mediaconnect.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS MediaConnect multi-region endpoint
+- url: https://mediaconnect.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS MediaConnect multi-region endpoint
+- url: http://mediaconnect.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS MediaConnect endpoint for China (Beijing) and China (Ningxia)
+- url: https://mediaconnect.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS MediaConnect endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Offerings
+paths:
+  /v1/offerings/{offeringArn}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: DescribeOffering
+      description: Displays the details of an offering. The response includes the offering description, duration, outbound bandwidth, price, and Amazon Resource Name (ARN).
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeOfferingResponse'
+              examples:
+                DescribeOffering200Example:
+                  summary: Default DescribeOffering 200 response
+                  x-microcks-default: true
+                  value:
+                    Offering: example-value
+        '480':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                DescribeOffering480Example:
+                  summary: Default DescribeOffering 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DescribeOffering481Example:
+                  summary: Default DescribeOffering 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                DescribeOffering482Example:
+                  summary: Default DescribeOffering 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                DescribeOffering483Example:
+                  summary: Default DescribeOffering 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                DescribeOffering484Example:
+                  summary: Default DescribeOffering 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: offeringArn
+        in: path
+        required: true
+        description: The Amazon Resource Name (ARN) of the offering.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      summary: Amazon MediaConnect Describe Offering
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Offerings
+    post:
+      operationId: PurchaseOffering
+      description: Submits a request to purchase an offering. If you already have an active reservation, you can't purchase another offering.
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOfferingResponse'
+              examples:
+                PurchaseOffering201Example:
+                  summary: Default PurchaseOffering 201 response
+                  x-microcks-default: true
+                  value:
+                    Reservation: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                PurchaseOffering480Example:
+                  summary: Default PurchaseOffering 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                PurchaseOffering481Example:
+                  summary: Default PurchaseOffering 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                PurchaseOffering482Example:
+                  summary: Default PurchaseOffering 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                PurchaseOffering483Example:
+                  summary: Default PurchaseOffering 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                PurchaseOffering484Example:
+                  summary: Default PurchaseOffering 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                PurchaseOffering485Example:
+                  summary: Default PurchaseOffering 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: offeringArn
+        in: path
+        required: true
+        description: The Amazon Resource Name (ARN) of the offering.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - reservationName
+              - start
+              properties:
+                reservationName:
+                  description: The name that you want to use for the reservation.
+                  type: string
+                start:
+                  description: 'The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today''s date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.'
+                  type: string
+      summary: Amazon MediaConnect Purchase Offering
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Offerings
+  /v1/offerings:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListOfferings
+      description: Displays a list of all offerings that are available to this account in the current AWS Region. If you have an active reservation (which means you've purchased an offering that has already started and hasn't expired yet), your account isn't eligible for other offerings.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOfferingsResponse'
+              examples:
+                ListOfferings200Example:
+                  summary: Default ListOfferings 200 response
+                  x-microcks-default: true
+                  value:
+                    NextToken: example-value
+                    Offerings: example-value
+        '480':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                ListOfferings480Example:
+                  summary: Default ListOfferings 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                ListOfferings481Example:
+                  summary: Default ListOfferings 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                ListOfferings482Example:
+                  summary: Default ListOfferings 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                ListOfferings483Example:
+                  summary: Default ListOfferings 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: maxResults
+        in: query
+        required: false
+        description: The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000
+        example: 1
+      - name: nextToken
+        in: query
+        required: false
+        description: The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+        schema:
+          type: string
+        example: example-value
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+        example: example-value
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+        example: example-value
+      summary: Amazon MediaConnect List Offerings
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Offerings
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ListOfferingsResponse:
+      type: object
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+        Offerings:
+          allOf:
+          - $ref: '#/components/schemas/__listOfOffering'
+          - xml:
+              name: offerings
+            description: A list of offerings that are available to this account in the current AWS Region.
+    Offering:
+      type: object
+      required:
+      - CurrencyCode
+      - OfferingArn
+      - OfferingDescription
+      - DurationUnits
+      - Duration
+      - PricePerUnit
+      - ResourceSpecification
+      - PriceUnits
+      properties:
+        CurrencyCode:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: currencyCode
+            description: The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
+        Duration:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: duration
+            description: The length of time that your reservation would be active.
+        DurationUnits:
+          allOf:
+          - $ref: '#/components/schemas/DurationUnits'
+          - xml:
+              name: durationUnits
+            description: The unit of measurement for the duration of the offering.
+        OfferingArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: offeringArn
+            description: The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+        OfferingDescription:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: offeringDescription
+            description: A description of the offering.
+        PricePerUnit:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: pricePerUnit
+            description: The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
+        PriceUnits:
+          allOf:
+          - $ref: '#/components/schemas/PriceUnits'
+          - xml:
+              name: priceUnits
+            description: The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
+        ResourceSpecification:
+          allOf:
+          - $ref: '#/components/schemas/ResourceSpecification'
+          - xml:
+              name: resourceSpecification
+            description: A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
+      description: A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    __listOfOffering:
+      type: array
+      items:
+        $ref: '#/components/schemas/Offering'
+    ResourceSpecification:
+      type: object
+      required:
+      - ResourceType
+      properties:
+        ReservedBitrate:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: reservedBitrate
+            description: The amount of outbound bandwidth that is discounted in the offering.
+        ResourceType:
+          allOf:
+          - $ref: '#/components/schemas/ResourceType'
+          - xml:
+              name: resourceType
+            description: The type of resource and the unit that is being billed for.
+      description: A definition of what is being billed for, including the type and amount.
+    Reservation:
+      type: object
+      required:
+      - CurrencyCode
+      - ReservationState
+      - OfferingArn
+      - ReservationArn
+      - Start
+      - OfferingDescription
+      - ReservationName
+      - End
+      - Duration
+      - DurationUnits
+      - PricePerUnit
+      - ResourceSpecification
+      - PriceUnits
+      properties:
+        CurrencyCode:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: currencyCode
+            description: The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
+        Duration:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: duration
+            description: The length of time that this reservation is active. MediaConnect defines this value in the offering.
+        DurationUnits:
+          allOf:
+          - $ref: '#/components/schemas/DurationUnits'
+          - xml:
+              name: durationUnits
+            description: The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
+        End:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: end
+            description: The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
+        OfferingArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: offeringArn
+            description: The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+        OfferingDescription:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: offeringDescription
+            description: A description of the offering. MediaConnect defines this value in the offering.
+        PricePerUnit:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: pricePerUnit
+            description: The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
+        PriceUnits:
+          allOf:
+          - $ref: '#/components/schemas/PriceUnits'
+          - xml:
+              name: priceUnits
+            description: The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
+        ReservationArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: reservationArn
+            description: The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
+        ReservationName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: reservationName
+            description: The name that you assigned to the reservation when you purchased the offering.
+        ReservationState:
+          allOf:
+          - $ref: '#/components/schemas/ReservationState'
+          - xml:
+              name: reservationState
+            description: The status of your reservation.
+        ResourceSpecification:
+          allOf:
+          - $ref: '#/components/schemas/ResourceSpecification'
+          - xml:
+              name: resourceSpecification
+            description: A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
+        Start:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: start
+            description: The day and time that the reservation becomes active. You set this value when you purchase the offering.
+      description: A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
+    __integer:
+      type: integer
+    ReservationState:
+      type: string
+      enum:
+      - ACTIVE
+      - EXPIRED
+      - PROCESSING
+      - CANCELED
+    InternalServerErrorException: {}
+    PurchaseOfferingResponse:
+      type: object
+      properties:
+        Reservation:
+          allOf:
+          - $ref: '#/components/schemas/Reservation'
+          - xml:
+              name: reservation
+    ResourceType:
+      type: string
+      enum:
+      - Mbps_Outbound_Bandwidth
+    PriceUnits:
+      type: string
+      enum:
+      - HOURLY
+    ForbiddenException: {}
+    DescribeOfferingResponse:
+      type: object
+      properties:
+        Offering:
+          allOf:
+          - $ref: '#/components/schemas/Offering'
+          - xml:
+              name: offering
+    BadRequestException: {}
+    NotFoundException: {}
+    ServiceUnavailableException: {}
+    TooManyRequestsException: {}
+    __string:
+      type: string
+    DurationUnits:
+      type: string
+      enum:
+      - MONTHS
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mediaconnect/
+x-hasEquivalentPaths: true

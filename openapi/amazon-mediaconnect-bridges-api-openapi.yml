@@ -1,0 +1,2660 @@
+openapi: 3.0.0
+info:
+  version: 2018-11-14
+  x-release: v4
+  title: AWS MediaConnect Bridges API
+  description: API for AWS Elemental MediaConnect
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: mediaconnect
+  x-aws-signingName: mediaconnect
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediaconnect-2018-11-14.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://mediaconnect.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS MediaConnect multi-region endpoint
+- url: https://mediaconnect.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS MediaConnect multi-region endpoint
+- url: http://mediaconnect.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS MediaConnect endpoint for China (Beijing) and China (Ningxia)
+- url: https://mediaconnect.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS MediaConnect endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Bridges
+paths:
+  /v1/bridges/{bridgeArn}/outputs:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: AddBridgeOutputs
+      description: Adds outputs to an existing bridge.
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddBridgeOutputsResponse'
+              examples:
+                AddBridgeOutputs202Example:
+                  summary: Default AddBridgeOutputs 202 response
+                  x-microcks-default: true
+                  value:
+                    BridgeArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+                    Outputs: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                AddBridgeOutputs480Example:
+                  summary: Default AddBridgeOutputs 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                AddBridgeOutputs481Example:
+                  summary: Default AddBridgeOutputs 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                AddBridgeOutputs482Example:
+                  summary: Default AddBridgeOutputs 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                AddBridgeOutputs483Example:
+                  summary: Default AddBridgeOutputs 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                AddBridgeOutputs484Example:
+                  summary: Default AddBridgeOutputs 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                AddBridgeOutputs485Example:
+                  summary: Default AddBridgeOutputs 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                AddBridgeOutputs486Example:
+                  summary: Default AddBridgeOutputs 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The ARN of the bridge that you want to update.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - outputs
+              properties:
+                outputs:
+                  description: The outputs that you want to add to this bridge.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/AddBridgeOutputRequest'
+      summary: Amazon MediaConnect Add Bridge Outputs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+  /v1/bridges/{bridgeArn}/sources:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: AddBridgeSources
+      description: Adds sources to an existing bridge.
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddBridgeSourcesResponse'
+              examples:
+                AddBridgeSources202Example:
+                  summary: Default AddBridgeSources 202 response
+                  x-microcks-default: true
+                  value:
+                    BridgeArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+                    Sources: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                AddBridgeSources480Example:
+                  summary: Default AddBridgeSources 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                AddBridgeSources481Example:
+                  summary: Default AddBridgeSources 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                AddBridgeSources482Example:
+                  summary: Default AddBridgeSources 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                AddBridgeSources483Example:
+                  summary: Default AddBridgeSources 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                AddBridgeSources484Example:
+                  summary: Default AddBridgeSources 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                AddBridgeSources485Example:
+                  summary: Default AddBridgeSources 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                AddBridgeSources486Example:
+                  summary: Default AddBridgeSources 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The ARN of the bridge that you want to update.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - sources
+              properties:
+                sources:
+                  description: The sources that you want to add to this bridge.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/AddBridgeSourceRequest'
+      summary: Amazon MediaConnect Add Bridge Sources
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+  /v1/bridges:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateBridge
+      description: Creates a new bridge. The request must include one source.
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateBridgeResponse'
+              examples:
+                CreateBridge201Example:
+                  summary: Default CreateBridge 201 response
+                  x-microcks-default: true
+                  value:
+                    Bridge: example-value
+        '480':
+          description: CreateBridge420Exception
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateBridge420Exception'
+              examples:
+                CreateBridge480Example:
+                  summary: Default CreateBridge 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                CreateBridge481Example:
+                  summary: Default CreateBridge 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                CreateBridge482Example:
+                  summary: Default CreateBridge 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                CreateBridge483Example:
+                  summary: Default CreateBridge 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                CreateBridge484Example:
+                  summary: Default CreateBridge 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                CreateBridge485Example:
+                  summary: Default CreateBridge 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                CreateBridge486Example:
+                  summary: Default CreateBridge 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              - placementArn
+              - sources
+              properties:
+                egressGatewayBridge:
+                  description: Create a bridge with the egress bridge type. An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.
+                  type: object
+                  properties:
+                    MaxBitrate:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: maxBitrate
+                        description: The maximum expected bitrate (in bps).
+                ingressGatewayBridge:
+                  description: Create a bridge with the ingress bridge type. An ingress bridge is a ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.
+                  type: object
+                  properties:
+                    MaxBitrate:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: maxBitrate
+                        description: The maximum expected bitrate (in bps).
+                    MaxOutputs:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: maxOutputs
+                        description: The maximum number of expected outputs.
+                name:
+                  description: The name of the bridge. This name can not be modified after the bridge is created.
+                  type: string
+                outputs:
+                  description: The outputs that you want to add to this bridge.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/AddBridgeOutputRequest'
+                placementArn:
+                  description: The bridge placement Amazon Resource Number (ARN).
+                  type: string
+                sourceFailoverConfig:
+                  description: The settings for source failover.
+                  type: object
+                  properties:
+                    FailoverMode:
+                      allOf:
+                      - $ref: '#/components/schemas/FailoverMode'
+                      - xml:
+                          name: failoverMode
+                        description: The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+                    RecoveryWindow:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: recoveryWindow
+                        description: Search window time to look for dash-7 packets
+                    SourcePriority:
+                      allOf:
+                      - $ref: '#/components/schemas/SourcePriority'
+                      - xml:
+                          name: sourcePriority
+                        description: The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+                    State:
+                      allOf:
+                      - $ref: '#/components/schemas/State'
+                      - xml:
+                          name: state
+                sources:
+                  description: The sources that you want to add to this bridge.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/AddBridgeSourceRequest'
+      summary: Amazon MediaConnect Create Bridge
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+    get:
+      operationId: ListBridges
+      description: Displays a list of bridges that are associated with this account and an optionally specified Arn. This request returns a paginated result.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListBridgesResponse'
+              examples:
+                ListBridges200Example:
+                  summary: Default ListBridges 200 response
+                  x-microcks-default: true
+                  value:
+                    Bridges: example-value
+                    NextToken: example-value
+        '480':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                ListBridges480Example:
+                  summary: Default ListBridges 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                ListBridges481Example:
+                  summary: Default ListBridges 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                ListBridges482Example:
+                  summary: Default ListBridges 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                ListBridges483Example:
+                  summary: Default ListBridges 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                ListBridges484Example:
+                  summary: Default ListBridges 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: filterArn
+        in: query
+        required: false
+        description: Filter the list results to display only the bridges associated with the selected Amazon Resource Name (ARN).
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      - name: maxResults
+        in: query
+        required: false
+        description: The maximum number of results to return per API request. For example, you submit a ListBridges request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000
+        example: 1
+      - name: nextToken
+        in: query
+        required: false
+        description: The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
+        schema:
+          type: string
+        example: example-value
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+        example: example-value
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+        example: example-value
+      summary: Amazon MediaConnect List Bridges
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+  /v1/bridges/{bridgeArn}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteBridge
+      description: Deletes a bridge. Before you can delete a bridge, you must stop the bridge.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteBridgeResponse'
+              examples:
+                DeleteBridge200Example:
+                  summary: Default DeleteBridge 200 response
+                  x-microcks-default: true
+                  value:
+                    BridgeArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                DeleteBridge480Example:
+                  summary: Default DeleteBridge 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                DeleteBridge481Example:
+                  summary: Default DeleteBridge 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                DeleteBridge482Example:
+                  summary: Default DeleteBridge 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                DeleteBridge483Example:
+                  summary: Default DeleteBridge 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DeleteBridge484Example:
+                  summary: Default DeleteBridge 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                DeleteBridge485Example:
+                  summary: Default DeleteBridge 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DeleteBridge486Example:
+                  summary: Default DeleteBridge 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The ARN of the bridge that you want to delete.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      summary: Amazon MediaConnect Delete Bridge
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+    get:
+      operationId: DescribeBridge
+      description: Displays the details of a bridge.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeBridgeResponse'
+              examples:
+                DescribeBridge200Example:
+                  summary: Default DescribeBridge 200 response
+                  x-microcks-default: true
+                  value:
+                    Bridge: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                DescribeBridge480Example:
+                  summary: Default DescribeBridge 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                DescribeBridge481Example:
+                  summary: Default DescribeBridge 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                DescribeBridge482Example:
+                  summary: Default DescribeBridge 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                DescribeBridge483Example:
+                  summary: Default DescribeBridge 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DescribeBridge484Example:
+                  summary: Default DescribeBridge 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                DescribeBridge485Example:
+                  summary: Default DescribeBridge 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DescribeBridge486Example:
+                  summary: Default DescribeBridge 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The ARN of the bridge that you want to describe.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      summary: Amazon MediaConnect Describe Bridge
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+    put:
+      operationId: UpdateBridge
+      description: Updates the bridge
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateBridgeResponse'
+              examples:
+                UpdateBridge202Example:
+                  summary: Default UpdateBridge 202 response
+                  x-microcks-default: true
+                  value:
+                    Bridge: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                UpdateBridge480Example:
+                  summary: Default UpdateBridge 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                UpdateBridge481Example:
+                  summary: Default UpdateBridge 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                UpdateBridge482Example:
+                  summary: Default UpdateBridge 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                UpdateBridge483Example:
+                  summary: Default UpdateBridge 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                UpdateBridge484Example:
+                  summary: Default UpdateBridge 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                UpdateBridge485Example:
+                  summary: Default UpdateBridge 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                UpdateBridge486Example:
+                  summary: Default UpdateBridge 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The Amazon Resource Number (ARN) of the bridge that you want to update.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                egressGatewayBridge:
+                  description: ''
+                  type: object
+                  properties:
+                    MaxBitrate:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: maxBitrate
+                        description: Update an existing egress-type bridge.
+                ingressGatewayBridge:
+                  description: ''
+                  type: object
+                  properties:
+                    MaxBitrate:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: maxBitrate
+                        description: The maximum expected bitrate (in bps).
+                    MaxOutputs:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: maxOutputs
+                        description: The maximum number of expected outputs.
+                sourceFailoverConfig:
+                  description: The settings for source failover.
+                  type: object
+                  properties:
+                    FailoverMode:
+                      allOf:
+                      - $ref: '#/components/schemas/FailoverMode'
+                      - xml:
+                          name: failoverMode
+                        description: The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+                    RecoveryWindow:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: recoveryWindow
+                        description: Recovery window time to look for dash-7 packets
+                    SourcePriority:
+                      allOf:
+                      - $ref: '#/components/schemas/SourcePriority'
+                      - xml:
+                          name: sourcePriority
+                        description: The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+                    State:
+                      allOf:
+                      - $ref: '#/components/schemas/State'
+                      - xml:
+                          name: state
+      summary: Amazon MediaConnect Update Bridge
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+  /v1/bridges/{bridgeArn}/outputs/{outputName}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: RemoveBridgeOutput
+      description: Removes an output from a bridge.
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RemoveBridgeOutputResponse'
+              examples:
+                RemoveBridgeOutput202Example:
+                  summary: Default RemoveBridgeOutput 202 response
+                  x-microcks-default: true
+                  value:
+                    BridgeArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+                    OutputName: example-flow
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                RemoveBridgeOutput480Example:
+                  summary: Default RemoveBridgeOutput 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                RemoveBridgeOutput481Example:
+                  summary: Default RemoveBridgeOutput 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                RemoveBridgeOutput482Example:
+                  summary: Default RemoveBridgeOutput 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                RemoveBridgeOutput483Example:
+                  summary: Default RemoveBridgeOutput 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                RemoveBridgeOutput484Example:
+                  summary: Default RemoveBridgeOutput 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                RemoveBridgeOutput485Example:
+                  summary: Default RemoveBridgeOutput 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                RemoveBridgeOutput486Example:
+                  summary: Default RemoveBridgeOutput 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The ARN of the bridge that you want to update.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      - name: outputName
+        in: path
+        required: true
+        description: The name of the bridge output that you want to remove.
+        schema:
+          type: string
+        example: example-flow
+      summary: Amazon MediaConnect Remove Bridge Output
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+    put:
+      operationId: UpdateBridgeOutput
+      description: Updates an existing bridge output.
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateBridgeOutputResponse'
+              examples:
+                UpdateBridgeOutput202Example:
+                  summary: Default UpdateBridgeOutput 202 response
+                  x-microcks-default: true
+                  value:
+                    BridgeArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+                    Output: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                UpdateBridgeOutput480Example:
+                  summary: Default UpdateBridgeOutput 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                UpdateBridgeOutput481Example:
+                  summary: Default UpdateBridgeOutput 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                UpdateBridgeOutput482Example:
+                  summary: Default UpdateBridgeOutput 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                UpdateBridgeOutput483Example:
+                  summary: Default UpdateBridgeOutput 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                UpdateBridgeOutput484Example:
+                  summary: Default UpdateBridgeOutput 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                UpdateBridgeOutput485Example:
+                  summary: Default UpdateBridgeOutput 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                UpdateBridgeOutput486Example:
+                  summary: Default UpdateBridgeOutput 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The ARN of the bridge that you want to update.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      - name: outputName
+        in: path
+        required: true
+        description: The name of the bridge output that you want to update.
+        schema:
+          type: string
+        example: example-flow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                networkOutput:
+                  description: Update an existing network output.
+                  type: object
+                  properties:
+                    IpAddress:
+                      allOf:
+                      - $ref: '#/components/schemas/__string'
+                      - xml:
+                          name: ipAddress
+                        description: The network output IP Address.
+                    NetworkName:
+                      allOf:
+                      - $ref: '#/components/schemas/__string'
+                      - xml:
+                          name: networkName
+                        description: The network output's gateway network name.
+                    Port:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: port
+                        description: The network output port.
+                    Protocol:
+                      allOf:
+                      - $ref: '#/components/schemas/Protocol'
+                      - xml:
+                          name: protocol
+                        description: The network output protocol.
+                    Ttl:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: ttl
+                        description: The network output TTL.
+      summary: Amazon MediaConnect Update Bridge Output
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+  /v1/bridges/{bridgeArn}/sources/{sourceName}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: RemoveBridgeSource
+      description: Removes a source from a bridge.
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RemoveBridgeSourceResponse'
+              examples:
+                RemoveBridgeSource202Example:
+                  summary: Default RemoveBridgeSource 202 response
+                  x-microcks-default: true
+                  value:
+                    BridgeArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+                    SourceName: example-flow
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                RemoveBridgeSource480Example:
+                  summary: Default RemoveBridgeSource 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                RemoveBridgeSource481Example:
+                  summary: Default RemoveBridgeSource 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                RemoveBridgeSource482Example:
+                  summary: Default RemoveBridgeSource 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                RemoveBridgeSource483Example:
+                  summary: Default RemoveBridgeSource 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                RemoveBridgeSource484Example:
+                  summary: Default RemoveBridgeSource 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                RemoveBridgeSource485Example:
+                  summary: Default RemoveBridgeSource 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                RemoveBridgeSource486Example:
+                  summary: Default RemoveBridgeSource 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The ARN of the bridge that you want to update.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      - name: sourceName
+        in: path
+        required: true
+        description: The name of the bridge source that you want to remove.
+        schema:
+          type: string
+        example: example-flow
+      summary: Amazon MediaConnect Remove Bridge Source
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+    put:
+      operationId: UpdateBridgeSource
+      description: Updates an existing bridge source.
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateBridgeSourceResponse'
+              examples:
+                UpdateBridgeSource202Example:
+                  summary: Default UpdateBridgeSource 202 response
+                  x-microcks-default: true
+                  value:
+                    BridgeArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+                    Source: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                UpdateBridgeSource480Example:
+                  summary: Default UpdateBridgeSource 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                UpdateBridgeSource481Example:
+                  summary: Default UpdateBridgeSource 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                UpdateBridgeSource482Example:
+                  summary: Default UpdateBridgeSource 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                UpdateBridgeSource483Example:
+                  summary: Default UpdateBridgeSource 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                UpdateBridgeSource484Example:
+                  summary: Default UpdateBridgeSource 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                UpdateBridgeSource485Example:
+                  summary: Default UpdateBridgeSource 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                UpdateBridgeSource486Example:
+                  summary: Default UpdateBridgeSource 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The ARN of the bridge that you want to update.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      - name: sourceName
+        in: path
+        required: true
+        description: The name of the source that you want to update.
+        schema:
+          type: string
+        example: example-flow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                flowSource:
+                  description: Update the flow source of the bridge.
+                  type: object
+                  properties:
+                    FlowArn:
+                      allOf:
+                      - $ref: '#/components/schemas/__string'
+                      - pattern: ^arn:.+:mediaconnect.+:flow:.+$
+                        xml:
+                          name: flowArn
+                        description: The ARN of the cloud flow to use as a source of this bridge.
+                    FlowVpcInterfaceAttachment:
+                      allOf:
+                      - $ref: '#/components/schemas/VpcInterfaceAttachment'
+                      - xml:
+                          name: flowVpcInterfaceAttachment
+                        description: The name of the VPC interface attachment to use for this source.
+                networkSource:
+                  description: Update the network source of the bridge.
+                  type: object
+                  properties:
+                    MulticastIp:
+                      allOf:
+                      - $ref: '#/components/schemas/__string'
+                      - xml:
+                          name: multicastIp
+                        description: The network source multicast IP.
+                    NetworkName:
+                      allOf:
+                      - $ref: '#/components/schemas/__string'
+                      - xml:
+                          name: networkName
+                        description: The network source's gateway network name.
+                    Port:
+                      allOf:
+                      - $ref: '#/components/schemas/__integer'
+                      - xml:
+                          name: port
+                        description: The network source port.
+                    Protocol:
+                      allOf:
+                      - $ref: '#/components/schemas/Protocol'
+                      - xml:
+                          name: protocol
+                        description: The network source protocol.
+      summary: Amazon MediaConnect Update Bridge Source
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+  /v1/bridges/{bridgeArn}/state:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    put:
+      operationId: UpdateBridgeState
+      description: Updates the bridge state
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateBridgeStateResponse'
+              examples:
+                UpdateBridgeState202Example:
+                  summary: Default UpdateBridgeState 202 response
+                  x-microcks-default: true
+                  value:
+                    BridgeArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+                    DesiredState: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                UpdateBridgeState480Example:
+                  summary: Default UpdateBridgeState 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                UpdateBridgeState481Example:
+                  summary: Default UpdateBridgeState 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                UpdateBridgeState482Example:
+                  summary: Default UpdateBridgeState 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                UpdateBridgeState483Example:
+                  summary: Default UpdateBridgeState 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                UpdateBridgeState484Example:
+                  summary: Default UpdateBridgeState 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                UpdateBridgeState485Example:
+                  summary: Default UpdateBridgeState 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                UpdateBridgeState486Example:
+                  summary: Default UpdateBridgeState 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: bridgeArn
+        in: path
+        required: true
+        description: The ARN of the bridge that you want to update.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - desiredState
+              properties:
+                desiredState:
+                  description: ''
+                  type: string
+                  enum:
+                  - ACTIVE
+                  - STANDBY
+                  - DELETED
+      summary: Amazon MediaConnect Update Bridge State
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Bridges
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    SourcePriority:
+      type: object
+      properties:
+        PrimarySource:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: primarySource
+            description: The name of the source you choose as the primary source for this flow.
+      description: The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+    AddBridgeSourcesResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        Sources:
+          allOf:
+          - $ref: '#/components/schemas/__listOfBridgeSource'
+          - xml:
+              name: sources
+            description: The sources that you added to this bridge.
+    AddBridgeFlowSourceRequest:
+      type: object
+      required:
+      - FlowArn
+      - Name
+      properties:
+        FlowArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - pattern: ^arn:.+:mediaconnect.+:flow:.+$
+            xml:
+              name: flowArn
+            description: The Amazon Resource Number (ARN) of the cloud flow to use as a source of this bridge.
+        FlowVpcInterfaceAttachment:
+          allOf:
+          - $ref: '#/components/schemas/VpcInterfaceAttachment'
+          - xml:
+              name: flowVpcInterfaceAttachment
+            description: The name of the VPC interface attachment to use for this source.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.
+      description: Add a flow source to an existing bridge.
+    BridgeOutput:
+      type: object
+      properties:
+        FlowOutput:
+          allOf:
+          - $ref: '#/components/schemas/BridgeFlowOutput'
+          - xml:
+              name: flowOutput
+        NetworkOutput:
+          allOf:
+          - $ref: '#/components/schemas/BridgeNetworkOutput'
+          - xml:
+              name: networkOutput
+      description: The output of the bridge.
+    IngressGatewayBridge:
+      type: object
+      required:
+      - MaxOutputs
+      - MaxBitrate
+      properties:
+        InstanceId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: instanceId
+            description: The ID of the instance running this bridge.
+        MaxBitrate:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: maxBitrate
+            description: The maximum expected bitrate (in bps) of the ingress bridge.
+        MaxOutputs:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: maxOutputs
+            description: The maximum number of outputs on the ingress bridge.
+    AddBridgeOutputsResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        Outputs:
+          allOf:
+          - $ref: '#/components/schemas/__listOfBridgeOutput'
+          - xml:
+              name: outputs
+            description: The outputs that you added to this bridge.
+    UpdateBridgeOutputResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        Output:
+          allOf:
+          - $ref: '#/components/schemas/BridgeOutput'
+          - xml:
+              name: output
+            description: The output that you updated.
+    DesiredState:
+      type: string
+      enum:
+      - ACTIVE
+      - STANDBY
+      - DELETED
+    ListedBridge:
+      type: object
+      required:
+      - BridgeArn
+      - BridgeState
+      - PlacementArn
+      - BridgeType
+      - Name
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The ARN of the bridge.
+        BridgeState:
+          allOf:
+          - $ref: '#/components/schemas/BridgeState'
+          - xml:
+              name: bridgeState
+        BridgeType:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeType
+            description: The type of the bridge.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the bridge.
+        PlacementArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: placementArn
+            description: The ARN of the gateway associated with the bridge.
+      description: Displays details of the selected bridge.
+    FailoverConfig:
+      type: object
+      properties:
+        FailoverMode:
+          allOf:
+          - $ref: '#/components/schemas/FailoverMode'
+          - xml:
+              name: failoverMode
+            description: The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+        RecoveryWindow:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: recoveryWindow
+            description: Search window time to look for dash-7 packets
+        SourcePriority:
+          allOf:
+          - $ref: '#/components/schemas/SourcePriority'
+          - xml:
+              name: sourcePriority
+            description: The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/State'
+          - xml:
+              name: state
+      description: The settings for source failover.
+    UpdateBridgeStateResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        DesiredState:
+          allOf:
+          - $ref: '#/components/schemas/DesiredState'
+          - xml:
+              name: desiredState
+            description: The state of the bridge. ACTIVE or STANDBY.
+    RemoveBridgeSourceResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+        SourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: sourceName
+    __listOfMessageDetail:
+      type: array
+      items:
+        $ref: '#/components/schemas/MessageDetail'
+    __integer:
+      type: integer
+    CreateBridgeResponse:
+      type: object
+      properties:
+        Bridge:
+          allOf:
+          - $ref: '#/components/schemas/Bridge'
+          - xml:
+              name: bridge
+    __listOfListedBridge:
+      type: array
+      items:
+        $ref: '#/components/schemas/ListedBridge'
+    MessageDetail:
+      type: object
+      required:
+      - Message
+      - Code
+      properties:
+        Code:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: code
+            description: The error code.
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: message
+            description: The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
+        ResourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: resourceName
+            description: The name of the resource.
+    AddBridgeSourceRequest:
+      type: object
+      properties:
+        FlowSource:
+          allOf:
+          - $ref: '#/components/schemas/AddBridgeFlowSourceRequest'
+          - xml:
+              name: flowSource
+        NetworkSource:
+          allOf:
+          - $ref: '#/components/schemas/AddBridgeNetworkSourceRequest'
+          - xml:
+              name: networkSource
+      description: Add a source to an existing bridge.
+    __listOfBridgeSource:
+      type: array
+      items:
+        $ref: '#/components/schemas/BridgeSource'
+    BridgeNetworkSource:
+      type: object
+      required:
+      - NetworkName
+      - MulticastIp
+      - Port
+      - Protocol
+      - Name
+      properties:
+        MulticastIp:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: multicastIp
+            description: The network source multicast IP.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the network source.
+        NetworkName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: networkName
+            description: The network source's gateway network name.
+        Port:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: port
+            description: The network source port.
+        Protocol:
+          allOf:
+          - $ref: '#/components/schemas/Protocol'
+          - xml:
+              name: protocol
+            description: The network source protocol.
+      description: The source of the bridge. A network source originates at your premises.
+    BridgeFlowOutput:
+      type: object
+      required:
+      - FlowSourceArn
+      - FlowArn
+      - Name
+      properties:
+        FlowArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: flowArn
+            description: The Amazon Resource Number (ARN) of the cloud flow.
+        FlowSourceArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: flowSourceArn
+            description: The Amazon Resource Number (ARN) of the flow source.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the bridge's output.
+      description: The output of the bridge. A flow output is delivered to the AWS cloud.
+    DeleteBridgeResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the deleted bridge.
+    UpdateBridgeSourceResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/BridgeSource'
+          - xml:
+              name: source
+    ListBridgesResponse:
+      type: object
+      properties:
+        Bridges:
+          allOf:
+          - $ref: '#/components/schemas/__listOfListedBridge'
+          - xml:
+              name: bridges
+            description: A list of bridge summaries.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
+    RemoveBridgeOutputResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+        OutputName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: outputName
+    InternalServerErrorException: {}
+    AddBridgeNetworkOutputRequest:
+      type: object
+      required:
+      - NetworkName
+      - Port
+      - IpAddress
+      - Protocol
+      - Ttl
+      - Name
+      properties:
+        IpAddress:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: ipAddress
+            description: The network output IP Address.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The network output name. This name is used to reference the output and must be unique among outputs in this bridge.
+        NetworkName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: networkName
+            description: The network output's gateway network name.
+        Port:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: port
+            description: The network output port.
+        Protocol:
+          allOf:
+          - $ref: '#/components/schemas/Protocol'
+          - xml:
+              name: protocol
+            description: The network output protocol.
+        Ttl:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: ttl
+            description: The network output TTL.
+      description: Add a network output to an existing bridge.
+    DescribeBridgeResponse:
+      type: object
+      properties:
+        Bridge:
+          allOf:
+          - $ref: '#/components/schemas/Bridge'
+          - xml:
+              name: bridge
+    __listOfBridgeOutput:
+      type: array
+      items:
+        $ref: '#/components/schemas/BridgeOutput'
+    AddBridgeOutputRequest:
+      type: object
+      properties:
+        NetworkOutput:
+          allOf:
+          - $ref: '#/components/schemas/AddBridgeNetworkOutputRequest'
+          - xml:
+              name: networkOutput
+      description: Add an output to a bridge.
+    BridgeState:
+      type: string
+      enum:
+      - CREATING
+      - STANDBY
+      - STARTING
+      - DEPLOYING
+      - ACTIVE
+      - STOPPING
+      - DELETING
+      - DELETED
+      - START_FAILED
+      - START_PENDING
+      - STOP_FAILED
+      - UPDATING
+    State:
+      type: string
+      enum:
+      - ENABLED
+      - DISABLED
+    BridgeSource:
+      type: object
+      properties:
+        FlowSource:
+          allOf:
+          - $ref: '#/components/schemas/BridgeFlowSource'
+          - xml:
+              name: flowSource
+        NetworkSource:
+          allOf:
+          - $ref: '#/components/schemas/BridgeNetworkSource'
+          - xml:
+              name: networkSource
+      description: The bridge's source.
+    Bridge:
+      type: object
+      required:
+      - BridgeArn
+      - BridgeState
+      - PlacementArn
+      - Name
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        BridgeMessages:
+          allOf:
+          - $ref: '#/components/schemas/__listOfMessageDetail'
+          - xml:
+              name: bridgeMessages
+        BridgeState:
+          allOf:
+          - $ref: '#/components/schemas/BridgeState'
+          - xml:
+              name: bridgeState
+        EgressGatewayBridge:
+          allOf:
+          - $ref: '#/components/schemas/EgressGatewayBridge'
+          - xml:
+              name: egressGatewayBridge
+        IngressGatewayBridge:
+          allOf:
+          - $ref: '#/components/schemas/IngressGatewayBridge'
+          - xml:
+              name: ingressGatewayBridge
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the bridge.
+        Outputs:
+          allOf:
+          - $ref: '#/components/schemas/__listOfBridgeOutput'
+          - xml:
+              name: outputs
+            description: The outputs on this bridge.
+        PlacementArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: placementArn
+            description: The placement Amazon Resource Number (ARN) of the bridge.
+        SourceFailoverConfig:
+          allOf:
+          - $ref: '#/components/schemas/FailoverConfig'
+          - xml:
+              name: sourceFailoverConfig
+        Sources:
+          allOf:
+          - $ref: '#/components/schemas/__listOfBridgeSource'
+          - xml:
+              name: sources
+            description: The sources on this bridge.
+      description: A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
+    AddBridgeNetworkSourceRequest:
+      type: object
+      required:
+      - NetworkName
+      - MulticastIp
+      - Port
+      - Protocol
+      - Name
+      properties:
+        MulticastIp:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: multicastIp
+            description: The network source multicast IP.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
+        NetworkName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: networkName
+            description: The network source's gateway network name.
+        Port:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: port
+            description: The network source port.
+        Protocol:
+          allOf:
+          - $ref: '#/components/schemas/Protocol'
+          - xml:
+              name: protocol
+            description: The network source protocol.
+      description: Add a network source to an existing bridge.
+    ForbiddenException: {}
+    ConflictException: {}
+    BadRequestException: {}
+    FailoverMode:
+      type: string
+      enum:
+      - MERGE
+      - FAILOVER
+    NotFoundException: {}
+    VpcInterfaceAttachment:
+      type: object
+      properties:
+        VpcInterfaceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: vpcInterfaceName
+            description: The name of the VPC interface to use for this resource.
+      description: The settings for attaching a VPC interface to an resource.
+    BridgeFlowSource:
+      type: object
+      required:
+      - FlowArn
+      - Name
+      properties:
+        FlowArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: flowArn
+            description: The ARN of the cloud flow used as a source of this bridge.
+        FlowVpcInterfaceAttachment:
+          allOf:
+          - $ref: '#/components/schemas/VpcInterfaceAttachment'
+          - xml:
+              name: flowVpcInterfaceAttachment
+            description: The name of the VPC interface attachment to use for this source.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the flow source.
+        OutputArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: outputArn
+            description: The Amazon Resource Number (ARN) of the output.
+      description: The source of the bridge. A flow source originates in MediaConnect as an existing cloud flow.
+    ServiceUnavailableException: {}
+    TooManyRequestsException: {}
+    BridgeNetworkOutput:
+      type: object
+      required:
+      - NetworkName
+      - Port
+      - IpAddress
+      - Protocol
+      - Ttl
+      - Name
+      properties:
+        IpAddress:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: ipAddress
+            description: The network output IP Address.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The network output name.
+        NetworkName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: networkName
+            description: The network output's gateway network name.
+        Port:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: port
+            description: The network output port.
+        Protocol:
+          allOf:
+          - $ref: '#/components/schemas/Protocol'
+          - xml:
+              name: protocol
+            description: The network output protocol.
+        Ttl:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: ttl
+            description: The network output TTL.
+      description: The output of the bridge. A network output is delivered to your premises.
+    __string:
+      type: string
+    UpdateBridgeResponse:
+      type: object
+      properties:
+        Bridge:
+          allOf:
+          - $ref: '#/components/schemas/Bridge'
+          - xml:
+              name: bridge
+    CreateBridge420Exception: {}
+    Protocol:
+      type: string
+      enum:
+      - zixi-push
+      - rtp-fec
+      - rtp
+      - zixi-pull
+      - rist
+      - st2110-jpegxs
+      - cdi
+      - srt-listener
+      - srt-caller
+      - fujitsu-qos
+      - udp
+    EgressGatewayBridge:
+      type: object
+      required:
+      - MaxBitrate
+      properties:
+        InstanceId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: instanceId
+            description: The ID of the instance running this bridge.
+        MaxBitrate:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: maxBitrate
+            description: The maximum expected bitrate (in bps) of the egress bridge.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mediaconnect/
+x-hasEquivalentPaths: true

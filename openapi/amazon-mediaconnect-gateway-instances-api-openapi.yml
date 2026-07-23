@@ -1,0 +1,882 @@
+openapi: 3.0.0
+info:
+  version: 2018-11-14
+  x-release: v4
+  title: AWS MediaConnect Bridges Gateway Instances API
+  description: API for AWS Elemental MediaConnect
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: mediaconnect
+  x-aws-signingName: mediaconnect
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediaconnect-2018-11-14.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://mediaconnect.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS MediaConnect multi-region endpoint
+- url: https://mediaconnect.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS MediaConnect multi-region endpoint
+- url: http://mediaconnect.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS MediaConnect endpoint for China (Beijing) and China (Ningxia)
+- url: https://mediaconnect.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS MediaConnect endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Gateway Instances
+paths:
+  /v1/gateway-instances/{gatewayInstanceArn}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeregisterGatewayInstance
+      description: Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped. If you want to deregister an instance without stopping the bridges, you must use the --force option.
+      responses:
+        '202':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeregisterGatewayInstanceResponse'
+              examples:
+                DeregisterGatewayInstance202Example:
+                  summary: Default DeregisterGatewayInstance 202 response
+                  x-microcks-default: true
+                  value:
+                    GatewayInstanceArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+                    InstanceState: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                DeregisterGatewayInstance480Example:
+                  summary: Default DeregisterGatewayInstance 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                DeregisterGatewayInstance481Example:
+                  summary: Default DeregisterGatewayInstance 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                DeregisterGatewayInstance482Example:
+                  summary: Default DeregisterGatewayInstance 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                DeregisterGatewayInstance483Example:
+                  summary: Default DeregisterGatewayInstance 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DeregisterGatewayInstance484Example:
+                  summary: Default DeregisterGatewayInstance 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                DeregisterGatewayInstance485Example:
+                  summary: Default DeregisterGatewayInstance 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DeregisterGatewayInstance486Example:
+                  summary: Default DeregisterGatewayInstance 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: force
+        in: query
+        required: false
+        description: Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
+        schema:
+          type: boolean
+        example: true
+      - name: gatewayInstanceArn
+        in: path
+        required: true
+        description: The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      summary: Amazon MediaConnect Deregister Gateway Instance
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Gateway Instances
+    get:
+      operationId: DescribeGatewayInstance
+      description: Displays the details of an instance.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeGatewayInstanceResponse'
+              examples:
+                DescribeGatewayInstance200Example:
+                  summary: Default DescribeGatewayInstance 200 response
+                  x-microcks-default: true
+                  value:
+                    GatewayInstance: example-value
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                DescribeGatewayInstance480Example:
+                  summary: Default DescribeGatewayInstance 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                DescribeGatewayInstance481Example:
+                  summary: Default DescribeGatewayInstance 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                DescribeGatewayInstance482Example:
+                  summary: Default DescribeGatewayInstance 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                DescribeGatewayInstance483Example:
+                  summary: Default DescribeGatewayInstance 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DescribeGatewayInstance484Example:
+                  summary: Default DescribeGatewayInstance 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                DescribeGatewayInstance485Example:
+                  summary: Default DescribeGatewayInstance 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DescribeGatewayInstance486Example:
+                  summary: Default DescribeGatewayInstance 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: gatewayInstanceArn
+        in: path
+        required: true
+        description: The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      summary: Amazon MediaConnect Describe Gateway Instance
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Gateway Instances
+    put:
+      operationId: UpdateGatewayInstance
+      description: Updates the configuration of an existing Gateway Instance.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateGatewayInstanceResponse'
+              examples:
+                UpdateGatewayInstance200Example:
+                  summary: Default UpdateGatewayInstance 200 response
+                  x-microcks-default: true
+                  value:
+                    BridgePlacement: example-value
+                    GatewayInstanceArn: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+        '480':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                UpdateGatewayInstance480Example:
+                  summary: Default UpdateGatewayInstance 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                UpdateGatewayInstance481Example:
+                  summary: Default UpdateGatewayInstance 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                UpdateGatewayInstance482Example:
+                  summary: Default UpdateGatewayInstance 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                UpdateGatewayInstance483Example:
+                  summary: Default UpdateGatewayInstance 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                UpdateGatewayInstance484Example:
+                  summary: Default UpdateGatewayInstance 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                UpdateGatewayInstance485Example:
+                  summary: Default UpdateGatewayInstance 485 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '486':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                UpdateGatewayInstance486Example:
+                  summary: Default UpdateGatewayInstance 486 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: gatewayInstanceArn
+        in: path
+        required: true
+        description: The Amazon Resource Name (ARN) of the instance that you want to update.
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bridgePlacement:
+                  description: The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+                  type: string
+                  enum:
+                  - AVAILABLE
+                  - LOCKED
+      summary: Amazon MediaConnect Update Gateway Instance
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Gateway Instances
+  /v1/gateway-instances:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListGatewayInstances
+      description: Displays a list of instances associated with the AWS account. This request returns a paginated result. You can use the filterArn property to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListGatewayInstancesResponse'
+              examples:
+                ListGatewayInstances200Example:
+                  summary: Default ListGatewayInstances 200 response
+                  x-microcks-default: true
+                  value:
+                    Instances: example-value
+                    NextToken: example-value
+        '480':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                ListGatewayInstances480Example:
+                  summary: Default ListGatewayInstances 480 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '481':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                ListGatewayInstances481Example:
+                  summary: Default ListGatewayInstances 481 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '482':
+          description: BadRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestException'
+              examples:
+                ListGatewayInstances482Example:
+                  summary: Default ListGatewayInstances 482 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '483':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                ListGatewayInstances483Example:
+                  summary: Default ListGatewayInstances 483 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+        '484':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                ListGatewayInstances484Example:
+                  summary: Default ListGatewayInstances 484 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+      parameters:
+      - name: filterArn
+        in: query
+        required: false
+        description: Filter the list results to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).
+        schema:
+          type: string
+        example: arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow
+      - name: maxResults
+        in: query
+        required: false
+        description: The maximum number of results to return per API request. For example, you submit a ListInstances request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000
+        example: 1
+      - name: nextToken
+        in: query
+        required: false
+        description: The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
+        schema:
+          type: string
+        example: example-value
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+        example: example-value
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+        example: example-value
+      summary: Amazon MediaConnect List Gateway Instances
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Gateway Instances
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    DescribeGatewayInstanceResponse:
+      type: object
+      properties:
+        GatewayInstance:
+          allOf:
+          - $ref: '#/components/schemas/GatewayInstance'
+          - xml:
+              name: gatewayInstance
+    __listOfMessageDetail:
+      type: array
+      items:
+        $ref: '#/components/schemas/MessageDetail'
+    __integer:
+      type: integer
+    BridgePlacement:
+      type: string
+      enum:
+      - AVAILABLE
+      - LOCKED
+    ListedGatewayInstance:
+      type: object
+      required:
+      - GatewayArn
+      - GatewayInstanceArn
+      - InstanceId
+      properties:
+        GatewayArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayArn
+            description: The Amazon Resource Name (ARN) of the gateway.
+        GatewayInstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayInstanceArn
+            description: The Amazon Resource Name (ARN) of the instance.
+        InstanceId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: instanceId
+            description: The managed instance ID generated by the SSM install. This will begin with "mi-".
+        InstanceState:
+          allOf:
+          - $ref: '#/components/schemas/InstanceState'
+          - xml:
+              name: instanceState
+            description: The status of the instance.
+      description: Provides a summary of an instance.
+    UpdateGatewayInstanceResponse:
+      type: object
+      properties:
+        BridgePlacement:
+          allOf:
+          - $ref: '#/components/schemas/BridgePlacement'
+          - xml:
+              name: bridgePlacement
+            description: The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+        GatewayInstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayInstanceArn
+            description: The Amazon Resource Name (ARN) of the instance.
+    DeregisterGatewayInstanceResponse:
+      type: object
+      properties:
+        GatewayInstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayInstanceArn
+            description: The Amazon Resource Name (ARN) of the instance.
+        InstanceState:
+          allOf:
+          - $ref: '#/components/schemas/InstanceState'
+          - xml:
+              name: instanceState
+            description: The status of the instance.
+    GatewayInstance:
+      type: object
+      required:
+      - GatewayArn
+      - InstanceState
+      - GatewayInstanceArn
+      - InstanceId
+      - RunningBridgeCount
+      - BridgePlacement
+      - ConnectionStatus
+      properties:
+        BridgePlacement:
+          allOf:
+          - $ref: '#/components/schemas/BridgePlacement'
+          - xml:
+              name: bridgePlacement
+            description: The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+        ConnectionStatus:
+          allOf:
+          - $ref: '#/components/schemas/ConnectionStatus'
+          - xml:
+              name: connectionStatus
+            description: The connection state of the instance.
+        GatewayArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayArn
+            description: The Amazon Resource Name (ARN) of the instance.
+        GatewayInstanceArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayInstanceArn
+            description: The Amazon Resource Name (ARN) of the gateway.
+        InstanceId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: instanceId
+            description: The managed instance ID generated by the SSM install. This will begin with "mi-".
+        InstanceMessages:
+          allOf:
+          - $ref: '#/components/schemas/__listOfMessageDetail'
+          - xml:
+              name: instanceMessages
+        InstanceState:
+          allOf:
+          - $ref: '#/components/schemas/InstanceState'
+          - xml:
+              name: instanceState
+            description: The status of the instance.
+        RunningBridgeCount:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: runningBridgeCount
+            description: The running bridge count.
+      description: The settings for an instance in a gateway.
+    ConnectionStatus:
+      type: string
+      enum:
+      - CONNECTED
+      - DISCONNECTED
+    InternalServerErrorException: {}
+    ListGatewayInstancesResponse:
+      type: object
+      properties:
+        Instances:
+          allOf:
+          - $ref: '#/components/schemas/__listOfListedGatewayInstance'
+          - xml:
+              name: instances
+            description: A list of instance summaries.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
+    ForbiddenException: {}
+    ConflictException: {}
+    BadRequestException: {}
+    NotFoundException: {}
+    __listOfListedGatewayInstance:
+      type: array
+      items:
+        $ref: '#/components/schemas/ListedGatewayInstance'
+    InstanceState:
+      type: string
+      enum:
+      - REGISTERING
+      - ACTIVE
+      - DEREGISTERING
+      - DEREGISTERED
+      - REGISTRATION_ERROR
+      - DEREGISTRATION_ERROR
+    ServiceUnavailableException: {}
+    TooManyRequestsException: {}
+    __string:
+      type: string
+    MessageDetail:
+      type: object
+      required:
+      - Message
+      - Code
+      properties:
+        Code:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: code
+            description: The error code.
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: message
+            description: The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
+        ResourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: resourceName
+            description: The name of the resource.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mediaconnect/
+x-hasEquivalentPaths: true
