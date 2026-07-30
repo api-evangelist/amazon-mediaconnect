@@ -5,7 +5,20 @@ description: AWS Elemental MediaConnect is a high-quality transport service for 
   live video workflows in the cloud with reliable transport of broadcast-quality content using protocols including Zixi, RIST,
   SRT, RTP, and RTP with FEC.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-mediaconnect.png
 tags:
 - AWS
 - Broadcasting
@@ -17,24 +30,159 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-mediaconnect:aws-elemental-mediaconnect-api
-  name: AWS Elemental MediaConnect API
-  description: The AWS Elemental MediaConnect API provides programmatic access to create and manage flows, sources, outputs,
-    entitlements, VPC interfaces, bridges, gateways, and media streams for reliable live video transport in the cloud.
+- aid: amazon-mediaconnect:amazon-mediaconnect-bridges-api
+  name: Amazon MediaConnect Bridges API
+  description: The Bridges API from Amazon MediaConnect — 7 operation(s) for bridges.
   humanURL: https://aws.amazon.com/mediaconnect/
   baseURL: https://mediaconnect.amazonaws.com
   tags:
-  - Broadcasting
-  - Live Video
-  - Media Transport
-  - Flows
   - Bridges
-  - Gateways
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-bridges-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediaconnect.yaml
+- aid: amazon-mediaconnect:amazon-mediaconnect-entitlements-api
+  name: Amazon MediaConnect Entitlements API
+  description: The Entitlements API from Amazon MediaConnect — 1 operation(s) for entitlements.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Entitlements
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-mediaconnect-openapi-original.yml
+    url: openapi/amazon-mediaconnect-entitlements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediaconnect.yaml
+- aid: amazon-mediaconnect:amazon-mediaconnect-flows-api
+  name: Amazon MediaConnect Flows API
+  description: The Flows API from Amazon MediaConnect — 14 operation(s) for flows.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Flows
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-flows-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediaconnect.yaml
+- aid: amazon-mediaconnect:amazon-mediaconnect-gateway-instances-api
+  name: Amazon MediaConnect Gateway Instances API
+  description: >-
+    The Gateway Instances API from Amazon MediaConnect — 2 operation(s) for gateway instances.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Gateway Instances
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-gateway-instances-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediaconnect.yaml
+- aid: amazon-mediaconnect:amazon-mediaconnect-gateways-api
+  name: Amazon MediaConnect Gateways API
+  description: The Gateways API from Amazon MediaConnect — 2 operation(s) for gateways.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Gateways
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-gateways-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediaconnect.yaml
+- aid: amazon-mediaconnect:amazon-mediaconnect-offerings-api
+  name: Amazon MediaConnect Offerings API
+  description: The Offerings API from Amazon MediaConnect — 2 operation(s) for offerings.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Offerings
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-offerings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediaconnect.yaml
+- aid: amazon-mediaconnect:amazon-mediaconnect-reservations-api
+  name: Amazon MediaConnect Reservations API
+  description: The Reservations API from Amazon MediaConnect — 2 operation(s) for reservations.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Reservations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-reservations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediaconnect.yaml
+- aid: amazon-mediaconnect:amazon-mediaconnect-tags-api
+  name: Amazon MediaConnect Tags API
+  description: The Tags API from Amazon MediaConnect — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
   - type: GettingStarted
     url: https://aws.amazon.com/mediaconnect/getting-started/
   - type: Pricing
@@ -44,6 +192,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-mediaconnect.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-mediaconnect/overview
 - type: AgenticAccess
   url: agentic-access/amazon-mediaconnect-agentic-access.yml
 - type: TrustCenter
