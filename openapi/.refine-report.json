@@ -1,0 +1,28 @@
+{
+  "provider": "amazon-mediaconnect",
+  "sources": [
+    "amazon-mediaconnect-bridges-api-openapi.yml",
+    "amazon-mediaconnect-entitlements-api-openapi.yml",
+    "amazon-mediaconnect-flows-api-openapi.yml",
+    "amazon-mediaconnect-gateway-instances-api-openapi.yml",
+    "amazon-mediaconnect-gateways-api-openapi.yml",
+    "amazon-mediaconnect-offerings-api-openapi.yml",
+    "amazon-mediaconnect-reservations-api-openapi.yml",
+    "amazon-mediaconnect-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-mediaconnect-bridges-api-openapi.yml",
+    "amazon-mediaconnect-entitlements-api-openapi.yml",
+    "amazon-mediaconnect-flows-api-openapi.yml",
+    "amazon-mediaconnect-gateway-instances-api-openapi.yml",
+    "amazon-mediaconnect-gateways-api-openapi.yml",
+    "amazon-mediaconnect-offerings-api-openapi.yml",
+    "amazon-mediaconnect-reservations-api-openapi.yml",
+    "amazon-mediaconnect-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,1131 @@
+{
+  "info": {
+    "_postman_id": "759e4e14-95bd-41ad-8934-62be71ca12c5",
+    "name": "AWS MediaConnect Bridges Reservations API",
+    "description": "API for AWS Elemental MediaConnect\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:38:26.000Z",
+    "updatedAt": "2026-07-28T10:38:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-759e4e14-95bd-41ad-8934-62be71ca12c5"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "reservations",
+          "item": [
+            {
+              "name": "{reservationArn}",
+              "item": [
+                {
+                  "name": "Amazon MediaConnect Describe Reservation",
+                  "id": "6e85d124-465f-4eb1-b0bb-d7186d55b740",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/reservations/:reservationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "reservations",
+                        ":reservationArn"
+                      ],
+                      "variable": [
+                        {
+                          "id": "526e32b6-0aa1-487a-aa39-e58d01214cf8",
+                          "key": "reservationArn",
+                          "value": "<string>",
+                          "description": "(Required) The Amazon Resource Name (ARN) of the reservation."
+                        }
+                      ]
+                    },
+                    "description": "Displays the details of a reservation. The response includes the reservation name, state, start date and time, and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound bandwidth)."
+                  },
+                  "response": [
+                    {
+                      "id": "63e209a1-e626-46ef-85c6-f9d0528accdb",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/reservations/:reservationArn",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "reservations",
+                            ":reservationArn"
+                          ],
+                          "variable": [
+                            {
+                              "key": "reservationArn"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Reservation\": {\n    \"CurrencyCode\": \"<string>\",\n    \"ReservationState\": \"EXPIRED\",\n    \"OfferingArn\": \"<string>\",\n    \"ReservationArn\": \"<string>\",\n    \"Start\": \"<string>\",\n    \"OfferingDescription\": \"<string>\",\n    \"ReservationName\": \"<string>\",\n    \"End\": \"<string>\",\n    \"Duration\": \"<integer>\",\n    \"DurationUnits\": \"MONTHS\",\n    \"PricePerUnit\": \"<string>\",\n    \"ResourceSpecification\": {\n      \"ResourceType\": \"Mbps_Outbound_Bandwidth\",\n      \"ReservedBitrate\": \"<integer>\"\n    },\n    \"PriceUnits\": \"HOURLY\"\n  }\n}",
+                      "createdAt": "2026-07-28T10:38:26.000Z",
+                      "updatedAt": "2026-07-28T10:38:26.000Z",
+                      "uid": "35240-63e209a1-e626-46ef-85c6-f9d0528accdb"
+                    },
+                    {
+                      "id": "36069205-47a4-45d2-80e0-ea6e45990839",
+                      "name": "NotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/reservations/:reservationArn",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "reservations",
+                            ":reservationArn"
+                          ],
+                          "variable": [
+                            {
+                              "key": "reservationArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:38:26.000Z",
+                      "updatedAt": "2026-07-28T10:38:26.000Z",
+                      "uid": "35240-36069205-47a4-45d2-80e0-ea6e45990839"
+                    },
+                    {
+                      "id": "6ac093cd-cfc0-4f40-9488-9741d46fcbc3",
+                      "name": "ServiceUnavailableException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/reservations/:reservationArn",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "reservations",
+                            ":reservationArn"
+                          ],
+                          "variable": [
+                            {
+                              "key": "reservationArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:38:26.000Z",
+                      "updatedAt": "2026-07-28T10:38:26.000Z",
+                      "uid": "35240-6ac093cd-cfc0-4f40-9488-9741d46fcbc3"
+                    },
+                    {
+                      "id": "26bbad4e-ba0c-42ae-97ab-5290cb202357",
+                      "name": "TooManyRequestsException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/reservations/:reservationArn",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "reservations",
+                            ":reservationArn"
+                          ],
+                          "variable": [
+                            {
+                              "key": "reservationArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:38:26.000Z",
+                      "updatedAt": "2026-07-28T10:38:26.000Z",
+                      "uid": "35240-26bbad4e-ba0c-42ae-97ab-5290cb202357"
+                    },
+                    {
+                      "id": "5c904072-8ee4-42e6-af02-a49c906d05c1",
+                      "name": "BadRequestException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/reservations/:reservationArn",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "reservations",
+                            ":reservationArn"
+                          ],
+                          "variable": [
+                            {
+                              "key": "reservationArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:38:26.000Z",
+                      "updatedAt": "2026-07-28T10:38:26.000Z",
+                      "uid": "35240-5c904072-8ee4-42e6-af02-a49c906d05c1"
+                    },
+                    {
+                      "id": "6a3301cb-6585-42ba-a1a1-ce88a638dd91",
+                      "name": "InternalServerErrorException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/reservations/:reservationArn",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "reservations",
+                            ":reservationArn"
+                          ],
+                          "variable": [
+                            {
+                              "key": "reservationArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:38:26.000Z",
+                      "updatedAt": "2026-07-28T10:38:26.000Z",
+                      "uid": "35240-6a3301cb-6585-42ba-a1a1-ce88a638dd91"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:38:26.000Z",
+                  "updatedAt": "2026-07-28T10:38:26.000Z",
+                  "uid": "35240-6e85d124-465f-4eb1-b0bb-d7186d55b740"
+                }
+              ],
+              "id": "1b375410-9bff-4de8-8624-3fa0991505fe",
+              "createdAt": "2026-07-28T10:38:26.000Z",
+              "updatedAt": "2026-07-28T10:38:26.000Z",
+              "uid": "35240-1b375410-9bff-4de8-8624-3fa0991505fe"
+            },
+            {
+              "name": "Amazon MediaConnect List Reservations",
+              "id": "160613bc-080a-4935-a42a-35d49167cde3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/reservations?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "reservations"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Displays a list of all reservations that have been purchased by this account in the current AWS Region. This list includes all reservations in all states (such as active and expired)."
+              },
+              "response": [
+                {
+                  "id": "84ea60d1-29a9-4608-9ebf-6d5d356f8ab5",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/reservations?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "reservations"
+                      ],
+                      "query": [
+                        {
+                          "description": "The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination limit",
+                          "key": "MaxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"NextToken\": \"<string>\",\n  \"Reservations\": [\n    {\n      \"CurrencyCode\": \"<string>\",\n      \"ReservationState\": \"CANCELED\",\n      \"OfferingArn\": \"<string>\",\n      \"ReservationArn\": \"<string>\",\n      \"Start\": \"<string>\",\n      \"OfferingDescription\": \"<string>\",\n      \"ReservationName\": \"<string>\",\n      \"End\": \"<string>\",\n      \"Duration\": \"<integer>\",\n      \"DurationUnits\": \"MONTHS\",\n      \"PricePerUnit\": \"<string>\",\n      \"ResourceSpecification\": {\n        \"ResourceType\": \"Mbps_Outbound_Bandwidth\",\n        \"ReservedBitrate\": \"<integer>\"\n      },\n      \"PriceUnits\": \"HOURLY\"\n    },\n    {\n      \"CurrencyCode\": \"<string>\",\n      \"ReservationState\": \"ACTIVE\",\n      \"OfferingArn\": \"<string>\",\n      \"ReservationArn\": \"<string>\",\n      \"Start\": \"<string>\",\n      \"OfferingDescription\": \"<string>\",\n      \"ReservationName\": \"<string>\",\n      \"End\": \"<string>\",\n      \"Duration\": \"<integer>\",\n      \"DurationUnits\": \"MONTHS\",\n      \"PricePerUnit\": \"<string>\",\n      \"ResourceSpecification\": {\n        \"ResourceType\": \"Mbps_Outbound_Bandwidth\",\n        \"ReservedBitrate\": \"<integer>\"\n      },\n      \"PriceUnits\": \"HOURLY\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T10:38:26.000Z",
+                  "updatedAt": "2026-07-28T10:38:26.000Z",
+                  "uid": "35240-84ea60d1-29a9-4608-9ebf-6d5d356f8ab5"
+                },
+                {
+                  "id": "f105f741-d0bd-409c-bbdf-1857783e571f",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/reservations?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "reservations"
+                      ],
+                      "query": [
+                        {
+                          "description": "The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination limit",
+                          "key": "MaxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:38:26.000Z",
+                  "updatedAt": "2026-07-28T10:38:26.000Z",
+                  "uid": "35240-f105f741-d0bd-409c-bbdf-1857783e571f"
+                },
+                {
+                  "id": "05d9ee26-650f-4e11-a041-d36c1e9b0d99",
+                  "name": "TooManyRequestsException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/reservations?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "reservations"
+                      ],
+                      "query": [
+                        {
+                          "description": "The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination limit",
+                          "key": "MaxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:38:26.000Z",
+                  "updatedAt": "2026-07-28T10:38:26.000Z",
+                  "uid": "35240-05d9ee26-650f-4e11-a041-d36c1e9b0d99"
+                },
+                {
+                  "id": "a3d44d6f-0b4d-45e7-bf95-5a445b913f28",
+                  "name": "BadRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/reservations?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "reservations"
+                      ],
+                      "query": [
+                        {
+                          "description": "The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination limit",
+                          "key": "MaxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:38:26.000Z",
+                  "updatedAt": "2026-07-28T10:38:26.000Z",
+                  "uid": "35240-a3d44d6f-0b4d-45e7-bf95-5a445b913f28"
+                },
+                {
+                  "id": "faab3613-4b8a-48b4-afaf-ea236e51dbc9",
+                  "name": "InternalServerErrorException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/reservations?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "reservations"
+                      ],
+                      "query": [
+                        {
+                          "description": "The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination limit",
+                          "key": "MaxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:38:26.000Z",
+                  "updatedAt": "2026-07-28T10:38:26.000Z",
+                  "uid": "35240-faab3613-4b8a-48b4-afaf-ea236e51dbc9"
+                }
+              ],
+              "createdAt": "2026-07-28T10:38:26.000Z",
+              "updatedAt": "2026-07-28T10:38:26.000Z",
+              "uid": "35240-160613bc-080a-4935-a42a-35d49167cde3"
+            }
+          ],
+          "id": "53f5c9ba-d6f7-4dd5-8dec-290c056e72d1",
+          "createdAt": "2026-07-28T10:38:26.000Z",
+          "updatedAt": "2026-07-28T10:38:26.000Z",
+          "uid": "35240-53f5c9ba-d6f7-4dd5-8dec-290c056e72d1"
+        }
+      ],
+      "id": "d05537ac-017c-41dc-ac4e-36583902b6d3",
+      "createdAt": "2026-07-28T10:38:26.000Z",
+      "updatedAt": "2026-07-28T10:38:26.000Z",
+      "uid": "35240-d05537ac-017c-41dc-ac4e-36583902b6d3"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://mediaconnect.{{region}}.amazonaws.com"
+    }
+  ]
+}
