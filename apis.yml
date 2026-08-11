@@ -48,8 +48,6 @@ apis:
     url: https://aws.amazon.com/mediaconnect/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediaconnect.yaml
 - aid: amazon-mediaconnect:amazon-mediaconnect-entitlements-api
   name: Amazon MediaConnect Entitlements API
   description: The Entitlements API from Amazon MediaConnect — 1 operation(s) for entitlements.
@@ -68,8 +66,6 @@ apis:
     url: https://aws.amazon.com/mediaconnect/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediaconnect.yaml
 - aid: amazon-mediaconnect:amazon-mediaconnect-flows-api
   name: Amazon MediaConnect Flows API
   description: The Flows API from Amazon MediaConnect — 14 operation(s) for flows.
@@ -88,8 +84,6 @@ apis:
     url: https://aws.amazon.com/mediaconnect/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediaconnect.yaml
 - aid: amazon-mediaconnect:amazon-mediaconnect-gateway-instances-api
   name: Amazon MediaConnect Gateway Instances API
   description: >-
@@ -109,8 +103,6 @@ apis:
     url: https://aws.amazon.com/mediaconnect/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediaconnect.yaml
 - aid: amazon-mediaconnect:amazon-mediaconnect-gateways-api
   name: Amazon MediaConnect Gateways API
   description: The Gateways API from Amazon MediaConnect — 2 operation(s) for gateways.
@@ -129,8 +121,6 @@ apis:
     url: https://aws.amazon.com/mediaconnect/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediaconnect.yaml
 - aid: amazon-mediaconnect:amazon-mediaconnect-offerings-api
   name: Amazon MediaConnect Offerings API
   description: The Offerings API from Amazon MediaConnect — 2 operation(s) for offerings.
@@ -149,8 +139,6 @@ apis:
     url: https://aws.amazon.com/mediaconnect/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediaconnect.yaml
 - aid: amazon-mediaconnect:amazon-mediaconnect-reservations-api
   name: Amazon MediaConnect Reservations API
   description: The Reservations API from Amazon MediaConnect — 2 operation(s) for reservations.
@@ -169,8 +157,6 @@ apis:
     url: https://aws.amazon.com/mediaconnect/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediaconnect.yaml
 - aid: amazon-mediaconnect:amazon-mediaconnect-tags-api
   name: Amazon MediaConnect Tags API
   description: The Tags API from Amazon MediaConnect — 2 operation(s) for tags.
@@ -189,8 +175,6 @@ apis:
     url: https://aws.amazon.com/mediaconnect/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediaconnect.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-mediaconnect/overview
