@@ -1,0 +1,1163 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS MediaConnect Bridges Flows API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Flows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MediaConnect Add Flow Media Streams",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/mediaStreams",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The Amazon Resource Name (ARN) of the flow."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a source and/or an output that uses the ST 2110 JPEG XS or CDI protocol."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Add Flow Outputs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/outputs",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that you want to add outputs to."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds outputs to an existing flow. You can create up to 50 outputs per flow."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Add Flow Sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/source",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that you want to mutate."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds Sources to flow"
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Add Flow Vpc Interfaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/vpcInterfaces",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that you want to mutate."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds VPC interfaces to flow"
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect List Flows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "maxResults",
+                "value": "1",
+                "type": "query",
+                "description": "The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page."
+              },
+              {
+                "name": "nextToken",
+                "value": "example-value",
+                "type": "query",
+                "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value."
+              },
+              {
+                "name": "MaxResults",
+                "value": "example-value",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "example-value",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ]
+          },
+          "docs": "Displays a list of flows that are associated with this account. This request returns a paginated result."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Create Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50)."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Describe Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the flow that you want to describe."
+              }
+            ]
+          },
+          "docs": "Displays the details of a flow. The response includes the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Update Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that you want to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates flow"
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Delete Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the flow that you want to delete."
+              }
+            ]
+          },
+          "docs": "Deletes a flow. Before you can delete a flow, you must stop the flow."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Grant Flow Entitlements",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/entitlements",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that you want to grant entitlements on."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Grants entitlements to an existing flow."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Update Flow Media Stream",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/mediaStreams/:mediaStreamName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The Amazon Resource Name (ARN) of the flow."
+              },
+              {
+                "name": "mediaStreamName",
+                "value": "example-flow",
+                "type": "path",
+                "description": "The name of the media stream that you want to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing media stream."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Remove Flow Media Stream",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/mediaStreams/:mediaStreamName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The Amazon Resource Name (ARN) of the flow."
+              },
+              {
+                "name": "mediaStreamName",
+                "value": "example-flow",
+                "type": "path",
+                "description": "The name of the media stream that you want to remove."
+              }
+            ]
+          },
+          "docs": "Removes a media stream from a flow. This action is only available if the media stream is not associated with a source or output."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Update Flow Output",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/outputs/:outputArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that is associated with the output that you want to update."
+              },
+              {
+                "name": "outputArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the output that you want to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing flow output."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Remove Flow Output",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/outputs/:outputArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that you want to remove an output from."
+              },
+              {
+                "name": "outputArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the output that you want to remove."
+              }
+            ]
+          },
+          "docs": "Removes an output from an existing flow. This request can be made only on an output that does not have an entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When an entitlement is revoked from a flow, the service automatically removes the associated output."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Update Flow Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/source/:sourceArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that is associated with the source that you want to update."
+              },
+              {
+                "name": "sourceArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the source that you want to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the source of a flow."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Remove Flow Source",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/source/:sourceArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that you want to remove a source from."
+              },
+              {
+                "name": "sourceArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the source that you want to remove."
+              }
+            ]
+          },
+          "docs": "Removes a source from an existing flow. This request can be made only if there is more than one source on the flow."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Remove Flow Vpc Interface",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/vpcInterfaces/:vpcInterfaceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that you want to remove a VPC interface from."
+              },
+              {
+                "name": "vpcInterfaceName",
+                "value": "example-flow",
+                "type": "path",
+                "description": "The name of the VPC interface that you want to remove."
+              }
+            ]
+          },
+          "docs": "Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must first delete or update the Source or Output to no longer reference the VPC interface."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Update Flow Entitlement",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/entitlements/:entitlementArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "entitlementArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the entitlement that you want to update."
+              },
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that is associated with the entitlement that you want to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "You can change an entitlement's description, subscribers, and encryption. If you change the subscribers, the service will remove the outputs that are are used by the subscribers that are removed."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Revoke Flow Entitlement",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/:flowArn/entitlements/:entitlementArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "entitlementArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the entitlement that you want to revoke."
+              },
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The flow that you want to revoke an entitlement from."
+              }
+            ]
+          },
+          "docs": "Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the subscriber and the associated output is removed."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Start Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/start/:flowArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the flow that you want to start."
+              }
+            ]
+          },
+          "docs": "Starts a flow."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Stop Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/flows/stop/:flowArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "flowArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The ARN of the flow that you want to stop."
+              }
+            ]
+          },
+          "docs": "Stops a flow."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

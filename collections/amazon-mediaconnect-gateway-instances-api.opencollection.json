@@ -1,0 +1,256 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS MediaConnect Bridges Gateway Instances API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Gateway Instances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MediaConnect Describe Gateway Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/gateway-instances/:gatewayInstanceArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayInstanceArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The Amazon Resource Name (ARN) of the gateway instance that you want to describe."
+              }
+            ]
+          },
+          "docs": "Displays the details of an instance."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Update Gateway Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/gateway-instances/:gatewayInstanceArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayInstanceArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The Amazon Resource Name (ARN) of the instance that you want to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the configuration of an existing Gateway Instance."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect Deregister Gateway Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/gateway-instances/:gatewayInstanceArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "force",
+                "value": "true",
+                "type": "query",
+                "description": "Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it."
+              },
+              {
+                "name": "gatewayInstanceArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "path",
+                "description": "The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister."
+              }
+            ]
+          },
+          "docs": "Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped. If you want to deregister an instance without stopping the bridges, you must use the --force option."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaConnect List Gateway Instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediaconnect.{region}.amazonaws.com/v1/gateway-instances",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "filterArn",
+                "value": "arn:aws:mediaconnect:us-east-1:123456789012:flow:example-flow",
+                "type": "query",
+                "description": "Filter the list results to display only the instances associated with the selected Gateway Amazon Resource Name (ARN)."
+              },
+              {
+                "name": "maxResults",
+                "value": "1",
+                "type": "query",
+                "description": "The maximum number of results to return per API request. For example, you submit a ListInstances request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page."
+              },
+              {
+                "name": "nextToken",
+                "value": "example-value",
+                "type": "query",
+                "description": "The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value."
+              },
+              {
+                "name": "MaxResults",
+                "value": "example-value",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "example-value",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ]
+          },
+          "docs": "Displays a list of instances associated with the AWS account. This request returns a paginated result. You can use the filterArn property to display only the instances associated with the selected Gateway Amazon Resource Name (ARN)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
