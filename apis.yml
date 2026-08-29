@@ -188,6 +188,9 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-mediaconnect-capability-edges.yml
+  name: Amazon MediaConnect Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-mediaconnect/overview
 - type: AgenticAccess

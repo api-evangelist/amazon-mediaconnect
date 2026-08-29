@@ -1,0 +1,26 @@
+slug: amazon-mediaconnect
+provider: Amazon MediaConnect
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Flows
+  spec_file: amazon-mediaconnect-flows-api-openapi.yml
+  capability_id: BC-3740
+  capability_id_l1: BC-3740
+  capability_name: Content Distribution & Delivery Management
+  confidence: 0.75
+  evidence: '"Amazon MediaConnect Create Flow", "Add Flow Media Streams", "Add Flow Outputs", "Grant Flow
+    Entitlements", schemas MediaStreamType, VpcInterface'
+  reason: Flows are the core live-video transport construct — sources, media streams and outputs for delivering
+    broadcast-quality live feeds — which realises content distribution and delivery. Sub-capability left
+    open because the surface serves both linear broadcast carriage and streaming/OTT egress paths.
