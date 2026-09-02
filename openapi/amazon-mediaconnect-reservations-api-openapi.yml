@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS MediaConnect Bridges Reservations API
   description: API for AWS Elemental MediaConnect
@@ -325,58 +325,7 @@ paths:
       tags:
       - Reservations
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DescribeReservationResponse:
-      type: object
-      properties:
-        Reservation:
-          allOf:
-          - $ref: '#/components/schemas/Reservation'
-          - xml:
-              name: reservation
     ResourceSpecification:
       type: object
       required:
@@ -395,6 +344,26 @@ components:
               name: resourceType
             description: The type of resource and the unit that is being billed for.
       description: A definition of what is being billed for, including the type and amount.
+    DurationUnits:
+      type: string
+      enum:
+      - MONTHS
+    TooManyRequestsException: {}
+    ResourceType:
+      type: string
+      enum:
+      - Mbps_Outbound_Bandwidth
+    __listOfReservation:
+      type: array
+      items:
+        $ref: '#/components/schemas/Reservation'
+    ReservationState:
+      type: string
+      enum:
+      - ACTIVE
+      - EXPIRED
+      - PROCESSING
+      - CANCELED
     Reservation:
       type: object
       required:
@@ -491,8 +460,17 @@ components:
               name: start
             description: The day and time that the reservation becomes active. You set this value when you purchase the offering.
       description: A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-    __integer:
-      type: integer
+    DescribeReservationResponse:
+      type: object
+      properties:
+        Reservation:
+          allOf:
+          - $ref: '#/components/schemas/Reservation'
+          - xml:
+              name: reservation
+    BadRequestException: {}
+    __string:
+      type: string
     ListReservationsResponse:
       type: object
       properties:
@@ -508,36 +486,58 @@ components:
           - xml:
               name: reservations
             description: A list of all reservations that have been purchased by this account in the current AWS Region.
-    ReservationState:
-      type: string
-      enum:
-      - ACTIVE
-      - EXPIRED
-      - PROCESSING
-      - CANCELED
+    __integer:
+      type: integer
     InternalServerErrorException: {}
-    ResourceType:
-      type: string
-      enum:
-      - Mbps_Outbound_Bandwidth
     PriceUnits:
       type: string
       enum:
       - HOURLY
-    BadRequestException: {}
     NotFoundException: {}
     ServiceUnavailableException: {}
-    TooManyRequestsException: {}
-    __listOfReservation:
-      type: array
-      items:
-        $ref: '#/components/schemas/Reservation'
-    __string:
-      type: string
-    DurationUnits:
-      type: string
-      enum:
-      - MONTHS
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

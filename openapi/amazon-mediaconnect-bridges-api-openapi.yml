@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS MediaConnect Bridges API
   description: API for AWS Elemental MediaConnect
@@ -1858,535 +1858,22 @@ paths:
       tags:
       - Bridges
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    SourcePriority:
-      type: object
-      properties:
-        PrimarySource:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: primarySource
-            description: The name of the source you choose as the primary source for this flow.
-      description: The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-    AddBridgeSourcesResponse:
-      type: object
-      properties:
-        BridgeArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeArn
-            description: The Amazon Resource Number (ARN) of the bridge.
-        Sources:
-          allOf:
-          - $ref: '#/components/schemas/__listOfBridgeSource'
-          - xml:
-              name: sources
-            description: The sources that you added to this bridge.
-    AddBridgeFlowSourceRequest:
-      type: object
-      required:
-      - FlowArn
-      - Name
-      properties:
-        FlowArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - pattern: ^arn:.+:mediaconnect.+:flow:.+$
-            xml:
-              name: flowArn
-            description: The Amazon Resource Number (ARN) of the cloud flow to use as a source of this bridge.
-        FlowVpcInterfaceAttachment:
-          allOf:
-          - $ref: '#/components/schemas/VpcInterfaceAttachment'
-          - xml:
-              name: flowVpcInterfaceAttachment
-            description: The name of the VPC interface attachment to use for this source.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.
-      description: Add a flow source to an existing bridge.
-    BridgeOutput:
-      type: object
-      properties:
-        FlowOutput:
-          allOf:
-          - $ref: '#/components/schemas/BridgeFlowOutput'
-          - xml:
-              name: flowOutput
-        NetworkOutput:
-          allOf:
-          - $ref: '#/components/schemas/BridgeNetworkOutput'
-          - xml:
-              name: networkOutput
-      description: The output of the bridge.
-    IngressGatewayBridge:
-      type: object
-      required:
-      - MaxOutputs
-      - MaxBitrate
-      properties:
-        InstanceId:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: instanceId
-            description: The ID of the instance running this bridge.
-        MaxBitrate:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: maxBitrate
-            description: The maximum expected bitrate (in bps) of the ingress bridge.
-        MaxOutputs:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: maxOutputs
-            description: The maximum number of outputs on the ingress bridge.
-    AddBridgeOutputsResponse:
-      type: object
-      properties:
-        BridgeArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeArn
-            description: The Amazon Resource Number (ARN) of the bridge.
-        Outputs:
-          allOf:
-          - $ref: '#/components/schemas/__listOfBridgeOutput'
-          - xml:
-              name: outputs
-            description: The outputs that you added to this bridge.
-    UpdateBridgeOutputResponse:
-      type: object
-      properties:
-        BridgeArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeArn
-            description: The Amazon Resource Number (ARN) of the bridge.
-        Output:
-          allOf:
-          - $ref: '#/components/schemas/BridgeOutput'
-          - xml:
-              name: output
-            description: The output that you updated.
-    DesiredState:
+    ConflictException: {}
+    Protocol:
       type: string
       enum:
-      - ACTIVE
-      - STANDBY
-      - DELETED
-    ListedBridge:
-      type: object
-      required:
-      - BridgeArn
-      - BridgeState
-      - PlacementArn
-      - BridgeType
-      - Name
-      properties:
-        BridgeArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeArn
-            description: The ARN of the bridge.
-        BridgeState:
-          allOf:
-          - $ref: '#/components/schemas/BridgeState'
-          - xml:
-              name: bridgeState
-        BridgeType:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeType
-            description: The type of the bridge.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The name of the bridge.
-        PlacementArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: placementArn
-            description: The ARN of the gateway associated with the bridge.
-      description: Displays details of the selected bridge.
-    FailoverConfig:
-      type: object
-      properties:
-        FailoverMode:
-          allOf:
-          - $ref: '#/components/schemas/FailoverMode'
-          - xml:
-              name: failoverMode
-            description: The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-        RecoveryWindow:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: recoveryWindow
-            description: Search window time to look for dash-7 packets
-        SourcePriority:
-          allOf:
-          - $ref: '#/components/schemas/SourcePriority'
-          - xml:
-              name: sourcePriority
-            description: The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-        State:
-          allOf:
-          - $ref: '#/components/schemas/State'
-          - xml:
-              name: state
-      description: The settings for source failover.
-    UpdateBridgeStateResponse:
-      type: object
-      properties:
-        BridgeArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeArn
-            description: The Amazon Resource Number (ARN) of the bridge.
-        DesiredState:
-          allOf:
-          - $ref: '#/components/schemas/DesiredState'
-          - xml:
-              name: desiredState
-            description: The state of the bridge. ACTIVE or STANDBY.
-    RemoveBridgeSourceResponse:
-      type: object
-      properties:
-        BridgeArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeArn
-        SourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: sourceName
-    __listOfMessageDetail:
-      type: array
-      items:
-        $ref: '#/components/schemas/MessageDetail'
-    __integer:
-      type: integer
-    CreateBridgeResponse:
-      type: object
-      properties:
-        Bridge:
-          allOf:
-          - $ref: '#/components/schemas/Bridge'
-          - xml:
-              name: bridge
-    __listOfListedBridge:
-      type: array
-      items:
-        $ref: '#/components/schemas/ListedBridge'
-    MessageDetail:
-      type: object
-      required:
-      - Message
-      - Code
-      properties:
-        Code:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: code
-            description: The error code.
-        Message:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: message
-            description: The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
-        ResourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: resourceName
-            description: The name of the resource.
-    AddBridgeSourceRequest:
-      type: object
-      properties:
-        FlowSource:
-          allOf:
-          - $ref: '#/components/schemas/AddBridgeFlowSourceRequest'
-          - xml:
-              name: flowSource
-        NetworkSource:
-          allOf:
-          - $ref: '#/components/schemas/AddBridgeNetworkSourceRequest'
-          - xml:
-              name: networkSource
-      description: Add a source to an existing bridge.
-    __listOfBridgeSource:
-      type: array
-      items:
-        $ref: '#/components/schemas/BridgeSource'
-    BridgeNetworkSource:
-      type: object
-      required:
-      - NetworkName
-      - MulticastIp
-      - Port
-      - Protocol
-      - Name
-      properties:
-        MulticastIp:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: multicastIp
-            description: The network source multicast IP.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The name of the network source.
-        NetworkName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: networkName
-            description: The network source's gateway network name.
-        Port:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: port
-            description: The network source port.
-        Protocol:
-          allOf:
-          - $ref: '#/components/schemas/Protocol'
-          - xml:
-              name: protocol
-            description: The network source protocol.
-      description: The source of the bridge. A network source originates at your premises.
-    BridgeFlowOutput:
-      type: object
-      required:
-      - FlowSourceArn
-      - FlowArn
-      - Name
-      properties:
-        FlowArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: flowArn
-            description: The Amazon Resource Number (ARN) of the cloud flow.
-        FlowSourceArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: flowSourceArn
-            description: The Amazon Resource Number (ARN) of the flow source.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The name of the bridge's output.
-      description: The output of the bridge. A flow output is delivered to the AWS cloud.
-    DeleteBridgeResponse:
-      type: object
-      properties:
-        BridgeArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeArn
-            description: The Amazon Resource Number (ARN) of the deleted bridge.
-    UpdateBridgeSourceResponse:
-      type: object
-      properties:
-        BridgeArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeArn
-            description: The Amazon Resource Number (ARN) of the bridge.
-        Source:
-          allOf:
-          - $ref: '#/components/schemas/BridgeSource'
-          - xml:
-              name: source
-    ListBridgesResponse:
-      type: object
-      properties:
-        Bridges:
-          allOf:
-          - $ref: '#/components/schemas/__listOfListedBridge'
-          - xml:
-              name: bridges
-            description: A list of bridge summaries.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: nextToken
-            description: The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
-    RemoveBridgeOutputResponse:
-      type: object
-      properties:
-        BridgeArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: bridgeArn
-        OutputName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: outputName
-    InternalServerErrorException: {}
-    AddBridgeNetworkOutputRequest:
-      type: object
-      required:
-      - NetworkName
-      - Port
-      - IpAddress
-      - Protocol
-      - Ttl
-      - Name
-      properties:
-        IpAddress:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: ipAddress
-            description: The network output IP Address.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The network output name. This name is used to reference the output and must be unique among outputs in this bridge.
-        NetworkName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: networkName
-            description: The network output's gateway network name.
-        Port:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: port
-            description: The network output port.
-        Protocol:
-          allOf:
-          - $ref: '#/components/schemas/Protocol'
-          - xml:
-              name: protocol
-            description: The network output protocol.
-        Ttl:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: ttl
-            description: The network output TTL.
-      description: Add a network output to an existing bridge.
-    DescribeBridgeResponse:
-      type: object
-      properties:
-        Bridge:
-          allOf:
-          - $ref: '#/components/schemas/Bridge'
-          - xml:
-              name: bridge
-    __listOfBridgeOutput:
-      type: array
-      items:
-        $ref: '#/components/schemas/BridgeOutput'
-    AddBridgeOutputRequest:
-      type: object
-      properties:
-        NetworkOutput:
-          allOf:
-          - $ref: '#/components/schemas/AddBridgeNetworkOutputRequest'
-          - xml:
-              name: networkOutput
-      description: Add an output to a bridge.
-    BridgeState:
-      type: string
-      enum:
-      - CREATING
-      - STANDBY
-      - STARTING
-      - DEPLOYING
-      - ACTIVE
-      - STOPPING
-      - DELETING
-      - DELETED
-      - START_FAILED
-      - START_PENDING
-      - STOP_FAILED
-      - UPDATING
-    State:
-      type: string
-      enum:
-      - ENABLED
-      - DISABLED
+      - zixi-push
+      - rtp-fec
+      - rtp
+      - zixi-pull
+      - rist
+      - st2110-jpegxs
+      - cdi
+      - srt-listener
+      - srt-caller
+      - fujitsu-qos
+      - udp
     BridgeSource:
       type: object
       properties:
@@ -2401,6 +1888,14 @@ components:
           - xml:
               name: networkSource
       description: The bridge's source.
+    UpdateBridgeResponse:
+      type: object
+      properties:
+        Bridge:
+          allOf:
+          - $ref: '#/components/schemas/Bridge'
+          - xml:
+              name: bridge
     Bridge:
       type: object
       required:
@@ -2465,98 +1960,40 @@ components:
               name: sources
             description: The sources on this bridge.
       description: A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
-    AddBridgeNetworkSourceRequest:
+    DeleteBridgeResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the deleted bridge.
+    EgressGatewayBridge:
       type: object
       required:
-      - NetworkName
-      - MulticastIp
-      - Port
-      - Protocol
-      - Name
+      - MaxBitrate
       properties:
-        MulticastIp:
+        InstanceId:
           allOf:
           - $ref: '#/components/schemas/__string'
           - xml:
-              name: multicastIp
-            description: The network source multicast IP.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
-        NetworkName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: networkName
-            description: The network source's gateway network name.
-        Port:
+              name: instanceId
+            description: The ID of the instance running this bridge.
+        MaxBitrate:
           allOf:
           - $ref: '#/components/schemas/__integer'
           - xml:
-              name: port
-            description: The network source port.
-        Protocol:
-          allOf:
-          - $ref: '#/components/schemas/Protocol'
-          - xml:
-              name: protocol
-            description: The network source protocol.
-      description: Add a network source to an existing bridge.
-    ForbiddenException: {}
-    ConflictException: {}
-    BadRequestException: {}
-    FailoverMode:
-      type: string
-      enum:
-      - MERGE
-      - FAILOVER
-    NotFoundException: {}
-    VpcInterfaceAttachment:
-      type: object
-      properties:
-        VpcInterfaceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: vpcInterfaceName
-            description: The name of the VPC interface to use for this resource.
-      description: The settings for attaching a VPC interface to an resource.
-    BridgeFlowSource:
-      type: object
-      required:
-      - FlowArn
-      - Name
-      properties:
-        FlowArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: flowArn
-            description: The ARN of the cloud flow used as a source of this bridge.
-        FlowVpcInterfaceAttachment:
-          allOf:
-          - $ref: '#/components/schemas/VpcInterfaceAttachment'
-          - xml:
-              name: flowVpcInterfaceAttachment
-            description: The name of the VPC interface attachment to use for this source.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The name of the flow source.
-        OutputArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: outputArn
-            description: The Amazon Resource Number (ARN) of the output.
-      description: The source of the bridge. A flow source originates in MediaConnect as an existing cloud flow.
-    ServiceUnavailableException: {}
-    TooManyRequestsException: {}
+              name: maxBitrate
+            description: The maximum expected bitrate (in bps) of the egress bridge.
+    __listOfListedBridge:
+      type: array
+      items:
+        $ref: '#/components/schemas/ListedBridge'
+    __listOfBridgeOutput:
+      type: array
+      items:
+        $ref: '#/components/schemas/BridgeOutput'
     BridgeNetworkOutput:
       type: object
       required:
@@ -2604,9 +2041,113 @@ components:
               name: ttl
             description: The network output TTL.
       description: The output of the bridge. A network output is delivered to your premises.
-    __string:
-      type: string
-    UpdateBridgeResponse:
+    AddBridgeNetworkSourceRequest:
+      type: object
+      required:
+      - NetworkName
+      - MulticastIp
+      - Port
+      - Protocol
+      - Name
+      properties:
+        MulticastIp:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: multicastIp
+            description: The network source multicast IP.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
+        NetworkName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: networkName
+            description: The network source's gateway network name.
+        Port:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: port
+            description: The network source port.
+        Protocol:
+          allOf:
+          - $ref: '#/components/schemas/Protocol'
+          - xml:
+              name: protocol
+            description: The network source protocol.
+      description: Add a network source to an existing bridge.
+    ForbiddenException: {}
+    TooManyRequestsException: {}
+    BridgeNetworkSource:
+      type: object
+      required:
+      - NetworkName
+      - MulticastIp
+      - Port
+      - Protocol
+      - Name
+      properties:
+        MulticastIp:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: multicastIp
+            description: The network source multicast IP.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the network source.
+        NetworkName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: networkName
+            description: The network source's gateway network name.
+        Port:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: port
+            description: The network source port.
+        Protocol:
+          allOf:
+          - $ref: '#/components/schemas/Protocol'
+          - xml:
+              name: protocol
+            description: The network source protocol.
+      description: The source of the bridge. A network source originates at your premises.
+    MessageDetail:
+      type: object
+      required:
+      - Message
+      - Code
+      properties:
+        Code:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: code
+            description: The error code.
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: message
+            description: The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
+        ResourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: resourceName
+            description: The name of the resource.
+    DescribeBridgeResponse:
       type: object
       properties:
         Bridge:
@@ -2614,24 +2155,140 @@ components:
           - $ref: '#/components/schemas/Bridge'
           - xml:
               name: bridge
-    CreateBridge420Exception: {}
-    Protocol:
-      type: string
-      enum:
-      - zixi-push
-      - rtp-fec
-      - rtp
-      - zixi-pull
-      - rist
-      - st2110-jpegxs
-      - cdi
-      - srt-listener
-      - srt-caller
-      - fujitsu-qos
-      - udp
-    EgressGatewayBridge:
+    ListedBridge:
       type: object
       required:
+      - BridgeArn
+      - BridgeState
+      - PlacementArn
+      - BridgeType
+      - Name
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The ARN of the bridge.
+        BridgeState:
+          allOf:
+          - $ref: '#/components/schemas/BridgeState'
+          - xml:
+              name: bridgeState
+        BridgeType:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeType
+            description: The type of the bridge.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the bridge.
+        PlacementArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: placementArn
+            description: The ARN of the gateway associated with the bridge.
+      description: Displays details of the selected bridge.
+    AddBridgeSourcesResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        Sources:
+          allOf:
+          - $ref: '#/components/schemas/__listOfBridgeSource'
+          - xml:
+              name: sources
+            description: The sources that you added to this bridge.
+    AddBridgeNetworkOutputRequest:
+      type: object
+      required:
+      - NetworkName
+      - Port
+      - IpAddress
+      - Protocol
+      - Ttl
+      - Name
+      properties:
+        IpAddress:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: ipAddress
+            description: The network output IP Address.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The network output name. This name is used to reference the output and must be unique among outputs in this bridge.
+        NetworkName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: networkName
+            description: The network output's gateway network name.
+        Port:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: port
+            description: The network output port.
+        Protocol:
+          allOf:
+          - $ref: '#/components/schemas/Protocol'
+          - xml:
+              name: protocol
+            description: The network output protocol.
+        Ttl:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: ttl
+            description: The network output TTL.
+      description: Add a network output to an existing bridge.
+    VpcInterfaceAttachment:
+      type: object
+      properties:
+        VpcInterfaceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: vpcInterfaceName
+            description: The name of the VPC interface to use for this resource.
+      description: The settings for attaching a VPC interface to an resource.
+    __listOfMessageDetail:
+      type: array
+      items:
+        $ref: '#/components/schemas/MessageDetail'
+    ListBridgesResponse:
+      type: object
+      properties:
+        Bridges:
+          allOf:
+          - $ref: '#/components/schemas/__listOfListedBridge'
+          - xml:
+              name: bridges
+            description: A list of bridge summaries.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
+    IngressGatewayBridge:
+      type: object
+      required:
+      - MaxOutputs
       - MaxBitrate
       properties:
         InstanceId:
@@ -2645,7 +2302,350 @@ components:
           - $ref: '#/components/schemas/__integer'
           - xml:
               name: maxBitrate
-            description: The maximum expected bitrate (in bps) of the egress bridge.
+            description: The maximum expected bitrate (in bps) of the ingress bridge.
+        MaxOutputs:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: maxOutputs
+            description: The maximum number of outputs on the ingress bridge.
+    CreateBridgeResponse:
+      type: object
+      properties:
+        Bridge:
+          allOf:
+          - $ref: '#/components/schemas/Bridge'
+          - xml:
+              name: bridge
+    UpdateBridgeStateResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        DesiredState:
+          allOf:
+          - $ref: '#/components/schemas/DesiredState'
+          - xml:
+              name: desiredState
+            description: The state of the bridge. ACTIVE or STANDBY.
+    RemoveBridgeOutputResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+        OutputName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: outputName
+    BridgeOutput:
+      type: object
+      properties:
+        FlowOutput:
+          allOf:
+          - $ref: '#/components/schemas/BridgeFlowOutput'
+          - xml:
+              name: flowOutput
+        NetworkOutput:
+          allOf:
+          - $ref: '#/components/schemas/BridgeNetworkOutput'
+          - xml:
+              name: networkOutput
+      description: The output of the bridge.
+    UpdateBridgeOutputResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        Output:
+          allOf:
+          - $ref: '#/components/schemas/BridgeOutput'
+          - xml:
+              name: output
+            description: The output that you updated.
+    __listOfBridgeSource:
+      type: array
+      items:
+        $ref: '#/components/schemas/BridgeSource'
+    BridgeState:
+      type: string
+      enum:
+      - CREATING
+      - STANDBY
+      - STARTING
+      - DEPLOYING
+      - ACTIVE
+      - STOPPING
+      - DELETING
+      - DELETED
+      - START_FAILED
+      - START_PENDING
+      - STOP_FAILED
+      - UPDATING
+    UpdateBridgeSourceResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/BridgeSource'
+          - xml:
+              name: source
+    RemoveBridgeSourceResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+        SourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: sourceName
+    DesiredState:
+      type: string
+      enum:
+      - ACTIVE
+      - STANDBY
+      - DELETED
+    SourcePriority:
+      type: object
+      properties:
+        PrimarySource:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: primarySource
+            description: The name of the source you choose as the primary source for this flow.
+      description: The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+    AddBridgeFlowSourceRequest:
+      type: object
+      required:
+      - FlowArn
+      - Name
+      properties:
+        FlowArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - pattern: ^arn:.+:mediaconnect.+:flow:.+$
+            xml:
+              name: flowArn
+            description: The Amazon Resource Number (ARN) of the cloud flow to use as a source of this bridge.
+        FlowVpcInterfaceAttachment:
+          allOf:
+          - $ref: '#/components/schemas/VpcInterfaceAttachment'
+          - xml:
+              name: flowVpcInterfaceAttachment
+            description: The name of the VPC interface attachment to use for this source.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.
+      description: Add a flow source to an existing bridge.
+    BridgeFlowOutput:
+      type: object
+      required:
+      - FlowSourceArn
+      - FlowArn
+      - Name
+      properties:
+        FlowArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: flowArn
+            description: The Amazon Resource Number (ARN) of the cloud flow.
+        FlowSourceArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: flowSourceArn
+            description: The Amazon Resource Number (ARN) of the flow source.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the bridge's output.
+      description: The output of the bridge. A flow output is delivered to the AWS cloud.
+    BadRequestException: {}
+    __string:
+      type: string
+    AddBridgeOutputRequest:
+      type: object
+      properties:
+        NetworkOutput:
+          allOf:
+          - $ref: '#/components/schemas/AddBridgeNetworkOutputRequest'
+          - xml:
+              name: networkOutput
+      description: Add an output to a bridge.
+    __integer:
+      type: integer
+    AddBridgeOutputsResponse:
+      type: object
+      properties:
+        BridgeArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bridgeArn
+            description: The Amazon Resource Number (ARN) of the bridge.
+        Outputs:
+          allOf:
+          - $ref: '#/components/schemas/__listOfBridgeOutput'
+          - xml:
+              name: outputs
+            description: The outputs that you added to this bridge.
+    State:
+      type: string
+      enum:
+      - ENABLED
+      - DISABLED
+    InternalServerErrorException: {}
+    FailoverMode:
+      type: string
+      enum:
+      - MERGE
+      - FAILOVER
+    FailoverConfig:
+      type: object
+      properties:
+        FailoverMode:
+          allOf:
+          - $ref: '#/components/schemas/FailoverMode'
+          - xml:
+              name: failoverMode
+            description: The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+        RecoveryWindow:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: recoveryWindow
+            description: Search window time to look for dash-7 packets
+        SourcePriority:
+          allOf:
+          - $ref: '#/components/schemas/SourcePriority'
+          - xml:
+              name: sourcePriority
+            description: The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/State'
+          - xml:
+              name: state
+      description: The settings for source failover.
+    NotFoundException: {}
+    BridgeFlowSource:
+      type: object
+      required:
+      - FlowArn
+      - Name
+      properties:
+        FlowArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: flowArn
+            description: The ARN of the cloud flow used as a source of this bridge.
+        FlowVpcInterfaceAttachment:
+          allOf:
+          - $ref: '#/components/schemas/VpcInterfaceAttachment'
+          - xml:
+              name: flowVpcInterfaceAttachment
+            description: The name of the VPC interface attachment to use for this source.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the flow source.
+        OutputArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: outputArn
+            description: The Amazon Resource Number (ARN) of the output.
+      description: The source of the bridge. A flow source originates in MediaConnect as an existing cloud flow.
+    ServiceUnavailableException: {}
+    CreateBridge420Exception: {}
+    AddBridgeSourceRequest:
+      type: object
+      properties:
+        FlowSource:
+          allOf:
+          - $ref: '#/components/schemas/AddBridgeFlowSourceRequest'
+          - xml:
+              name: flowSource
+        NetworkSource:
+          allOf:
+          - $ref: '#/components/schemas/AddBridgeNetworkSourceRequest'
+          - xml:
+              name: networkSource
+      description: Add a source to an existing bridge.
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

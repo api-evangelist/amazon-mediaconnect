@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS MediaConnect Bridges Entitlements API
   description: API for AWS Elemental MediaConnect
@@ -226,29 +226,57 @@ paths:
       tags:
       - Entitlements
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    __integer:
-      type: integer
-    ServiceUnavailableException: {}
     BadRequestException: {}
-    TooManyRequestsException: {}
-    ListEntitlementsResponse:
-      type: object
-      properties:
-        Entitlements:
-          allOf:
-          - $ref: '#/components/schemas/__listOfListedEntitlement'
-          - xml:
-              name: entitlements
-            description: A list of entitlements that have been granted to you from other AWS accounts.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: nextToken
-            description: The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     __string:
       type: string
+    __listOfListedEntitlement:
+      type: array
+      items:
+        $ref: '#/components/schemas/ListedEntitlement'
     ListedEntitlement:
       type: object
       required:
@@ -274,54 +302,26 @@ components:
               name: entitlementName
             description: The name of the entitlement.
       description: An entitlement that has been granted to you from other AWS accounts.
+    ListEntitlementsResponse:
+      type: object
+      properties:
+        Entitlements:
+          allOf:
+          - $ref: '#/components/schemas/__listOfListedEntitlement'
+          - xml:
+              name: entitlements
+            description: A list of entitlements that have been granted to you from other AWS accounts.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
+    __integer:
+      type: integer
     InternalServerErrorException: {}
-    __listOfListedEntitlement:
-      type: array
-      items:
-        $ref: '#/components/schemas/ListedEntitlement'
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+    ServiceUnavailableException: {}
+    TooManyRequestsException: {}
   securitySchemes:
     hmac:
       type: apiKey

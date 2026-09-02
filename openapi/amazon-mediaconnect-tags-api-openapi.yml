@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS MediaConnect Bridges Tags API
   description: API for AWS Elemental MediaConnect
@@ -335,14 +335,14 @@ paths:
       - Tags
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -359,14 +359,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -377,15 +371,22 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    NotFoundException: {}
+    BadRequestException: {}
+    __string:
+      type: string
+    InternalServerErrorException: {}
     __mapOf__string:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/__string'
-    BadRequestException: {}
-    __string:
-      type: string
+    NotFoundException: {}
     ListTagsForResourceResponse:
       type: object
       properties:
@@ -395,7 +396,6 @@ components:
           - xml:
               name: tags
             description: A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-    InternalServerErrorException: {}
   securitySchemes:
     hmac:
       type: apiKey

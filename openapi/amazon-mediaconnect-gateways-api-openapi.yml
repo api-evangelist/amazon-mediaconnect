@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS MediaConnect Bridges Gateways API
   description: API for AWS Elemental MediaConnect
@@ -606,87 +606,8 @@ paths:
       tags:
       - Gateways
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    __listOfGatewayNetwork:
-      type: array
-      items:
-        $ref: '#/components/schemas/GatewayNetwork'
-    __listOf__string:
-      type: array
-      items:
-        $ref: '#/components/schemas/__string'
-    CreateGatewayResponse:
-      type: object
-      properties:
-        Gateway:
-          allOf:
-          - $ref: '#/components/schemas/Gateway'
-          - xml:
-              name: gateway
-    DescribeGatewayResponse:
-      type: object
-      properties:
-        Gateway:
-          allOf:
-          - $ref: '#/components/schemas/Gateway'
-          - xml:
-              name: gateway
-    __listOfMessageDetail:
-      type: array
-      items:
-        $ref: '#/components/schemas/MessageDetail'
-    GatewayState:
-      type: string
-      enum:
-      - CREATING
-      - ACTIVE
-      - UPDATING
-      - ERROR
-      - DELETING
-      - DELETED
+    ConflictException: {}
     ListGatewaysResponse:
       type: object
       properties:
@@ -702,6 +623,108 @@ components:
           - xml:
               name: nextToken
             description: The token that identifies which batch of results that you want to see. For example, you submit a ListGateways request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListGateways request a second time and specify the NextToken value.
+    ForbiddenException: {}
+    TooManyRequestsException: {}
+    __listOfGatewayNetwork:
+      type: array
+      items:
+        $ref: '#/components/schemas/GatewayNetwork'
+    DescribeGatewayResponse:
+      type: object
+      properties:
+        Gateway:
+          allOf:
+          - $ref: '#/components/schemas/Gateway'
+          - xml:
+              name: gateway
+    MessageDetail:
+      type: object
+      required:
+      - Message
+      - Code
+      properties:
+        Code:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: code
+            description: The error code.
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: message
+            description: The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
+        ResourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: resourceName
+            description: The name of the resource.
+    __listOfListedGateway:
+      type: array
+      items:
+        $ref: '#/components/schemas/ListedGateway'
+    GatewayNetwork:
+      type: object
+      required:
+      - CidrBlock
+      - Name
+      properties:
+        CidrBlock:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: cidrBlock
+            description: A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
+      description: The network settings for a gateway.
+    CreateGatewayResponse:
+      type: object
+      properties:
+        Gateway:
+          allOf:
+          - $ref: '#/components/schemas/Gateway'
+          - xml:
+              name: gateway
+    __listOf__string:
+      type: array
+      items:
+        $ref: '#/components/schemas/__string'
+    __listOfMessageDetail:
+      type: array
+      items:
+        $ref: '#/components/schemas/MessageDetail'
+    ListedGateway:
+      type: object
+      required:
+      - GatewayArn
+      - GatewayState
+      - Name
+      properties:
+        GatewayArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayArn
+            description: The Amazon Resource Name (ARN) of the gateway.
+        GatewayState:
+          allOf:
+          - $ref: '#/components/schemas/GatewayState'
+          - xml:
+              name: gatewayState
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the gateway.
+      description: Provides a summary of a gateway, including its name, ARN, and status.
     DeleteGatewayResponse:
       type: object
       properties:
@@ -711,7 +734,6 @@ components:
           - xml:
               name: gatewayArn
             description: The Amazon Resource Name (ARN) of the gateway that was deleted.
-    InternalServerErrorException: {}
     Gateway:
       type: object
       required:
@@ -756,87 +778,65 @@ components:
               name: networks
             description: The list of networks in the gateway.
       description: The settings for a gateway, including its networks.
-    GatewayNetwork:
-      type: object
-      required:
-      - CidrBlock
-      - Name
-      properties:
-        CidrBlock:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: cidrBlock
-            description: A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
-      description: The network settings for a gateway.
-    CreateGateway420Exception: {}
-    ConflictException: {}
-    ForbiddenException: {}
     BadRequestException: {}
-    ListedGateway:
-      type: object
-      required:
-      - GatewayArn
-      - GatewayState
-      - Name
-      properties:
-        GatewayArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: gatewayArn
-            description: The Amazon Resource Name (ARN) of the gateway.
-        GatewayState:
-          allOf:
-          - $ref: '#/components/schemas/GatewayState'
-          - xml:
-              name: gatewayState
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The name of the gateway.
-      description: Provides a summary of a gateway, including its name, ARN, and status.
-    NotFoundException: {}
-    ServiceUnavailableException: {}
-    TooManyRequestsException: {}
     __string:
       type: string
-    __listOfListedGateway:
-      type: array
-      items:
-        $ref: '#/components/schemas/ListedGateway'
-    MessageDetail:
-      type: object
-      required:
-      - Message
-      - Code
-      properties:
-        Code:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: code
-            description: The error code.
-        Message:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: message
-            description: The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
-        ResourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: resourceName
-            description: The name of the resource.
+    InternalServerErrorException: {}
+    NotFoundException: {}
+    CreateGateway420Exception: {}
+    ServiceUnavailableException: {}
+    GatewayState:
+      type: string
+      enum:
+      - CREATING
+      - ACTIVE
+      - UPDATING
+      - ERROR
+      - DELETING
+      - DELETED
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
