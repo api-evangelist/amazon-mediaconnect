@@ -1,9 +1,9 @@
 aid: amazon-mediaconnect
 name: Amazon MediaConnect
-description: AWS Elemental MediaConnect is a high-quality transport service for live video that provides the reliability,
-  security, and visibility customers expect from traditional satellite and fiber services. It enables broadcasters to build
-  live video workflows in the cloud with reliable transport of broadcast-quality content using protocols including Zixi, RIST,
-  SRT, RTP, and RTP with FEC.
+description: AWS Elemental MediaConnect is a high-quality transport service for live video that provides
+  the reliability, security, and visibility customers expect from traditional satellite and fiber services.
+  It enables broadcasters to build live video workflows in the cloud with reliable transport of broadcast-quality
+  content using protocols including Zixi, RIST, SRT, RTP, and RTP with FEC.
 type: Index
 deliveryModel:
   model: saas
@@ -40,7 +40,7 @@ tags:
 - Media Transport
 url: https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: amazon-mediaconnect:amazon-mediaconnect-bridges-api
@@ -99,8 +99,7 @@ apis:
     url: https://aws.amazon.com/mediaconnect/faqs/
 - aid: amazon-mediaconnect:amazon-mediaconnect-gateway-instances-api
   name: Amazon MediaConnect Gateway Instances API
-  description: >-
-    The Gateway Instances API from Amazon MediaConnect — 2 operation(s) for gateway instances.
+  description: The Gateway Instances API from Amazon MediaConnect — 2 operation(s) for gateway instances.
   humanURL: https://aws.amazon.com/mediaconnect/
   baseURL: https://mediaconnect.amazonaws.com
   tags:
@@ -189,6 +188,8 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/mediaconnect/faqs/
 common:
+- type: Website
+  url: https://amazon.com
 - type: CapabilityMap
   url: capabilities/amazon-mediaconnect-capability-edges.yml
   name: Amazon MediaConnect Business Capability Map
@@ -233,12 +234,14 @@ common:
 - type: Features
   data:
   - name: Video Transport Protocols
-    description: Supports Zixi, RIST, SRT, RTP, and RTP with FEC protocols for reliable live video delivery over IP networks.
+    description: Supports Zixi, RIST, SRT, RTP, and RTP with FEC protocols for reliable live video delivery
+      over IP networks.
   - name: Gateway Capability
-    description: Transmit compressed video between on-premises multicast environments and cloud infrastructure via the MediaConnect
-      Gateway.
+    description: Transmit compressed video between on-premises multicast environments and cloud infrastructure
+      via the MediaConnect Gateway.
   - name: Uncompressed Video Support
-    description: Handle uncompressed and visually-lossless video through AWS CDI and JPEG XS encoding with low-latency delivery.
+    description: Handle uncompressed and visually-lossless video through AWS CDI and JPEG XS encoding
+      with low-latency delivery.
   - name: End-to-End Encryption
     description: Built-in AES encryption with AWS Secrets Manager integration for encryption key management.
   - name: Entitlements
@@ -246,7 +249,8 @@ common:
   - name: Flow Management
     description: Programmatically create and manage flows, sources, outputs, and VPC interfaces.
   - name: Workflow Monitor
-    description: Visualize relationships between resources in live video workflows across connected AWS services.
+    description: Visualize relationships between resources in live video workflows across connected AWS
+      services.
 - type: UseCases
   data:
   - name: 24/7 TV Channel Operation
