@@ -49,6 +49,8 @@ apis:
   humanURL: https://aws.amazon.com/mediaconnect/
   baseURL: https://mediaconnect.amazonaws.com
   tags:
+  - Bridge
+  tags_raw:
   - Bridges
   properties:
   - type: OpenAPI
@@ -85,6 +87,8 @@ apis:
   humanURL: https://aws.amazon.com/mediaconnect/
   baseURL: https://mediaconnect.amazonaws.com
   tags:
+  - Flow
+  tags_raw:
   - Flows
   properties:
   - type: OpenAPI
