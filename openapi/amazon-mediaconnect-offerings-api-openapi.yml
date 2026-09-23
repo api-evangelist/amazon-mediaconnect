@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2018-11-14
   x-release: v4
-  title: AWS MediaConnect Bridges Offerings API
+  title: AWS MediaConnect Offerings API
   description: API for AWS Elemental MediaConnect
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediaconnect-2018-11-14.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -444,24 +445,6 @@ paths:
       - Offerings
 components:
   schemas:
-    ResourceSpecification:
-      type: object
-      required:
-      - ResourceType
-      properties:
-        ReservedBitrate:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: reservedBitrate
-            description: The amount of outbound bandwidth that is discounted in the offering.
-        ResourceType:
-          allOf:
-          - $ref: '#/components/schemas/ResourceType'
-          - xml:
-              name: resourceType
-            description: The type of resource and the unit that is being billed for.
-      description: A definition of what is being billed for, including the type and amount.
     ListOfferingsResponse:
       type: object
       properties:
@@ -477,16 +460,84 @@ components:
           - xml:
               name: offerings
             description: A list of offerings that are available to this account in the current AWS Region.
-    DurationUnits:
+    InternalServerErrorException: {}
+    BadRequestException: {}
+    Offering:
+      type: object
+      required:
+      - CurrencyCode
+      - OfferingArn
+      - OfferingDescription
+      - DurationUnits
+      - Duration
+      - PricePerUnit
+      - ResourceSpecification
+      - PriceUnits
+      properties:
+        CurrencyCode:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: currencyCode
+            description: The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
+        Duration:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: duration
+            description: The length of time that your reservation would be active.
+        DurationUnits:
+          allOf:
+          - $ref: '#/components/schemas/DurationUnits'
+          - xml:
+              name: durationUnits
+            description: The unit of measurement for the duration of the offering.
+        OfferingArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: offeringArn
+            description: The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+        OfferingDescription:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: offeringDescription
+            description: A description of the offering.
+        PricePerUnit:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: pricePerUnit
+            description: The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
+        PriceUnits:
+          allOf:
+          - $ref: '#/components/schemas/PriceUnits'
+          - xml:
+              name: priceUnits
+            description: The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
+        ResourceSpecification:
+          allOf:
+          - $ref: '#/components/schemas/ResourceSpecification'
+          - xml:
+              name: resourceSpecification
+            description: A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
+      description: A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    DescribeOfferingResponse:
+      type: object
+      properties:
+        Offering:
+          allOf:
+          - $ref: '#/components/schemas/Offering'
+          - xml:
+              name: offering
+    ReservationState:
       type: string
       enum:
-      - MONTHS
-    __listOfOffering:
-      type: array
-      items:
-        $ref: '#/components/schemas/Offering'
-    ForbiddenException: {}
-    TooManyRequestsException: {}
+      - ACTIVE
+      - EXPIRED
+      - PROCESSING
+      - CANCELED
     PurchaseOfferingResponse:
       type: object
       properties:
@@ -495,17 +546,6 @@ components:
           - $ref: '#/components/schemas/Reservation'
           - xml:
               name: reservation
-    ResourceType:
-      type: string
-      enum:
-      - Mbps_Outbound_Bandwidth
-    ReservationState:
-      type: string
-      enum:
-      - ACTIVE
-      - EXPIRED
-      - PROCESSING
-      - CANCELED
     Reservation:
       type: object
       required:
@@ -602,96 +642,63 @@ components:
               name: start
             description: The day and time that the reservation becomes active. You set this value when you purchase the offering.
       description: A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-    DescribeOfferingResponse:
-      type: object
-      properties:
-        Offering:
-          allOf:
-          - $ref: '#/components/schemas/Offering'
-          - xml:
-              name: offering
-    Offering:
+    TooManyRequestsException: {}
+    __integer:
+      type: integer
+    ServiceUnavailableException: {}
+    __listOfOffering:
+      type: array
+      items:
+        $ref: '#/components/schemas/Offering'
+    ForbiddenException: {}
+    ResourceSpecification:
       type: object
       required:
-      - CurrencyCode
-      - OfferingArn
-      - OfferingDescription
-      - DurationUnits
-      - Duration
-      - PricePerUnit
-      - ResourceSpecification
-      - PriceUnits
+      - ResourceType
       properties:
-        CurrencyCode:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: currencyCode
-            description: The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
-        Duration:
+        ReservedBitrate:
           allOf:
           - $ref: '#/components/schemas/__integer'
           - xml:
-              name: duration
-            description: The length of time that your reservation would be active.
-        DurationUnits:
+              name: reservedBitrate
+            description: The amount of outbound bandwidth that is discounted in the offering.
+        ResourceType:
           allOf:
-          - $ref: '#/components/schemas/DurationUnits'
+          - $ref: '#/components/schemas/ResourceType'
           - xml:
-              name: durationUnits
-            description: The unit of measurement for the duration of the offering.
-        OfferingArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: offeringArn
-            description: The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
-        OfferingDescription:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: offeringDescription
-            description: A description of the offering.
-        PricePerUnit:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: pricePerUnit
-            description: The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
-        PriceUnits:
-          allOf:
-          - $ref: '#/components/schemas/PriceUnits'
-          - xml:
-              name: priceUnits
-            description: The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
-        ResourceSpecification:
-          allOf:
-          - $ref: '#/components/schemas/ResourceSpecification'
-          - xml:
-              name: resourceSpecification
-            description: A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
-      description: A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
-    BadRequestException: {}
+              name: resourceType
+            description: The type of resource and the unit that is being billed for.
+      description: A definition of what is being billed for, including the type and amount.
     __string:
       type: string
-    __integer:
-      type: integer
-    InternalServerErrorException: {}
     PriceUnits:
       type: string
       enum:
       - HOURLY
+    ResourceType:
+      type: string
+      enum:
+      - Mbps_Outbound_Bandwidth
     NotFoundException: {}
-    ServiceUnavailableException: {}
+    DurationUnits:
+      type: string
+      enum:
+      - MONTHS
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -708,20 +715,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
