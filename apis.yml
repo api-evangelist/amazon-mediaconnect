@@ -193,7 +193,7 @@ apis:
     url: https://aws.amazon.com/mediaconnect/faqs/
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/mediaconnect/
 - type: CapabilityMap
   url: capabilities/amazon-mediaconnect-capability-edges.yml
   name: Amazon MediaConnect Business Capability Map
@@ -292,5 +292,5 @@ integrations:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
