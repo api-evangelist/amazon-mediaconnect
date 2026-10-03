@@ -608,6 +608,76 @@ paths:
       - Gateways
 components:
   schemas:
+    InternalServerErrorException: {}
+    TooManyRequestsException: {}
+    __listOfMessageDetail:
+      type: array
+      items:
+        $ref: '#/components/schemas/MessageDetail'
+    MessageDetail:
+      type: object
+      required:
+      - Message
+      - Code
+      properties:
+        Code:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: code
+            description: The error code.
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: message
+            description: The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
+        ResourceName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: resourceName
+            description: The name of the resource.
+    CreateGateway420Exception: {}
+    __listOf__string:
+      type: array
+      items:
+        $ref: '#/components/schemas/__string'
+    CreateGatewayResponse:
+      type: object
+      properties:
+        Gateway:
+          allOf:
+          - $ref: '#/components/schemas/Gateway'
+          - xml:
+              name: gateway
+    __listOfListedGateway:
+      type: array
+      items:
+        $ref: '#/components/schemas/ListedGateway'
+    ListGatewaysResponse:
+      type: object
+      properties:
+        Gateways:
+          allOf:
+          - $ref: '#/components/schemas/__listOfListedGateway'
+          - xml:
+              name: gateways
+            description: A list of gateway summaries.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: The token that identifies which batch of results that you want to see. For example, you submit a ListGateways request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListGateways request a second time and specify the NextToken value.
+    DescribeGatewayResponse:
+      type: object
+      properties:
+        Gateway:
+          allOf:
+          - $ref: '#/components/schemas/Gateway'
+          - xml:
+              name: gateway
     Gateway:
       type: object
       required:
@@ -652,10 +722,45 @@ components:
               name: networks
             description: The list of networks in the gateway.
       description: The settings for a gateway, including its networks.
-    __listOfListedGateway:
-      type: array
-      items:
-        $ref: '#/components/schemas/ListedGateway'
+    ServiceUnavailableException: {}
+    NotFoundException: {}
+    DeleteGatewayResponse:
+      type: object
+      properties:
+        GatewayArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: gatewayArn
+            description: The Amazon Resource Name (ARN) of the gateway that was deleted.
+    GatewayNetwork:
+      type: object
+      required:
+      - CidrBlock
+      - Name
+      properties:
+        CidrBlock:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: cidrBlock
+            description: A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: name
+            description: The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
+      description: The network settings for a gateway.
+    GatewayState:
+      type: string
+      enum:
+      - CREATING
+      - ACTIVE
+      - UPDATING
+      - ERROR
+      - DELETING
+      - DELETED
     ListedGateway:
       type: object
       required:
@@ -681,135 +786,18 @@ components:
               name: name
             description: The name of the gateway.
       description: Provides a summary of a gateway, including its name, ARN, and status.
-    GatewayNetwork:
-      type: object
-      required:
-      - CidrBlock
-      - Name
-      properties:
-        CidrBlock:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: cidrBlock
-            description: A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: name
-            description: The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
-      description: The network settings for a gateway.
-    ServiceUnavailableException: {}
-    CreateGatewayResponse:
-      type: object
-      properties:
-        Gateway:
-          allOf:
-          - $ref: '#/components/schemas/Gateway'
-          - xml:
-              name: gateway
-    __string:
-      type: string
-    __listOfMessageDetail:
-      type: array
-      items:
-        $ref: '#/components/schemas/MessageDetail'
     ForbiddenException: {}
-    MessageDetail:
-      type: object
-      required:
-      - Message
-      - Code
-      properties:
-        Code:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: code
-            description: The error code.
-        Message:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: message
-            description: The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
-        ResourceName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: resourceName
-            description: The name of the resource.
-    ConflictException: {}
-    __listOf__string:
-      type: array
-      items:
-        $ref: '#/components/schemas/__string'
-    InternalServerErrorException: {}
-    DeleteGatewayResponse:
-      type: object
-      properties:
-        GatewayArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: gatewayArn
-            description: The Amazon Resource Name (ARN) of the gateway that was deleted.
-    ListGatewaysResponse:
-      type: object
-      properties:
-        Gateways:
-          allOf:
-          - $ref: '#/components/schemas/__listOfListedGateway'
-          - xml:
-              name: gateways
-            description: A list of gateway summaries.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: nextToken
-            description: The token that identifies which batch of results that you want to see. For example, you submit a ListGateways request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListGateways request a second time and specify the NextToken value.
-    CreateGateway420Exception: {}
-    NotFoundException: {}
-    TooManyRequestsException: {}
     __listOfGatewayNetwork:
       type: array
       items:
         $ref: '#/components/schemas/GatewayNetwork'
-    GatewayState:
+    __string:
       type: string
-      enum:
-      - CREATING
-      - ACTIVE
-      - UPDATING
-      - ERROR
-      - DELETING
-      - DELETED
-    DescribeGatewayResponse:
-      type: object
-      properties:
-        Gateway:
-          allOf:
-          - $ref: '#/components/schemas/Gateway'
-          - xml:
-              name: gateway
+    ConflictException: {}
     BadRequestException: {}
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -820,20 +808,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

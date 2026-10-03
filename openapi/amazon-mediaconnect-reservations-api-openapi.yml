@@ -327,31 +327,16 @@ paths:
       - Reservations
 components:
   schemas:
-    ResourceSpecification:
+    InternalServerErrorException: {}
+    DescribeReservationResponse:
       type: object
-      required:
-      - ResourceType
       properties:
-        ReservedBitrate:
+        Reservation:
           allOf:
-          - $ref: '#/components/schemas/__integer'
+          - $ref: '#/components/schemas/Reservation'
           - xml:
-              name: reservedBitrate
-            description: The amount of outbound bandwidth that is discounted in the offering.
-        ResourceType:
-          allOf:
-          - $ref: '#/components/schemas/ResourceType'
-          - xml:
-              name: resourceType
-            description: The type of resource and the unit that is being billed for.
-      description: A definition of what is being billed for, including the type and amount.
-    ReservationState:
-      type: string
-      enum:
-      - ACTIVE
-      - EXPIRED
-      - PROCESSING
-      - CANCELED
+              name: reservation
+    TooManyRequestsException: {}
     Reservation:
       type: object
       required:
@@ -448,38 +433,43 @@ components:
               name: start
             description: The day and time that the reservation becomes active. You set this value when you purchase the offering.
       description: A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-    ServiceUnavailableException: {}
-    __string:
-      type: string
+    __integer:
+      type: integer
     __listOfReservation:
       type: array
       items:
         $ref: '#/components/schemas/Reservation'
-    __integer:
-      type: integer
-    DescribeReservationResponse:
-      type: object
-      properties:
-        Reservation:
-          allOf:
-          - $ref: '#/components/schemas/Reservation'
-          - xml:
-              name: reservation
-    InternalServerErrorException: {}
+    ReservationState:
+      type: string
+      enum:
+      - ACTIVE
+      - EXPIRED
+      - PROCESSING
+      - CANCELED
+    ServiceUnavailableException: {}
     NotFoundException: {}
-    TooManyRequestsException: {}
-    ResourceType:
-      type: string
-      enum:
-      - Mbps_Outbound_Bandwidth
-    DurationUnits:
-      type: string
-      enum:
-      - MONTHS
     PriceUnits:
       type: string
       enum:
       - HOURLY
+    ResourceSpecification:
+      type: object
+      required:
+      - ResourceType
+      properties:
+        ReservedBitrate:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: reservedBitrate
+            description: The amount of outbound bandwidth that is discounted in the offering.
+        ResourceType:
+          allOf:
+          - $ref: '#/components/schemas/ResourceType'
+          - xml:
+              name: resourceType
+            description: The type of resource and the unit that is being billed for.
+      description: A definition of what is being billed for, including the type and amount.
     ListReservationsResponse:
       type: object
       properties:
@@ -495,22 +485,20 @@ components:
           - xml:
               name: reservations
             description: A list of all reservations that have been purchased by this account in the current AWS Region.
+    DurationUnits:
+      type: string
+      enum:
+      - MONTHS
+    ResourceType:
+      type: string
+      enum:
+      - Mbps_Outbound_Bandwidth
+    __string:
+      type: string
     BadRequestException: {}
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -521,20 +509,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
