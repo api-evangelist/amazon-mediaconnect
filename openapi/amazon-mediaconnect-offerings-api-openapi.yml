@@ -445,7 +445,77 @@ paths:
       - Offerings
 components:
   schemas:
+    ForbiddenException: {}
+    __listOfOffering:
+      type: array
+      items:
+        $ref: '#/components/schemas/Offering'
+    __integer:
+      type: integer
+    BadRequestException: {}
+    ServiceUnavailableException: {}
+    NotFoundException: {}
+    TooManyRequestsException: {}
+    DurationUnits:
+      type: string
+      enum:
+      - MONTHS
+    ListOfferingsResponse:
+      type: object
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+        Offerings:
+          allOf:
+          - $ref: '#/components/schemas/__listOfOffering'
+          - xml:
+              name: offerings
+            description: A list of offerings that are available to this account in the current AWS Region.
+    PriceUnits:
+      type: string
+      enum:
+      - HOURLY
+    ResourceSpecification:
+      type: object
+      required:
+      - ResourceType
+      properties:
+        ReservedBitrate:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: reservedBitrate
+            description: The amount of outbound bandwidth that is discounted in the offering.
+        ResourceType:
+          allOf:
+          - $ref: '#/components/schemas/ResourceType'
+          - xml:
+              name: resourceType
+            description: The type of resource and the unit that is being billed for.
+      description: A definition of what is being billed for, including the type and amount.
+    DescribeOfferingResponse:
+      type: object
+      properties:
+        Offering:
+          allOf:
+          - $ref: '#/components/schemas/Offering'
+          - xml:
+              name: offering
+    __string:
+      type: string
     InternalServerErrorException: {}
+    PurchaseOfferingResponse:
+      type: object
+      properties:
+        Reservation:
+          allOf:
+          - $ref: '#/components/schemas/Reservation'
+          - xml:
+              name: reservation
     Offering:
       type: object
       required:
@@ -507,7 +577,17 @@ components:
               name: resourceSpecification
             description: A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
       description: A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
-    TooManyRequestsException: {}
+    ResourceType:
+      type: string
+      enum:
+      - Mbps_Outbound_Bandwidth
+    ReservationState:
+      type: string
+      enum:
+      - ACTIVE
+      - EXPIRED
+      - PROCESSING
+      - CANCELED
     Reservation:
       type: object
       required:
@@ -604,107 +684,15 @@ components:
               name: start
             description: The day and time that the reservation becomes active. You set this value when you purchase the offering.
       description: A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-    __integer:
-      type: integer
-    ReservationState:
-      type: string
-      enum:
-      - ACTIVE
-      - EXPIRED
-      - PROCESSING
-      - CANCELED
-    PurchaseOfferingResponse:
-      type: object
-      properties:
-        Reservation:
-          allOf:
-          - $ref: '#/components/schemas/Reservation'
-          - xml:
-              name: reservation
-    ServiceUnavailableException: {}
-    ListOfferingsResponse:
-      type: object
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: nextToken
-            description: The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-        Offerings:
-          allOf:
-          - $ref: '#/components/schemas/__listOfOffering'
-          - xml:
-              name: offerings
-            description: A list of offerings that are available to this account in the current AWS Region.
-    NotFoundException: {}
-    PriceUnits:
-      type: string
-      enum:
-      - HOURLY
-    DescribeOfferingResponse:
-      type: object
-      properties:
-        Offering:
-          allOf:
-          - $ref: '#/components/schemas/Offering'
-          - xml:
-              name: offering
-    ResourceSpecification:
-      type: object
-      required:
-      - ResourceType
-      properties:
-        ReservedBitrate:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: reservedBitrate
-            description: The amount of outbound bandwidth that is discounted in the offering.
-        ResourceType:
-          allOf:
-          - $ref: '#/components/schemas/ResourceType'
-          - xml:
-              name: resourceType
-            description: The type of resource and the unit that is being billed for.
-      description: A definition of what is being billed for, including the type and amount.
-    ForbiddenException: {}
-    DurationUnits:
-      type: string
-      enum:
-      - MONTHS
-    __listOfOffering:
-      type: array
-      items:
-        $ref: '#/components/schemas/Offering'
-    ResourceType:
-      type: string
-      enum:
-      - Mbps_Outbound_Bandwidth
-    __string:
-      type: string
-    BadRequestException: {}
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -715,14 +703,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
