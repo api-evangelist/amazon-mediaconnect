@@ -1,4 +1,4 @@
-# Amazon MediaConnect (amazon-mediaconnect)
+# Amazon MediaConnect
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,131 +66,267 @@
 
 AWS Elemental MediaConnect is a high-quality transport service for live video that provides the reliability, security, and visibility customers expect from traditional satellite and fiber services. It enables broadcasters to build live video workflows in the cloud with reliable transport of broadcast-quality content using protocols including Zixi, RIST, SRT, RTP, and RTP with FEC.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/apis.yml)
+**Areas:** AWS · Broadcasting · Live Streaming · Media · Media Transport
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon MediaConnect on APIs.io
 
-## Tags:
+Everything profiled for Amazon MediaConnect is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-mediaconnect/](https://apis.io/providers/amazon-mediaconnect/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Broadcasting, Live Video, Media, Media Transport
+### APIs (18)
 
-## Timestamps
+- [Amazon MediaConnect Bridges API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-bridges-api/) — The Bridges API from Amazon MediaConnect — 7 operation(s) for bridges.
+- [Amazon MediaConnect Entitlements API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-entitlements-api/) — The Entitlements API from Amazon MediaConnect — 1 operation(s) for entitlements.
+- [Amazon MediaConnect Flows API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-flows-api/) — The Flows API from Amazon MediaConnect — 14 operation(s) for flows.
+- [Amazon MediaConnect Gateway Instances API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-gateway-instances-api/) — The Gateway Instances API from Amazon MediaConnect — 2 operation(s) for gateway instances.
+- [Amazon MediaConnect Gateways API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-gateways-api/) — The Gateways API from Amazon MediaConnect — 2 operation(s) for gateways.
+- [Amazon MediaConnect Offerings API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-offerings-api/) — The Offerings API from Amazon MediaConnect — 2 operation(s) for offerings.
+- [Amazon MediaConnect Reservations API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-reservations-api/) — The Reservations API from Amazon MediaConnect — 2 operation(s) for reservations.
+- [Amazon MediaConnect Tags API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-tags-api/) — The Tags API from Amazon MediaConnect — 2 operation(s) for tags.
+- [Amazon MediaConnect Mediaconnect Destinationendpoint API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-destinationendpoint-api/) — The Mediaconnect Destinationendpoint API from Amazon MediaConnect — 2 operation(s) for mediaconnect destinationendpoint.
+- [Amazon MediaConnect Mediaconnect Mediastreams API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-mediastreams-api/) — The Mediaconnect Mediastreams API from Amazon MediaConnect — 2 operation(s) for mediaconnect mediastreams.
+- [Amazon MediaConnect Mediaconnect Operations API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-operations-api/) — The Mediaconnect Operations API from Amazon MediaConnect — 14 operation(s) for mediaconnect operations.
+- [Amazon MediaConnect Mediaconnect Outputs API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-outputs-api/) — The Mediaconnect Outputs API from Amazon MediaConnect — 4 operation(s) for mediaconnect outputs.
+- [Amazon MediaConnect Mediaconnect Routerinput API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-routerinput-api/) — The Mediaconnect Routerinput API from Amazon MediaConnect — 5 operation(s) for mediaconnect routerinput.
+- [Amazon MediaConnect Mediaconnect Routernetworkinterface API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-routernetworkinterface-api/) — The Mediaconnect Routernetworkinterface API from Amazon MediaConnect — 2 operation(s) for mediaconnect routernetworkinterface.
+- [Amazon MediaConnect Mediaconnect Routeroutput API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-routeroutput-api/) — The Mediaconnect Routeroutput API from Amazon MediaConnect — 6 operation(s) for mediaconnect routeroutput.
+- [Amazon MediaConnect Mediaconnect Source API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-source-api/) — The Mediaconnect Source API from Amazon MediaConnect — 2 operation(s) for mediaconnect source.
+- [Amazon MediaConnect Mediaconnect Sourceendpoint API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-sourceendpoint-api/) — The Mediaconnect Sourceendpoint API from Amazon MediaConnect — 2 operation(s) for mediaconnect sourceendpoint.
+- [Amazon MediaConnect Mediaconnect Sources API](https://apis.io/apis/amazon-mediaconnect/amazon-mediaconnect-sources-api/) — The Mediaconnect Sources API from Amazon MediaConnect — 2 operation(s) for mediaconnect sources.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### AWS Elemental MediaConnect API
-The AWS Elemental MediaConnect API provides programmatic access to create and manage flows, sources, outputs, entitlements, VPC interfaces, bridges, gateways, and media streams for reliable live video transport in the cloud.
+#### Agentic access (1)
 
-**Human URL:** [https://aws.amazon.com/mediaconnect/](https://aws.amazon.com/mediaconnect/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Amazon Mediaconnect Agentic Access](https://apis.io/agentic-access/amazon-mediaconnect/amazon-mediaconnect-agentic-access/)
 
- - Broadcasting, Live Video, Media Transport, Flows, Bridges, Gateways
+#### JSON Schema (243)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html)
-- [OpenAPI](openapi/amazon-mediaconnect-openapi-original.yml)
-- [GettingStarted](https://aws.amazon.com/mediaconnect/getting-started/)
-- [Pricing](https://aws.amazon.com/mediaconnect/pricing/)
-- [FAQ](https://aws.amazon.com/mediaconnect/faqs/)
+- [__boolean](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__boolean/)
+- [__double](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__double/)
+- [__integer](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__integer/)
+- [__listOfAddBridgeOutputRequest](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-add-bridge-output-request/)
+- [__listOfAddBridgeSourceRequest](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-add-bridge-source-request/)
+- [__listOfAddMediaStreamRequest](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-add-media-stream-request/)
+- [__listOfAddOutputRequest](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-add-output-request/)
+- [__listOfBridgeOutput](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-bridge-output/)
+- [__listOfBridgeSource](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-bridge-source/)
+- [__listOfDestinationConfiguration](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-destination-configuration/)
+- [__listOfDestinationConfigurationRequest](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-destination-configuration-request/)
+- [__listOfEntitlement](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-entitlement/)
+- [__listOfGatewayNetwork](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-gateway-network/)
+- [__listOfGrantEntitlementRequest](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-grant-entitlement-request/)
+- [__listOfInputConfiguration](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-input-configuration/)
+- [__listOfInputConfigurationRequest](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-input-configuration-request/)
+- [__listOfListedBridge](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-listed-bridge/)
+- [__listOfListedEntitlement](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-listed-entitlement/)
+- [__listOfListedFlow](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-listed-flow/)
+- [__listOfListedGateway](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-listed-gateway/)
+- [__listOfListedGatewayInstance](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-listed-gateway-instance/)
+- [__listOfMediaStream](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-media-stream/)
+- [__listOfMediaStreamOutputConfiguration](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-media-stream-output-configuration/)
+- [__listOfMediaStreamOutputConfigurationRequest](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-media-stream-output-configuration-request/)
+- [__listOfMediaStreamSourceConfiguration](https://apis.io/schemas/amazon-mediaconnect/mediaconnect-api-__list-of-media-stream-source-configuration/)
+- …and 218 more published on APIs.io
 
-## Common Properties
+#### JSON Structure (243)
 
-- [Portal](https://aws.amazon.com/mediaconnect/)
+Data models expressed in JSON Structure.
+
+- [Mediaconnect Api __Boolean Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__boolean-structure/)
+- [Mediaconnect Api __Double Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__double-structure/)
+- [Mediaconnect Api __Integer Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__integer-structure/)
+- [Mediaconnect Api __List Of Add Bridge Output Request Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-add-bridge-output-request-structure/)
+- [Mediaconnect Api __List Of Add Bridge Source Request Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-add-bridge-source-request-structure/)
+- [Mediaconnect Api __List Of Add Media Stream Request Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-add-media-stream-request-structure/)
+- [Mediaconnect Api __List Of Add Output Request Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-add-output-request-structure/)
+- [Mediaconnect Api __List Of Bridge Output Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-bridge-output-structure/)
+- [Mediaconnect Api __List Of Bridge Source Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-bridge-source-structure/)
+- [Mediaconnect Api __List Of Destination Configuration Request Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-destination-configuration-request-structure/)
+- [Mediaconnect Api __List Of Destination Configuration Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-destination-configuration-structure/)
+- [Mediaconnect Api __List Of Entitlement Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-entitlement-structure/)
+- [Mediaconnect Api __List Of Gateway Network Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-gateway-network-structure/)
+- [Mediaconnect Api __List Of Grant Entitlement Request Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-grant-entitlement-request-structure/)
+- [Mediaconnect Api __List Of Input Configuration Request Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-input-configuration-request-structure/)
+- [Mediaconnect Api __List Of Input Configuration Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-input-configuration-structure/)
+- [Mediaconnect Api __List Of Listed Bridge Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-listed-bridge-structure/)
+- [Mediaconnect Api __List Of Listed Entitlement Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-listed-entitlement-structure/)
+- [Mediaconnect Api __List Of Listed Flow Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-listed-flow-structure/)
+- [Mediaconnect Api __List Of Listed Gateway Instance Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-listed-gateway-instance-structure/)
+- [Mediaconnect Api __List Of Listed Gateway Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-listed-gateway-structure/)
+- [Mediaconnect Api __List Of Media Stream Output Configuration Request Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-media-stream-output-configuration-request-structure/)
+- [Mediaconnect Api __List Of Media Stream Output Configuration Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-media-stream-output-configuration-structure/)
+- [Mediaconnect Api __List Of Media Stream Source Configuration Request Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-media-stream-source-configuration-request-structure/)
+- [Mediaconnect Api __List Of Media Stream Source Configuration Structure](https://apis.io/json-structure/amazon-mediaconnect/mediaconnect-api-__list-of-media-stream-source-configuration-structure/)
+- …and 218 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Mediaconnect Api Context](https://apis.io/jsonld/amazon-mediaconnect/amazon-mediaconnect-api-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Mediaconnect Vocabulary](https://apis.io/vocabularies/amazon-mediaconnect/amazon-mediaconnect-vocabulary/)
+
+#### Examples (210)
+
+Example requests and responses.
+
+- [Mediaconnect Api __Boolean Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-__boolean-example/)
+- [Mediaconnect Api __Double Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-__double-example/)
+- [Mediaconnect Api __Integer Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-__integer-example/)
+- [Mediaconnect Api __Map Of__String Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-__map-of__string-example/)
+- [Mediaconnect Api __String Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-__string-example/)
+- [Mediaconnect Api Add Bridge Flow Source Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-bridge-flow-source-request-example/)
+- [Mediaconnect Api Add Bridge Network Output Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-bridge-network-output-request-example/)
+- [Mediaconnect Api Add Bridge Network Source Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-bridge-network-source-request-example/)
+- [Mediaconnect Api Add Bridge Output Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-bridge-output-request-example/)
+- [Mediaconnect Api Add Bridge Outputs Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-bridge-outputs-request-example/)
+- [Mediaconnect Api Add Bridge Outputs Response Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-bridge-outputs-response-example/)
+- [Mediaconnect Api Add Bridge Source Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-bridge-source-request-example/)
+- [Mediaconnect Api Add Bridge Sources Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-bridge-sources-request-example/)
+- [Mediaconnect Api Add Bridge Sources Response Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-bridge-sources-response-example/)
+- [Mediaconnect Api Add Egress Gateway Bridge Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-egress-gateway-bridge-request-example/)
+- [Mediaconnect Api Add Flow Media Streams Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-flow-media-streams-request-example/)
+- [Mediaconnect Api Add Flow Media Streams Response Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-flow-media-streams-response-example/)
+- [Mediaconnect Api Add Flow Outputs Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-flow-outputs-request-example/)
+- [Mediaconnect Api Add Flow Outputs Response Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-flow-outputs-response-example/)
+- [Mediaconnect Api Add Flow Outputs420 Exception Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-flow-outputs420-exception-example/)
+- [Mediaconnect Api Add Flow Sources Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-flow-sources-request-example/)
+- [Mediaconnect Api Add Flow Sources Response Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-flow-sources-response-example/)
+- [Mediaconnect Api Add Flow Vpc Interfaces Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-flow-vpc-interfaces-request-example/)
+- [Mediaconnect Api Add Flow Vpc Interfaces Response Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-flow-vpc-interfaces-response-example/)
+- [Mediaconnect Api Add Ingress Gateway Bridge Request Example](https://apis.io/examples/amazon-mediaconnect/mediaconnect-api-add-ingress-gateway-bridge-request-example/)
+- …and 185 more published on APIs.io
+
+#### Collections (16)
+
+Postman and Open Collection request collections.
+
+- [AWS MediaConnect Bridges API](https://apis.io/collections/amazon-mediaconnect/open-amazon-mediaconnect-bridges-api/)
+- [AWS MediaConnect Bridges Entitlements API](https://apis.io/collections/amazon-mediaconnect/open-amazon-mediaconnect-entitlements-api/)
+- [AWS MediaConnect Bridges Flows API](https://apis.io/collections/amazon-mediaconnect/open-amazon-mediaconnect-flows-api/)
+- [AWS MediaConnect Bridges Gateway Instances API](https://apis.io/collections/amazon-mediaconnect/open-amazon-mediaconnect-gateway-instances-api/)
+- [AWS MediaConnect Bridges Gateways API](https://apis.io/collections/amazon-mediaconnect/open-amazon-mediaconnect-gateways-api/)
+- [AWS MediaConnect Bridges Offerings API](https://apis.io/collections/amazon-mediaconnect/open-amazon-mediaconnect-offerings-api/)
+- [AWS MediaConnect Bridges Reservations API](https://apis.io/collections/amazon-mediaconnect/open-amazon-mediaconnect-reservations-api/)
+- [AWS MediaConnect Bridges Tags API](https://apis.io/collections/amazon-mediaconnect/open-amazon-mediaconnect-tags-api/)
+- [AWS MediaConnect Bridges API](https://apis.io/collections/amazon-mediaconnect/postman-amazon-mediaconnect-bridges-api/)
+- [AWS MediaConnect Bridges Entitlements API](https://apis.io/collections/amazon-mediaconnect/postman-amazon-mediaconnect-entitlements-api/)
+- [AWS MediaConnect Bridges Flows API](https://apis.io/collections/amazon-mediaconnect/postman-amazon-mediaconnect-flows-api/)
+- [AWS MediaConnect Bridges Gateway Instances API](https://apis.io/collections/amazon-mediaconnect/postman-amazon-mediaconnect-gateway-instances-api/)
+- [AWS MediaConnect Bridges Gateways API](https://apis.io/collections/amazon-mediaconnect/postman-amazon-mediaconnect-gateways-api/)
+- [AWS MediaConnect Bridges Offerings API](https://apis.io/collections/amazon-mediaconnect/postman-amazon-mediaconnect-offerings-api/)
+- [AWS MediaConnect Bridges Reservations API](https://apis.io/collections/amazon-mediaconnect/postman-amazon-mediaconnect-reservations-api/)
+- [AWS MediaConnect Bridges Tags API](https://apis.io/collections/amazon-mediaconnect/postman-amazon-mediaconnect-tags-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon MediaConnect — jsonschema rules](https://apis.io/rules/amazon-mediaconnect/amazon-mediaconnect-jsonschema-spectral-rules/)
+- [Amazon MediaConnect API Rules](https://apis.io/rules/amazon-mediaconnect/amazon-mediaconnect-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Mediaconnect Authentication](https://apis.io/security/amazon-mediaconnect/amazon-mediaconnect-authentication/)
+- [Amazon Mediaconnect Domain Security](https://apis.io/security/amazon-mediaconnect/amazon-mediaconnect-domain-security/)
+- [Amazon Mediaconnect Trust Center](https://apis.io/security/amazon-mediaconnect/amazon-mediaconnect-trust-center/)
+- [Amazon Mediaconnect Vulnerability Disclosure](https://apis.io/security/amazon-mediaconnect/amazon-mediaconnect-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Mediaconnect Plans Pricing](https://apis.io/plans/amazon-mediaconnect/amazon-mediaconnect-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Mediaconnect Rate Limits](https://apis.io/rate-limits/amazon-mediaconnect/amazon-mediaconnect-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Mediaconnect Finops](https://apis.io/finops/amazon-mediaconnect/amazon-mediaconnect-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/mediaconnect/)
 - [Documentation](https://docs.aws.amazon.com/mediaconnect/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/media/tag/aws-elemental-mediaconnect/)
-- [GitHubOrganization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/mediaconnect/)
-- [SignUp](https://portal.aws.amazon.com/billing/signup)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Video Transport Protocols | Supports Zixi, RIST, SRT, RTP, and RTP with FEC protocols for reliable live video delivery over IP networks. |
-| Gateway Capability | Transmit compressed video between on-premises multicast environments and cloud infrastructure via the MediaConnect Gateway. |
-| Uncompressed Video Support | Handle uncompressed and visually-lossless video through AWS CDI and JPEG XS encoding with low-latency delivery. |
-| End-to-End Encryption | Built-in AES encryption with AWS Secrets Manager integration for encryption key management. |
-| Entitlements | Grant partner and customer accounts controlled access to your video streams via entitlements. |
-| Flow Management | Programmatically create and manage flows, sources, outputs, and VPC interfaces. |
-| Workflow Monitor | Visualize relationships between resources in live video workflows across connected AWS services. |
+**Kin Score 55.6** — strong · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 62.9 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.3 |
+| Access clarity | 60.5 |
 
-| Name | Description |
-|------|-------------|
-| 24/7 TV Channel Operation | Transport continuous broadcast streams reliably for round-the-clock television channels. |
-| Live Event Streaming | Manage event-based video distribution for sports, concerts, news, and other live events. |
-| Content Sharing | Share live video feeds with partners and customers through controlled entitlements. |
-| Disaster Recovery | Provide redundant video pathways for business continuity in broadcast workflows. |
+**Agent readiness 30.2** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| AWS Elemental MediaLive | Send video flows to MediaLive for transcoding and processing. |
-| Amazon CloudWatch | Monitor MediaConnect performance metrics and set alarms. |
-| Amazon EventBridge | Trigger event-driven workflows based on MediaConnect source health changes. |
-| Amazon CloudFront | Deliver processed video content at scale using CloudFront. |
-| AWS Secrets Manager | Securely manage encryption keys for content protection. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-mediaconnect/](https://apis.io/providers/amazon-mediaconnect/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Amazon MediaConnect OpenAPI](openapi/amazon-mediaconnect-openapi-original.yml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon MediaConnect: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- 243 schema files in [json-schema/](json-schema/)
-
-### JSON Structure
-
-- 243 structure files in [json-structure/](json-structure/)
-
-### JSON-LD
-
-- [Amazon MediaConnect API Context](json-ld/amazon-mediaconnect-api-context.jsonld)
-
-### Examples
-
-- 243 example files in [examples/](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [MediaConnect](capabilities/shared/mediaconnect.yaml) — 50 operations for live video transport
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Amazon MediaConnect Live Video Transport](capabilities/amazon-mediaconnect-live-video-transport.yaml) | MediaConnect | 8 | Broadcast Engineer |
-
-## Vocabulary
-
-- [Amazon MediaConnect Vocabulary](vocabulary/amazon-mediaconnect-vocabulary.yaml) — Unified taxonomy mapping resources, actions, workflows, and personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [Amazon MediaConnect Spectral Rules](rules/amazon-mediaconnect-spectral-rules.yml) — 20 rules across 8 categories enforcing Amazon MediaConnect API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-mediaconnect/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
