@@ -1,0 +1,171 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/mediaconnect/pricing/
+sources:
+- https://aws.amazon.com/mediaconnect/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Main rate tables render via dynamic {priceOf...} tokens with no visible numbers; numeric prices
+  captured are those stated in the page's pricing examples. Hourly charges for flows, inputs/outputs by
+  bitrate tier, plus per-GB data transfer; reserved outbound bandwidth requires a 12-month commitment.
+plan_count: 10
+currency: USD
+plans:
+- name: Transport stream flow (US East N. Virginia, pricing example)
+  price_text: $0.16 per hour
+  price: 0.16
+  currency: USD
+  period: per-use
+  unit: running flow hour
+- name: CDI/JPEG XS 1080p running flow (US East N. Virginia, pricing example)
+  price_text: $6.00 per hour
+  price: 6.0
+  currency: USD
+  period: per-use
+  unit: running flow hour
+  overage: Cost per Output per Hour in US East (N. Virginia) Region for CDI/JPEG XS 1080p video $0.30
+    per hour
+- name: CDI/JPEG XS 1080i running flow (Europe Ireland, pricing example)
+  price_text: $3.00 per hour
+  price: 3.0
+  currency: USD
+  period: per-use
+  unit: running flow hour
+  overage: Cost per Output per Hour in Europe (Ireland) Region for CDI/JPEG XS 1080i video $0.13 per hour
+- name: NDI flow (US East N. Virginia, pricing example)
+  price_text: $1.50 per hour
+  price: 1.5
+  currency: USD
+  period: per-use
+  unit: running NDI flow hour
+- name: Reserved outbound bandwidth 50 Mbps (pricing example)
+  price_text: $1.161 per hour
+  price: 1.161
+  currency: USD
+  period: per-use
+  unit: hour, 12-month commitment
+  overage: Excess bitrate delivered above the bandwidth commitment is billed per gigabyte (GB) using standard
+    rates
+- name: Data transfer out to internet (pricing example)
+  price_text: $0.090 per GB
+  price: 0.09
+  currency: USD
+  period: per-use
+  unit: GB
+  included_quota: 100GB of free data transfer out to the internet free each month
+- name: Router input up to 100 Mbps IAD (pricing example)
+  price_text: $0.14
+  price: 0.14
+  currency: USD
+  period: per-use
+  unit: input hour
+- name: Router output up to 100 Mbps IAD (pricing example)
+  price_text: $0.10
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: output hour
+- name: Reserved outbound bandwidth greater than 1500 Mbps
+  price_text: Contact Us
+  period: none
+- name: MediaConnect Gateway software
+  price_text: available at no cost
+  period: none
+  included_quota: Customers need to supply their own hardware and use Amazon ECS Anywhere
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  units:
+  - compute
+  - data
+  plans:
+  - name: Transport stream flow (US East N. Virginia, pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: CDI/JPEG XS 1080p running flow (US East N. Virginia, pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: CDI/JPEG XS 1080i running flow (Europe Ireland, pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: NDI flow (US East N. Virginia, pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Reserved outbound bandwidth 50 Mbps (pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Data transfer out to internet (pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Router input up to 100 Mbps IAD (pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Router output up to 100 Mbps IAD (pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Reserved outbound bandwidth greater than 1500 Mbps
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: MediaConnect Gateway software
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none

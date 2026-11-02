@@ -1,0 +1,421 @@
+aid: amazon-mediaconnect
+name: Amazon MediaConnect
+description: AWS Elemental MediaConnect is a high-quality transport service for live video that provides
+  the reliability, security, and visibility customers expect from traditional satellite and fiber services.
+  It enables broadcasters to build live video workflows in the cloud with reliable transport of broadcast-quality
+  content using protocols including Zixi, RIST, SRT, RTP, and RTP with FEC.
+type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: medium
+  source:
+  - plans
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-mediaconnect.png
+tags:
+- Amazon Web Services
+- Broadcasting
+- Live Streaming
+- Media
+- Media Transport
+tags_raw:
+- AWS
+- Broadcasting
+- Live Video
+- Media
+- Media Transport
+url: https://raw.githubusercontent.com/api-evangelist/amazon-mediaconnect/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-09-16'
+specificationVersion: '0.23'
+apis:
+- aid: amazon-mediaconnect:amazon-mediaconnect-bridges-api
+  name: Amazon MediaConnect Bridges API
+  description: The Bridges API from Amazon MediaConnect — 7 operation(s) for bridges.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Bridge
+  tags_raw:
+  - Bridges
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-bridges-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+- aid: amazon-mediaconnect:amazon-mediaconnect-entitlements-api
+  name: Amazon MediaConnect Entitlements API
+  description: The Entitlements API from Amazon MediaConnect — 1 operation(s) for entitlements.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Entitlements
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-entitlements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+- aid: amazon-mediaconnect:amazon-mediaconnect-flows-api
+  name: Amazon MediaConnect Flows API
+  description: The Flows API from Amazon MediaConnect — 14 operation(s) for flows.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Flow
+  tags_raw:
+  - Flows
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-flows-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+- aid: amazon-mediaconnect:amazon-mediaconnect-gateway-instances-api
+  name: Amazon MediaConnect Gateway Instances API
+  description: >-
+    The Gateway Instances API from Amazon MediaConnect — 2 operation(s) for gateway instances.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Gateway Instances
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-gateway-instances-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+- aid: amazon-mediaconnect:amazon-mediaconnect-gateways-api
+  name: Amazon MediaConnect Gateways API
+  description: The Gateways API from Amazon MediaConnect — 2 operation(s) for gateways.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Gateways
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-gateways-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+- aid: amazon-mediaconnect:amazon-mediaconnect-offerings-api
+  name: Amazon MediaConnect Offerings API
+  description: The Offerings API from Amazon MediaConnect — 2 operation(s) for offerings.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Offerings
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-offerings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+- aid: amazon-mediaconnect:amazon-mediaconnect-reservations-api
+  name: Amazon MediaConnect Reservations API
+  description: The Reservations API from Amazon MediaConnect — 2 operation(s) for reservations.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Reservations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-reservations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+- aid: amazon-mediaconnect:amazon-mediaconnect-tags-api
+  name: Amazon MediaConnect Tags API
+  description: The Tags API from Amazon MediaConnect — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediaconnect/latest/api/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediaconnect/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediaconnect/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediaconnect/faqs/
+- aid: amazon-mediaconnect:amazon-mediaconnect-destinationendpoint-api
+  name: Amazon MediaConnect Mediaconnect Destinationendpoint API
+  description: >-
+    The Mediaconnect Destinationendpoint API from Amazon MediaConnect — 2 operation(s) for mediaconnect
+    destinationendpoint.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Destinationendpoint
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-destinationendpoint-api-openapi.yml
+- aid: amazon-mediaconnect:amazon-mediaconnect-mediastreams-api
+  name: Amazon MediaConnect Mediaconnect Mediastreams API
+  description: >-
+    The Mediaconnect Mediastreams API from Amazon MediaConnect — 2 operation(s) for mediaconnect mediastreams.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Mediastreams
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-mediastreams-api-openapi.yml
+- aid: amazon-mediaconnect:amazon-mediaconnect-operations-api
+  name: Amazon MediaConnect Mediaconnect Operations API
+  description: >-
+    The Mediaconnect Operations API from Amazon MediaConnect — 14 operation(s) for mediaconnect operations.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-operations-api-openapi.yml
+- aid: amazon-mediaconnect:amazon-mediaconnect-outputs-api
+  name: Amazon MediaConnect Mediaconnect Outputs API
+  description: >-
+    The Mediaconnect Outputs API from Amazon MediaConnect — 4 operation(s) for mediaconnect outputs.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Outputs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-outputs-api-openapi.yml
+- aid: amazon-mediaconnect:amazon-mediaconnect-routerinput-api
+  name: Amazon MediaConnect Mediaconnect Routerinput API
+  description: >-
+    The Mediaconnect Routerinput API from Amazon MediaConnect — 5 operation(s) for mediaconnect routerinput.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Routerinput
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-routerinput-api-openapi.yml
+- aid: amazon-mediaconnect:amazon-mediaconnect-routernetworkinterface-api
+  name: Amazon MediaConnect Mediaconnect Routernetworkinterface API
+  description: >-
+    The Mediaconnect Routernetworkinterface API from Amazon MediaConnect — 2 operation(s) for mediaconnect
+    routernetworkinterface.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Routernetworkinterface
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-routernetworkinterface-api-openapi.yml
+- aid: amazon-mediaconnect:amazon-mediaconnect-routeroutput-api
+  name: Amazon MediaConnect Mediaconnect Routeroutput API
+  description: >-
+    The Mediaconnect Routeroutput API from Amazon MediaConnect — 6 operation(s) for mediaconnect routeroutput.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Routeroutput
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-routeroutput-api-openapi.yml
+- aid: amazon-mediaconnect:amazon-mediaconnect-source-api
+  name: Amazon MediaConnect Mediaconnect Source API
+  description: >-
+    The Mediaconnect Source API from Amazon MediaConnect — 2 operation(s) for mediaconnect source.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Source
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-source-api-openapi.yml
+- aid: amazon-mediaconnect:amazon-mediaconnect-sourceendpoint-api
+  name: Amazon MediaConnect Mediaconnect Sourceendpoint API
+  description: >-
+    The Mediaconnect Sourceendpoint API from Amazon MediaConnect — 2 operation(s) for mediaconnect sourceendpoint.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Sourceendpoint
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-sourceendpoint-api-openapi.yml
+- aid: amazon-mediaconnect:amazon-mediaconnect-sources-api
+  name: Amazon MediaConnect Mediaconnect Sources API
+  description: >-
+    The Mediaconnect Sources API from Amazon MediaConnect — 2 operation(s) for mediaconnect sources.
+  humanURL: https://aws.amazon.com/mediaconnect/
+  baseURL: https://mediaconnect.amazonaws.com
+  tags:
+  - Mediaconnect Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediaconnect-sources-api-openapi.yml
+common:
+- type: Plans
+  url: plans/amazon-mediaconnect-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/amazon-mediaconnect-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-mediaconnect-finops.yml
+- type: Website
+  url: https://aws.amazon.com/mediaconnect/
+- type: CapabilityMap
+  url: capabilities/amazon-mediaconnect-capability-edges.yml
+  name: Amazon MediaConnect Business Capability Map
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-mediaconnect/overview
+- type: AgenticAccess
+  url: agentic-access/amazon-mediaconnect-agentic-access.yml
+- type: TrustCenter
+  url: security/amazon-mediaconnect-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-mediaconnect-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-mediaconnect-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-mediaconnect-authentication.yml
+- type: Portal
+  url: https://aws.amazon.com/mediaconnect/
+- type: Documentation
+  url: https://docs.aws.amazon.com/mediaconnect/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: Support
+  url: https://aws.amazon.com/premiumsupport/
+- type: Blog
+  url: https://aws.amazon.com/blogs/media/tag/aws-elemental-mediaconnect/
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: Console
+  url: https://console.aws.amazon.com/mediaconnect/
+- type: Signup
+  url: https://portal.aws.amazon.com/billing/signup
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Contact
+  url: https://aws.amazon.com/contact-us/
+- type: SpectralRules
+  url: rules/amazon-mediaconnect-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-mediaconnect-vocabulary.yaml
+- type: Features
+  data:
+  - name: Video Transport Protocols
+    description: Supports Zixi, RIST, SRT, RTP, and RTP with FEC protocols for reliable live video delivery
+      over IP networks.
+  - name: Gateway Capability
+    description: Transmit compressed video between on-premises multicast environments and cloud infrastructure
+      via the MediaConnect Gateway.
+  - name: Uncompressed Video Support
+    description: Handle uncompressed and visually-lossless video through AWS CDI and JPEG XS encoding
+      with low-latency delivery.
+  - name: End-to-End Encryption
+    description: Built-in AES encryption with AWS Secrets Manager integration for encryption key management.
+  - name: Entitlements
+    description: Grant partner and customer accounts controlled access to your video streams via entitlements.
+  - name: Flow Management
+    description: Programmatically create and manage flows, sources, outputs, and VPC interfaces.
+  - name: Workflow Monitor
+    description: Visualize relationships between resources in live video workflows across connected AWS
+      services.
+- type: UseCases
+  data:
+  - name: 24/7 TV Channel Operation
+    description: Transport continuous broadcast streams reliably for round-the-clock television channels.
+  - name: Live Event Streaming
+    description: Manage event-based video distribution for sports, concerts, news, and other live events.
+  - name: Content Sharing
+    description: Share live video feeds with partners and customers through controlled entitlements.
+  - name: Disaster Recovery
+    description: Provide redundant video pathways for business continuity in broadcast workflows.
+- type: Integrations
+  data:
+  - name: AWS Elemental MediaLive
+    description: Send video flows to MediaLive for transcoding and processing.
+  - name: Amazon CloudWatch
+    description: Monitor MediaConnect performance metrics and set alarms.
+  - name: Amazon EventBridge
+    description: Trigger event-driven workflows based on MediaConnect source health changes.
+  - name: Amazon CloudFront
+    description: Deliver processed video content at scale using CloudFront.
+  - name: AWS Secrets Manager
+    description: Securely manage encryption keys for content protection.
+- type: Integrations
+  url: https://aws.amazon.com/marketplace/
+integrations:
+- name: Sign in
+- name: Agent Mode
+- name: Why AWS Marketplace?
+- name: Get started in AWS Marketplace
+- name: Industry
+- name: Resources
+- name: Become a Channel Partner
+- name: Sell in AWS Marketplace
+- name: Manage Your Account
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+x-parent: amazon-web-services
+x-relationship: product
