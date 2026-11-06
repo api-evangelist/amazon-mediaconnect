@@ -83,13 +83,14 @@ plans:
   period: none
   included_quota: Customers need to supply their own hardware and use Amazon ECS Anywhere
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
   units:
   - compute
   - data
+  - period
   plans:
   - name: Transport stream flow (US East N. Virginia, pricing example)
     access: other
@@ -128,7 +129,7 @@ x-canonical:
     model: hybrid
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Data transfer out to internet (pricing example)
