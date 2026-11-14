@@ -5,10 +5,19 @@ artifacts:
   agentic-access/amazon-mediaconnect-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-mediaconnect-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   authentication/amazon-mediaconnect-authentication.yml:
     method: derived
     evidence: declared in the artifact
   capabilities/amazon-mediaconnect-capability-edges.yml:
+    method: unknown
+    evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
     method: unknown
     evidence: no authorship recorded
   collections/amazon-mediaconnect-bridges-api.opencollection.json:
@@ -59,6 +68,24 @@ artifacts:
   collections/amazon-mediaconnect-tags-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-mediaconnect-tags-api
+  compliance/amazon-mediaconnect-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-mediaconnect-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-mediaconnect-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/amazon-mediaconnect-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  eligibility/amazon-mediaconnect-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
+  errors/amazon-mediaconnect-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/mediaconnect-api-__boolean-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -794,6 +821,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-mediaconnect-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -801,6 +831,306 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-ld/amazon-mediaconnect-api-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-ld/amazon-mediaconnect-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-add-bridge-outputs-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-add-bridge-sources-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-add-flow-media-streams-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-add-flow-media-streams-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-add-flow-outputs-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-add-flow-sources-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-add-flow-sources-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-batch-get-destination-endpoint-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-batch-get-router-network-interface-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-batch-get-source-endpoint-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-create-bridge-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-create-flow-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-create-gateway-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-create-router-input-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-create-router-network-interface-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-create-router-output-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-delete-bridge-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-delete-flow-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-delete-gateway-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-delete-gateway-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-delete-router-input-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-delete-router-network-interface-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-delete-router-output-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-deregister-destination-endpoint-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-deregister-gateway-instance-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-deregister-gateway-instance-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-deregister-source-endpoint-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-describe-bridge-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-describe-flow-source-metadata-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-describe-gateway-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-describe-offering-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-describe-offering-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-describe-reservation-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-describe-reservation-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-disconnect-endpoints-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-grant-flow-entitlements-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-grant-flow-entitlements-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-bridges-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-bridges-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-destination-endpoints-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-destination-endpoints-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-entitlements-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-entitlements-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-flows-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-flows-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-gateway-instances-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-gateway-instances-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-gateways-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-gateways-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-offerings-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-offerings-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-reservations-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-reservations-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-router-network-interfaces-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-router-network-interfaces-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-source-endpoints-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-source-endpoints-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-tags-for-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-list-tags-for-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-purchase-offering-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-purchase-offering-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-register-destination-endpoint-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-register-source-endpoint-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-remove-bridge-output-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-remove-bridge-source-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-remove-flow-media-stream-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-remove-flow-media-stream-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-remove-flow-output-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-remove-flow-source-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-remove-flow-source-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-restart-router-input-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-restart-router-output-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-revoke-flow-entitlement-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-start-flow-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-start-router-input-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-start-router-output-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-stop-router-input-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-tag-global-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-tag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-take-router-input-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-untag-global-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-untag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-bridge-output-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-bridge-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-bridge-source-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-destination-endpoint-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-flow-entitlement-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-flow-media-stream-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-flow-media-stream-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-flow-output-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-flow-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-flow-source-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-flow-source-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-gateway-instance-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-gateway-instance-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-router-input-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-router-network-interface-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-router-output-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediaconnect-update-source-endpoint-request-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/mediaconnect-api-__boolean-schema.json:
@@ -2264,7 +2594,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -2333,10 +2663,18 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-mediaconnect-openapi-original.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  llms/amazon-mediaconnect-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-mediaconnect-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-mediaconnect-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
   openapi/amazon-mediaconnect-bridges-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -2391,6 +2729,12 @@ artifacts:
   openapi/amazon-mediaconnect-tags-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
+  packages/amazon-mediaconnect-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-mediaconnect-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/amazon-mediaconnect-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -2418,10 +2762,16 @@ artifacts:
   postman/amazon-mediaconnect-tags-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-mediaconnect-tags-api
+  privacy/amazon-mediaconnect-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-mediaconnect-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-mediaconnect-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-mediaconnect-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-mediaconnect-spectral-rules.yml:
@@ -2440,8 +2790,27 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   smithy/mediaconnect-2018-11-14.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/mediaconnect/service/2018-11-14/mediaconnect-2018-11-14.json
+      (sha256 ff9df1152341, fetched 2026-11-11T21:12:27+00:00)
+  terms/amazon-mediaconnect-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-mediaconnect-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-mediaconnect-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-mediaconnect-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-mediaconnect-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-mediaconnect-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-mediaconnect-well-known.yml:
     method: unknown
     evidence: no authorship recorded

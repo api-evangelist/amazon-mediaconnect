@@ -2,6 +2,7 @@
 generated: '2026-10-28'
 method: searched
 source: https://aws.amazon.com/mediaconnect/pricing/
+name: Amazon MediaConnect API Plans
 sources:
 - https://aws.amazon.com/mediaconnect/pricing/
 provenance:
@@ -83,7 +84,7 @@ plans:
   period: none
   included_quota: Customers need to supply their own hardware and use Amazon ECS Anywhere
 x-canonical:
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
