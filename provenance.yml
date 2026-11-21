@@ -2594,7 +2594,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-06T143934.yml:
+  kin/checks-2026-11-13T214628.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -2664,6 +2664,9 @@ artifacts:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-13T214628.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   llms/amazon-mediaconnect-llms-provenance.yml:
@@ -2785,9 +2788,6 @@ artifacts:
     evidence: declared in the artifact
   security/amazon-mediaconnect-vulnerability-disclosure.yml:
     method: searched
-    evidence: declared in the artifact
-  sla/amazon-mediaconnect-sla.yml:
-    method: generated
     evidence: declared in the artifact
   smithy/mediaconnect-2018-11-14.json:
     method: harvested
